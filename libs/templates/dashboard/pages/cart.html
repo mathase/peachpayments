@@ -1,0 +1,885 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>BackToSchool</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'landing/Reg_page5.css' %}">
+  
+  <link rel="stylesheet" href="{% static 'landing/bootstrap/css/bootstrap.min.css' %}">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700,900&display=swap" rel="stylesheet">
+  <script src="{% static 'landing/js/main.js' %}"></script>
+
+  <style>
+    input[type=text], input[type=password], input[type=tel], input[type=email] {
+    width: 100%;
+    display: inline-block;
+    border: none;
+    background: white;
+    text-align: left;
+    margin-bottom: 4px;
+    height: 23px;
+}
+    </style>
+</head>
+
+<body>
+
+  <!--Reg_Box-->
+  <!--Reg_Box-->
+	
+
+  <!-- showcase -->
+  <div class="cart container col-md-9" id="cart-container">
+    <div class=" container-fluid">
+      <div class="firstSection col-md-12">
+      <h2 class="text-center" style="padding-top: 15px;">Cart</h2>
+      <div class="cart-section1 row">
+        <div class="cart-left col-md-2 col-sm-12" >
+          <div id="cart-logo"></div> 
+        </div>
+        {% for order in dataC %}
+        {% if order.product == 'General Membership'%}
+        
+        <div class="cart-right text-right col-md-10 col-sm-12">
+          <h9>Sign up Fee</h9>
+          <br>
+          <p class="total">Price:R {{order.price}}<br> July Promo: -R99 <br>
+            <hr id="hr"> Due Total: R0</p>
+
+        </div>
+        {% endif %}
+        {% endfor %}
+        <hr id="hr">
+      </div>
+      <hr id="hr">
+     
+      <!--box chosen  -->
+      {% for order in dataC %}
+      {% if order.product == 'General Membership'%}
+      {% else %}
+      <div class="cart-section row">
+        <div class="cart-left col-md-2 col-sm-12"  style="font-size: 10px">
+          <img src="/static/dashboard/css/{{order.image}}" id="order-image" width="100%" height="100%" style="object-fit: contain" alt="">
+        </div>
+
+        <div class="cart-right text-right col-md-10 col-sm-12">
+          <h9>{{order.product}}</h9>
+          <br>
+          <br>
+          <br>
+          <!-- <br>
+          <br> -->
+
+
+
+                    <p class="total">
+
+          {% if order.product == 'Rep membership' %}
+          Rep membership cost:R 99
+          <hr id="hr">
+          {% else %}
+                    {% if order.product == "Comprehensive(Foundation)" %}
+          
+                    </p>
+                    <p class="total">Stationary box cost: R: 1682.52</p>
+                    {% elif order.product == "Comprehensive(Essentials)" %}
+                    <p class="total">Stationary box cost: R: 796.07</p>
+                    {% endif %}
+          
+                    <p class="total">Stationary box cost: R: {{order.price}}</p>
+                    <hr id="hr">
+                    {% if order.price == '1682.52' %}
+                    
+                    <p class="total">Recurring Monthly fee: R: 0</p>
+                    {% else %}
+          
+                    <p class="total">Recurring Monthly fee: R: {{order.price}}</p>
+                    {% endif %}
+          
+          {% endif %}
+
+        </div>
+
+      </div>
+      {% endif %}
+      {% endfor %}
+      <!-- sub totals -->
+      <hr id="hr">
+      <div id="subtotal" class="cart-section row">
+        <div class="cart-left col-md-5 col-sm-12">
+        </div>
+
+
+        
+        
+
+        <div class="cart-left col-md-7 col-sm-12 total">
+          <div class="col-md-12 col-sm-12">
+          <div class="row">
+              <div class="col-md-3" style="padding-left: 0px;">
+              <p id="title">Sub Total:
+                <br>
+                (includes vat)
+              </p>
+              <br>
+            </div>
+            <div class="col-md-2" >
+              <p id="title" style="margin-left: -12px;">R: {{total}}
+                <br>
+              </p>
+              <br>
+            </div>
+            <div class="col-md-3" >
+                <br>
+              </p>
+              <br>
+            </div>
+            <div class="col-md-4">
+                <p id="title" style="margin-left: -3px;">R: {% for order in dataC %}
+                  {% if order.IsRecurring == 'True' %}
+                  {{order.price}}
+                  {%endif%}
+                  {% endfor %}
+                  <br>
+                </p>
+                <br>
+              </div>
+          </div>
+            </div>
+        </div>
+
+
+      </div>
+      <hr id="hr">
+
+
+
+
+
+
+      <div class="cart-section row">
+        <div class="cart-left col-md-5 col-sm-12 total">
+          <div class="row">
+            <div class="col-md-4">
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <b><a href="#" id="edit-btn">Modify Purchase</a></b>
+            </div>
+            <div class="col-md-3">
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <b><a href="#" id="edit-btn">Start Over</a></b>
+            </div>
+
+          </div>
+        </div>
+        <div class="cart-right col-md-7 col-sm-12 total">
+          <div class="col-md-12 col-sm-12">
+
+                    <div class="row">
+                      <div class="col-md-3" style="padding-left: 0px">
+                        <p id="title">Total Due Today:
+                          <br>
+                          (includes vat)
+                        </p>
+                        <br>
+                      </div>
+                      <div class="col-md-2">
+                        <p id="title" style="margin-left: -12px;">R:
+                          <br>
+                        </p>
+                        <br>
+                      </div>
+                      <div class="col-md-3">
+                        <p id="title" style="margin-left: -12px;">Due Per Month:
+                          <br>
+                        </p>
+                        <br>
+                      </div>
+                      <div class="col-md-4">
+                          <p id="title" style="margin-left: -12px;">R:
+                            <br>
+                          </p>
+                          <br>
+                        </div>
+                    </div>
+                  </div>
+                 
+                 
+                      <div class="col-md-12 col-sm-12">
+            
+                                <div class="row">
+                                  <div class="col-md-3" style="padding-left: 0px;">
+                                      <p id="title">Discount</p>
+                                    <br>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <p id="title" style="margin-left: -12px;">R:</p></div>
+                                  <div class="col-md-3"></div>
+                                  <div class="col-md-4"> </div>
+                                </div>
+                              </div>
+
+                              <div class="col-md-12 col-sm-12">
+            
+                                  <div class="row">
+                                    <div class="col-md-3" style="padding-left: 0px;">
+                                        <p id="title">Tax</p>
+                                      <br>
+                                    </div>
+                                    <div class="col-md-2">
+                                      <p id="title" style="margin-left: -12px;">R:</p></div>
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-4"> </div>
+                                  </div>
+                                </div>
+
+            
+            <p class="text-right">Please note delivery is not included</p>
+          </div>
+        </div>
+      
+      </div>
+    <!-- billing information -->
+    <div class="container-fluid">
+      <div class="cart-section">
+        <div class="row">
+          <div class="heading col-md-6 col-sm-12">
+            <h3 class="text-center">Billing information</h3>
+          </div>
+          
+          <div class="heading col-md-6 col-sm-12" style="float:right;">
+            <h3 class="text-center">Security</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="billing-left cart-left text-left col-md-6 col-sm-12 ">
+              <b><p id="red">(Marked with a * are Mandatory)</p></b>
+              
+
+              <!-- Button trigger modal -->
+              
+
+
+              <b><p style="margin-top: -20px;">Payment Method</p></b>
+              
+              <b><p style="float: left">Payment Mode<p style="color: red;">*</p></p>
+           </b>
+
+
+
+            <a type="" class="btn btn-primary" href="{% url 'dashboard:eftPopUp' %}" id="cashDeposit"><h1 id="h1">EFT</h1></a>
+            <script src="{{peach_base_url}}/v1/paymentWidgets.js?checkoutId={{checkout_id}}"></script>
+	<form
+		action="{{result_url}}"
+		class="paymentWidgets"
+		data-brands="VISA MASTER AMEX">
+	</form>
+
+            <br>
+            <br>
+
+            <a href="" type="" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="cashDeposit" style="margin-top: -18px;"><h1 id="h1">Cash Deposit</h1></a>
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+
+                    <div class="modal-body">
+                      <p>FNB
+                        <br>
+                        Account Name: Back to school
+                        <br>
+
+                        Account Number: 6280 8162 929
+                        <br>
+                        Branch Code: 250 655
+                        <br>
+                        Cheque Account
+                        <br>
+                        Ref: Membership Number
+                        <br>
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            <br>
+            <div class="payment-btn row">
+              <div class="col-md-2" id="card1"></div>
+              <div class="col-md-2" id="card2"></div>
+              <div class="col-md-2" id="card3"></div>
+            </div>
+
+          </div>
+          <div class=" billing-right cart-right text-center col-md-6 col-sm-12 ">
+
+            <p>Type in the characters you see in the picture below</p>
+            <!-- caption -->
+            <div class="captor-image col-md-6">
+              <img src="" alt="">
+            </div>
+            <div class="captor-text col-md-6">
+              <input type="text" name="" value="" placeholder="text">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <!--mailing info  -->
+    <!-- terms & <conditions></conditions> -->
+
+
+    <div class="container-fluid">
+        <div class="cart-section">
+          <div class="row">
+            <div class="heading col-md-6 col-sm-12">
+              <h3 class="text-center">Mailing Address</h3>
+            </div>
+            
+            <div class="heading col-md-6 col-sm-12" style="float:right;">
+              <h3 class="text-center">Delivery Address</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="billing-left cart-left text-left col-md-6 col-sm-12 ">
+                <div class="row1 col-md-12">
+                    <div class=" text-left col-md-6 col-sm-12" style="height: 30px;float:left">
+                      <div class="form-check"></div>
+                    </div>
+                    <div class="text-right col-md-6 col-sm-12" style="height: 30px;float:right"></div>
+                  </div>
+                  <form class="mailingForm" action="{% url 'dashboard:address' %}" method="POST" id="mailingForm1">
+                      {% csrf_token %}
+                      
+                      <label style="margin-bottom: -20px; float: left;"  for=""><p id="headings" style="float: left ;">Address<p style="color: red; float:left; display: inline;">*</p></p></label>
+                      <input required id="input1" type="text" name="address_street_name" value="" placeholder="">
+                      <label style="margin-bottom: -20px;float: left;"  for=""><p id="headings" style="float: left ;">Address<p style="color: red; float:left; display: inline;">*</p></p></label>
+                      <input required id="input1" type="text" name="address_suburb_" value="" placeholder="">
+          
+                      <div class="row col-md-12" style="margin-top: 10px;"><!-- row 1 -->
+                        <div class="col-md-5" style="padding-left: 0px">
+                          <label style="margin-bottom: -20px;float: left;"  for=""><p id="headings" style="float: left ;">Country<p style="color: red; float:left; display: inline;">*</p></label>
+                         
+                          <select  required name="country" id="" style="font-size: small;">
+                            <option value="holder">-Select-</option>
+                            <option value="South Africa">South Africa</option>
+                            <option value="Zimbabwe">Zimbabwe</option>
+                            <option value="Botswana">Botswana</option>
+                            <option value="Lesetho">Lesetho</option>
+          
+                          </select>
+                        </div>
+                        <div class="col-md-1" style="padding: 0px"></div>
+                          <div class="col-md-5" style="padding-left: 30px">
+                          <label style="margin-bottom: -20px;float: left;"  for=""><p id="headings" style="float: right ;">Province<p style="color: red; float:left; display: inline;">*</p></p></label>
+                          
+                          <select required  name="province" style="font-size: small;">
+                            <option value="holder">-Select-</option>
+                            <option value="Gauteng">Gauteng</option>
+                            <option value="KZN">KZN</option>
+                            <option value="Mpumalanga">Mpumalanga</option>
+                            <option value="Limpopo">Limpopo</option>
+          
+                          </select>
+                          
+                        </div>
+
+                       
+                      </div>
+
+                      <div class="row col-md-12" style="margin-top: 20px"><!-- row 2  -->
+                          <div class="col-md-5" style="padding-left: 0px">
+                              <label style="margin-top: -10px;float: left;"  for=""><p id="headings" style="float: left ;">City<p style="color: red; float:left; display: inline;">*</p><text style="color: transparent">sdkcsdjdc</text></p></label>
+                              <input required id="input" type="text" name="city" value="" placeholder="" style="width: 150px;float: left ;margin-top: -23px">
+                            
+                            
+                          </div>
+                           <div class="col-md-1" style="padding: 0px"></div>
+                          <div class="col-md-5" style="padding-left: 30px">
+                            <label style="margin-top: -10px;float: left;"  for=""><p id="headings" style="float: left ;">Postal Code<p style="color: red; float:left; display: inline;">*</p></p></label>
+                            <input required id="input" type="text" name="postal_code" value="" placeholder="" style="width: 150px;float: left ;margin-top: -23px">
+                          </div>
+                         
+                        </div>
+                        
+                    
+  
+            </div>
+            
+          <div class=" billing-right cart-right text-center col-md-6 col-sm-12 "><!-- Begining of main billing  -->
+            <div class="row1 col-md-12">
+                <div class=" text-left col-md-6 col-sm-12" style="height: 30px;float:left">
+                  <div class="form-check">
+                    <input id="same" class="form-check-input" type="checkbox" style="margin:0;margin-top: 10px; margin-bottom: -90px;">
+                    <input value="true" id="validate" hidden>
+                    <label for="my-input" class="form-check-label" style="float: left;"> <p id="heading1">Same as Mailing
+                      address</p></label>
+                  </div>
+                </div>
+                <div class="text-right col-md-6 col-sm-12" style="height: 30px;float:right">
+                  <label for="my-input" class="form-check-label" style="float: right;"> <p id="heading1"><i>Physical Address Only
+                    </i> </p></label>
+                </div>
+              </div>
+
+                
+                <label style="margin-bottom: -20px; float: left;"  for=""><p id="headings" style="float: left ;">Address<p style="color: red; float:left; display: inline;">*</p></p></label>
+                <input id="input1" type="text" name="address_street_name_2" id="address_street_name_2" value="" placeholder="">
+                <label style="margin-bottom: -20px;float: left;"  for=""><p id="headings" style="float: left ;">Address<p style="color: red; float:left; display: inline;">*</p></p></label>
+                <input id="input1" type="text" name="address_suburb_2"  id="address_suburb_2" value="" placeholder="">
+    
+                <div class="row col-md-12" style="margin-top: 1px;"><!-- row 1 -->
+                  <div class="col-md-5" style="padding-left: 0px">
+                    <label style="margin-bottom: -20px;float: left;"  for=""><p id="headings" style="float: left ;">Country<p style="color: red; float:left; display: inline;">*</p></label>
+                   
+                    <select name="country_2" id="country_2" style="font-size: small;">
+                      <option value="holder">-Select-</option>
+                      <option value="South Africa">South Africa</option>
+                      <option value="Zimbabwe">Zimbabwe</option>
+                      <option value="Botswana">Botswana</option>
+                      <option value="Lesetho">Lesetho</option>
+    
+                    </select>
+                  </div>
+                  <div class="col-md-1" style="padding: 0px"></div>
+                    <div class="col-md-5" style="padding-left: 30px">
+                    <label style="margin-bottom: -20px;float: left;"  for=""><p id="headings" style="float: right ;">Province<p style="color: red; float:left; display: inline;">*</p></p></label>
+                    
+                    <select  name="province_2" id="province_2" style="font-size: small;">
+                      <option value="holder">-Select-</option>
+                      <option value="Gauteng">Gauteng</option>
+                      <option value="KZN">KZN</option>
+                      <option value="Mpumalanga">Mpumalanga</option>
+                      <option value="Limpopo">Limpopo</option>
+    
+                    </select>
+                    
+                  </div>
+
+                 
+                </div>
+
+                <div class="row col-md-12" style="margin-top: 20px"><!-- row 2  -->
+                    <div class="col-md-5" style="padding-left: 0px">
+                        <label style="margin-top: -10px;float: left;"  for=""><p id="headings" style="float: left ;">City<p style="color: red; float:left; display: inline;">*</p><text style="color: transparent">sdkcsdjdc</text></p></label>
+                        <input id="input" type="text" name="city_2" id="city_2" value="" placeholder="" style="width: 150px;float: left ;margin-top: -23px">
+                      
+                      
+                    </div>
+                     <div class="col-md-1" style="padding: 0px"></div>
+                    <div class="col-md-5" style="padding-left: 30px">
+                      <label style="margin-top: -10px;float: left;"  for=""><p id="headings" style="float: left ;">Postal Code<p style="color: red; float:left; display: inline;">*</p></p></label>
+                      <input id="input" type="text" name="postal_code_2" id="postal_code_2" value="" placeholder="" style="width: 150px;float: left ;margin-top: -23px">
+                    </div>
+                   
+                  
+             
+              
+            </div>
+  
+          </div>
+  
+        </div>
+      </div>
+      <!--mailing info  -->
+
+        <div class="row">
+          <div class="cart-section2" >
+            <h3 class="text-center">Terms and Conditions</h3>
+            <div class="terms-conditions">
+             <!-- <div class="terms"> 0th November every year.
+              </div>-->
+              <div id="accept-text" class="col-md-12 text-center">
+                <p id="p10"> I agree that back to School may retain and process the personal information given by me to Back to school
+                  for purposes connected with realization of the agreement, including the marketing commissions payable for
+                  administrative and statistical purposes and for marketing of back to school and services Back to school may
+                  record this information manually and ot electronically and will be the data controller for this information.
+                  <br>
+                  I have been informed that i have access to my data processed by back to school and i may amend them. I have
+                  been also informed that providing my persona; data is voluntary, however not providing them will etc the
+                  impossibility of conclusion of the agreement
+        
+                  <br>
+                  <input type="checkbox" required name="" id=""> I agree that back to school may disclose and transfer such personal
+                  information to other liabilities and associates of the Back to School group of companies which are situated within Africa and to the other persons for the purposes of Back to School business 
+                  and other Back to School Representatives.These persons may be situated in countries that do not have laws to protect personal information. Details of the companies
+                  and countries involved will be provided on request.
+                  <br>
+                  <input type="checkbox" required name="" id=""> I agree that Back to School or other liaties and associates of the Back to School group of companies may send to me marketing 
+                  information via email
+                  information to other a liabilities
+                  <br>
+                  <input type="checkbox" required name="" id="">I have read the terms and conditions before makling the application
+                  <br>
+                  <input type="checkbox" required name="" id=""> I have read the terms and conditions of <a href="#">Peach Payments</a>
+                    <br><br>
+                    Catalogue of definitions 
+Any words or expressions used in this Agreement unless consistent with or otherwise indicated by the context, shall have the meanings assigned to them or ascribed hereunder. Headings to paragraphs and clauses are explanatory only and do not constitute part of the Agreement. The singular shall include the plural and vice versa, and any words importing the masculine gender shall include the remaining two genders. 
+1 Company or Club - means Back to School Africa (BSA) (Registration Number 2007/184125/23) 
+2 AmaPoint or AP – means the electronic point to which a Member is entitled to purchase online items from the Club’s online platform.
+3 Terms and Conditions – means this agreement
+4 Anniversary Date - means, in respect of each consecutive period of twelve months, the first day of that month in which the Member's first contribution was made. 
+5 Member or You - means an individual of the Club, whose name has been entered in the online register of the Company
+6 Rules - means the rules of the Club as may be amended varied or added to by the Company from time to time.
+7 Method of payment – Means direct deposit, electronic funds transfer, and/or push debits.
+8 Club Partners – Means other stores that the Club has partnered up with.
+9 Redemption Cycle – Means the consecutive period between 30th November – 31st January 
+10 Rollover – Means AmaPoints from previous redemption cycle.
+11 Packages – Means stationery in a box.
+
+1 General
+1.1	The electronic stationery point (“AmaPoint”) (“AP”) is operated by Back to School Africa (“Company”) (“BSA”). Club members (“Member”) will be receive one AmaPoint for every one South African rand, which can be used as partial or complete payment toward purchasing stationery online within the company platform, subject to these Terms and Conditions (“Agreement”);
+1.2	Membership of the Club will commence on the date that your name is entered into the online AmaPoints register and shall endure for a period as determined by your Agreement.
+1.3	Contributions are made through the method of payment that suits the individual/school;
+1.4 These terms and conditions are binding and enforceable on you, the Member. 
+
+2 Eligibility 
+2.1 Individuals who are residents of the Republic of South Africa and join the Club are eligible to become Members.
+
+3 Enrolment in the Club
+3.1 New Club Members must accept the Agreement to enrol into the Club;
+3.2 A R99 (ninety nine rand) joining fee is required to join the Club and to ensure that the account remains open. 
+3.3 The eleven monthly cycle contributions by each Member will be dependent on the Club’s constitution. It remains the responsibility of the Members to ensure that all information provided is correct. The opening of an account is subject to application form (manual or online) being filled out. Exclusive discounts may apply.
+
+4 Receiving AmaPoints for Enrolling 
+4.1 Members will receive AmaPoints when they make monthly contributions into the Club;
+4.1.1 One South African Rand equals one AmaPoint.
+
+5 AmaPoint system
+5.1 AmaPoints are not refundable or cash redeemable;
+5.2 You agree that in exchange for South African rand and keeping your account active and we will allocate you with AmaPoints equal to your rand contribution; 
+5.3 You will retain ownership of your AmaPoints for as long as your account is active;
+5.4 AmaPoints are only redeemable 30th November to 31st January every year, unless stated otherwise. 
+
+6 Special Offers and Initiatives 
+6.1 From time to time, we will have special offers and marketing initiatives. Such will be subject to this Agreement and may be terminated by the Company at any time without advance notice.  In addition to offers outlined in this section 6, some offers may be published in one or more addenda to this Agreement and will be subject to the terms in the addendum and this Agreement and may be terminated by the Company at any time without advance notice. 
+
+7 AmaPoint Maturity
+7.1 AmaPoints mature 30th November every year.
+8 Using AmaPoints
+8.1 AmaPoints can only be used to purchase goods on back to school online platform from 1st December;
+8.2 All AmaPoint purchases are made subject to the terms and conditions of BSA terms and conditions and inventory availability;
+8.3 AmaPoints cannot be used for anything other than back to school purchases; 
+8.4 Members must have AmaPoints in order to use AmaPoints.
+
+9 Expiration of AmaPoints 
+9.1 Unless specifically stated otherwise, AmaPoints need to be used within two redemption cycles or they will dissolve.
+
+10 Specific Rules for AmaPoints 
+10.1 AmaPoints are awarded to a membership account and not to individuals;
+10.2 AmaPoints may not be transferred to any other account, sold or gifted. 
+10.3 AmaPoints are not refundable or cash redeemable;
+10.4 AmaPoints have no cash value;
+10.5 Should you wish to cancel your membership permanently from the Club, you will forfeit all your AmaPoints. Special circumstances will be looked at on a case by cases basis.
+10.6 Withdrawing rollover or excess AmaPoints will in no way affect your purchased AmaPoints, the Club will issue you a voucher from our partners to use within a period set out by the Clubs partners.
+10.7 Should a Member pay their monthly fee for a short period of time and fail to maintain their active status, their account will be placed into suspension after three months and they will have twelve months in which to reactivate, failure to do so could result in them forfeiting all AmaPoints.
+10.8 To reactivate a suspended account, Members will need to pay an admin penalty of R150 (one hundred and fifty rand) to reactive their membership.
+
+11 Viewing AmaPoints 
+11.1 AmaPoints can be viewed from our membership online portal; 
+11.2 Members are responsible for ensuring that their AmaPoints are properly credited. If a Member believes that AmaPoints have been earned but not properly credited, the Member may be required to submit documentation or other proof satisfactory to the Company. Any claim for uncredited AmaPoints must be received by the Company within twelve months after the AmaPoints were earned. 
+
+12	Payment
+12.1 We are committed to providing secure online payment facilities. All transactions are encrypted using appropriate encryption technology.
+12.2	 Contributions can be made to join the club via-
+12.2.1	Debit card;
+12.2.2	Credit card: where contribution is made by credit card, we may require additional information in order to authorise and/or verify the validity of contribution. In such cases we are entitled to withhold delivery until such time as the additional information is received by us and authorisation is obtained by us for the amounts. You warrant that you are fully authorised to use the credit card supplied for purposes of paying the joining fee as well as the monthly contributions. You also warrant that your credit card has sufficient available funds to cover all the costs incurred as a result of the services used on the Website;
+12.2.3	Direct bank deposit or electronic funds transfer: if you pay via direct bank deposit or electronic funds transfer, contribution must be made within 5 (five) days of registration. Back to School will not accept your registration if joining fee has not been received;
+12.2.4	Instant EFT;
+12.3	You may contact us via info@backtoschool.biz to obtain a full record of your contributions. We will also send you email communications about your registration, monthly contributions and payment.
+12.4	Once you have selected your payment method (save for direct bank deposit), you will be directed to a link to a secure site for payment to join the club.
+
+13 Participation
+13.1 The Company reserves the right at any time to limit Club enrolment;
+13.2 The Company may discontinue a Member’s membership in the Club and void or cancel the Member’s entire AmaPoints balance if any AmaPoints in the Member’s account are issued, received or redeemed through fraud or theft, or otherwise illegally, or not as authorized in the Agreement.
+
+14 Executive Status
+14.1 The Company offers Executive Status to those Members who join the club; 
+14.2 You will, as long as you comply with the terms of this Agreement, be entitled to: 
+14.2.1 Membership of the Club; 
+14.2.2 AmaPoints Rights entitling you to an allocation of your AmaPoints; and 
+14.2.3 Right to purchase items from our online store with your AmaPoints.
+14.3 The Company may from time to time provide additional benefits to Members with Executive Status. The Company reserves the right, as its sole discretion, to suspend, change, modify or limit Executive Status and the terms and conditions stated in this Section 14 in whole or in part at any time.
+
+15 Box Contents  
+15.1 Back to School does not take responsibility for items not included in the box;
+15.2 Back to School reserves the right to substitute products for something of the same or better quality than that specified by client. 
+15.3 Delivery costs are not included in box costs
+
+16 Member's Obligations 
+You must: 
+16.1 Comply with the provisions of this Agreement, and any terms of finance; 
+16.2 Comply with all rules imposed by the club when purchasing online goods;
+16.3 Agree that all information inserted into BSA’s platform belongs to BSA.
+
+17 Cancellation Notice
+17.1 You may cancel this transaction without penalty or obligation, not later than midnight of the seventh business days from joining date;
+17.2 To cancel this transaction, please call us to send you a cancellation notice to sign.
+ 
+18 Limitation of Liability 
+Neither the Company, nor its affiliates, partners or the Company’s respective officers, directors, employees or agents shall have any responsibility or liability for any claim, loss, injury, damage, delay, cancellation, accident, cost or expense (including, without limitation, attorneys’ fees and costs of suit), nor for any incidental, indirect, special, punitive, exemplary or consequential damages or damages (including, without limitation, for loss of or damage to revenue, profits, savings, goodwill or data) (collectively, "losses and damages"), directly or indirectly arising from or related to (i) these terms of agreement; (ii) BSA; (iii) any failure, delay or decision by us in administering the goods; (iv) any unauthorized use of your account or any breach of security beyond our reasonable control; (v) any offer, representation, statement or claim about BSA; or (vi) the purchase, redemption for or use of any AmaPoints. The foregoing limitations of liability shall apply whether the alleged liability is based on contract, negligence, tort, strict liability or any other basis, even if the company or its affiliates or representatives have been advised of or should have known of the possibility of such losses and damages, and without regard to the success or effectiveness of other remedies. 
+
+
+
+19 Warranty 
+BSA and AmaPoints are provided "as-is," without warranty or representation of any kind. The company disclaims all warranties and representations of any kind whatsoever, whether written or oral, express, implied, statutory or arising by operation of law, course of dealing, course of performance or usage of trade, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, title, and non-infringement, with respect to the goods bought and the AmaPoints. 
+
+20 Miscellaneous 
+20.1 The Company’s failure to enforce a particular term or requirement does not constitute a waiver of that term or requirement by the Company;
+20.2 All questions or disputes regarding eligibility for the Club or the eligibility of AmaPoints will be resolved by the Company at its sole discretion;
+20.3 The Company reserves the right to audit any and all accounts at any time and without notice to the Member to ensure compliance with this Agreement. In the event that an audit reveals discrepancies or violations, the processing of AmaPoints may be delayed until the discrepancies or violations are resolved satisfactorily to the Company. Pending such resolution, Members may be prohibited from redeeming or spending AmaPoints as determined at the Company’s sole discretion;
+20.4 From time to time, the Company may offer special benefits to those Members, such special benefits determined and provided at the sole discretion of the Company; 
+20.5 Items sold via AmaPoints will be inclusive of VAT;
+20.6 By participating in the Club, you agree that the laws of the Republic of South Africa, without regard to its conflict of laws rules, will govern these Terms of Agreement, as well as your and our observance of them; 
+20.7 As a condition of participating in this Club, you agree that (1) any and all disputes, claims and causes of action arising out of or connected with this Program, or any AmaPoints obtained through the Club, shall be resolved individually, without resort to any form of class action and exclusively by arbitration under the International Arbitration Rules of the South African Arbitration Association. Arbitration will take place in Johannesburg, South Africa; (2) any and all claims, judgments and rewards shall be limited to actual out-of-pocket costs incurred, including costs associated with participating in this Club, but in no event attorneys' fees; and (3) under no circumstances will you be permitted to seek recovery for, and you hereby waive all rights to claim, punitive, incidental and consequential damages and any other damages, other than for actual out-of-pocket expenses, and waive any and all rights to have damages multiplied or otherwise increased. All issues and questions concerning the construction, validity, interpretation and enforceability of the Agreement, or the rights and obligations of you and Company in connection with the Club, shall be governed by, and construed in accordance with, the laws of the Republic of South Africa, without giving effect to any choice of law or conflict of law rules or provisions (whether of the Republic of South Africa, or any other jurisdiction) that would cause the application of the laws of any jurisdiction other than the Republic of South Africa. 
+
+21 Breach 
+21.1 In the event of you breaching this Agreement or any of your obligations to the Club and continuing such default, BSA will have the right to: 
+21.1.1Terminate your membership AmaPoints rights and all entitlements arising therefrom; and 
+21.1.2 Retain your AmaPoints and any rights attached there to.
+
+22 Notices 
+22.1 Any notice required to be given by one party to another, will be deemed to have been given as if addressed to the relevant party at the address set out in Club application form. Such notice shall be deemed to have been duly received, if delivered personally to the addressee, or if posted by pre-paid post within the Republic of South Africa, seven days after the date of despatch. 
+22.2 Back to School hereby selects Unit2, Coldstream Office Park, 2 Coldstream Street, Little Falls, 1724, Johannesburg, as its address for the service of all formal notices and legal processes in connection with these Terms and Conditions (“legal address”). Back to School may change this address from time to time by updating these Terms and Conditions.
+22.3 You hereby select the delivery address specified with your registration as your legal address, but you may change it to any other physical address by giving Back to School not less than seven days’ notice in writing.
+22.4 Notices must be sent either by hand, prepaid registered post, telefax or email and must be in English. All notices sent -
+22.3.1	by hand will be deemed to have been received on the date of delivery;
+22.3.2	by prepaid registered post, will be deemed to have been received 10 (ten) days after the date of posting;
+22.3.3	by telefax before 16h30 on a business day will be deemed to have been received, on the date of successful transmission of the telefax. All telefaxes sent after 16h30 or on a day which is not a business day will be deemed to have been received on the following business day; and
+22.3.4	by email will be deemed to have been on the date indicated in the “Read Receipt” notification. All email communications between you and Back to School must make use of the “read receipt” function to serve as proof that an email has been received.
+
+23 Return Policy
+We want you to be happy with your purchase. If you are not completely satisfied, you can return the product to us and we will either repair / replace it, or credit your account with AmaPoints, subject to the below terms. 
+23.1 You must return any goods in the same condition with all packaging and materials. We will refund your account to the value of goods in the form of AmaPoints (minus the direct costs of returning the goods) within 30 (thirty) days of the date of return request.
+23.2 The original delivery charge will not be refunded and the cost for returning the parcel is at your expense. Please include your order or invoice number in the box of the return so that your point credit can be processed
+23.3 Defective goods are those that had a defect or were unsafe when we supplied them. A defect usually means that the goods were manufactured using materials, components or workmanship below an acceptable standard. You must prove that goods are defective
+23.4 We will replace, repair, or refund in the form of AmaPoints of any defective goods that you return to us during the six-month statutory warranty.
+23.5 We will collect the defective physical goods under warranty to product from you at no charge. Our courier is entitled to refuse collection of a product that is not properly packaged for transport.
+23.6 If you claim that our goods are defective, our technicians will examine the goods for defects. In the case of physical goods, our technicians will examine the actual goods. They will report to us whether the goods were defective, were misused or are of good quality. If our technician reports that the goods were misused, were of good quality, were not provided to you for a specific purpose or were suitable for that purpose, then we will not replace or refund the goods.
+23.7 If you choose for us to replace or repair the goods, we will contact you as soon as reasonably possible to organise the necessary steps to repair or replace the goods.
+23.8 If you choose for us to make a refund, we will credit our account with AmaPoints within 30 (thirty) days.
+23.9 If we do not accept that we supplied defective or unsuitable goods, and our returns department has not been able to help, any customer may still take the matter up with the consumer goods and services ombudsman http://www.cgso.org.za/ or other dispute resolution body, or take legal action. The dispute resolution procedures under the CPA do not necessarily apply to all transactions with us. This policy does not exclude any other rights customers may have.
+23.10 The following will NOT be regarded as defects and will not entitled you to a return under this section
+-	faults resulting from normal wear and tear;
+-	damage arising from negligence, user abuse or incorrect usage of the product;
+-	damage arising from electrical surges or sea air corrosion;
+-	damage arising from a failure to adequately care for the product;
+-	damage arising from unauthorised alterations to the product; and
+-	where the specifications of a product, although accurately described on the Website and generally fit for its intended purpose, do not suit you.
+23.11	Best practice and all relevant laws. If you are not satisfied with any of our goods, or have any questions, please contact our customer services department and have your invoice number ready.
+23.12	Incorrect items
+23.12.1	We will either replace the item or refund you in the form of AmaPoints for any item that you receive that does not match the description advertised on the website. We will need you to return the item to us at no additional cost to yourself.
+23.12.2	Please log a return within 7 (seven) days, where the item is not what you ordered.
+23.13 Regular returns
+The below procedure is related to unwanted / incorrect / damaged on arrival and sub-standard items.
+23.13.1	Return logged
+-	Allow for additional time, if incorrect information on the website.
+-	Collection booked.
+-	Received at warehouse, inspected.
+-	Refund processed to customer account (unless otherwise specified).
+-	If item is not returned in mint condition / without the items original packaging the refund will not be processed. (This does not apply to damage on arrival).
+-	This procedure usually takes 3-7 (three to seven) working days to conclude.
+Kindly allow for longer waiting times during peak season, November – March. 
+23.14	Warranty returns
+23.14.1 Return logged (24 - 48 hours) (twenty four to forty eight)
+23.14.2.	Collection is booked for return of faulty item. (1-3 (one to three) working days, unless item is returned to BTS offices.)
+23.14.3	Unit arrives at BTS and is put into a queue awaiting damage assessment. (1-2 (one to two) working days. 3-5 (three to five) during peak season)
+23.14.4	Damage assessment of returned unit before it is sent to the supplier's / service center.
+23.14.5	Unit is sent away for assessment (24-48 (twenty four to forty eight) hour delivery)
+
+24	Privacy Policy
+24.1	We respect your privacy and will take reasonable measures to protect it.
+24.2	 Should you decide to register as a member on the Website, we may require you to provide us with personal information which includes but is not limited to:
+-	your name and surname;
+-	your email address;
+-	your physical address;
+-	your mobile number;
+-	your date of birth; and 
+-	relevant children information
+24.3	Should your personal information change, please inform us and provide us with updates to your personal information as soon as reasonably possible to enable us to update your personal information.
+24.4	You may choose to provide additional personal information to us, in which event you agree to provide accurate and current information, and not to impersonate or misrepresent any person or entity or falsely state or otherwise misrepresent your affiliation with anyone or anything.
+24.5	Subject to clause 25.1 below, we will not, without your express consent:
+24.5.1	use your personal information for any purpose other than as set out below:
+24.5.2	in relation to registration, sale and delivery of packages;
+24.5.3	to contact you regarding current or new packages or any other goods offered by us or any of our divisions, affiliates and/or partners (unless you have opted out from receiving marketing material from us);
+24.5.4	to inform you of new features, special offers and promotional competitions offered by us or any of our divisions, affiliates and/or partners (unless you have opted out from receiving marketing material from us); and
+24.5.5	to improve our product selection and your experience on our Website by, for example, monitoring your browsing habits, or tracking your activity on the Website; or
+24.6	Disclose your personal information to any third party other than as set out below:
+24.6.1	To our employees and/or third party service providers who assist us to interact with you via our Website, email or any other method, for the delivering packages to you, and thus need to know your personal information in order to assist us to communicate with you properly and efficiently;
+24.6.2	to our divisions, affiliates and/or partners (including their employees and/or third party service providers) in order for them to interact directly with you via email or any other method for purposes of sending you marketing material regarding any current or new goods or services, new features, special offers or promotional items offered by them (unless you have opted out from receiving marketing material from us);
+24.6.3	to law enforcement, government officials, fraud detection agencies or other third parties when we believe in good faith that the disclosure of personal information is necessary to prevent physical harm or financial loss, to report or support the investigation into suspected illegal activity, or to investigate violations of these Terms and Conditions;
+24.6.4	to our service providers (under contract with us) who help with parts of our business operations (fraud prevention, marketing, technology services etc). However, our contracts dictate that these service providers may only use your information in connection with the services they perform for us and not for their own benefit;
+24.6.5	to our suppliers in order for them to liaise directly with you regarding any faulty packages you have purchased which requires their involvement; and
+24.7	We are entitled to use or disclose your personal information if such use or disclosure is required in order to comply with any applicable law, subpoena, order of court or legal process served on us, or to protect and defend our rights or property. In the event of a fraudulent online payment, Back to School is entitled to disclose relevant personal information for criminal investigation purposes or in line with any other legal obligation for disclosure of the personal information which may be required of it.
+24.8	We will ensure that all of our employees, third party service providers, divisions, affiliates and partners (including their employees and third party service providers) having access to your personal information are bound by appropriate and legally binding confidentiality obligations in relation to your personal information.
+24.9	Ratings and Reviews: When you provide a rating or review of a Product, you consent to us using that rating or review as we deem fit, including without limitation on the Website, in newsletters or other marketing material. The name that will appear next to that rating or review is your First Name, as you would have provided upon registration. If you do not agree to this, please do not put any ratings or reviews on the Website. We will not display your Last Name, nor any of your contact details, with a rating or review.
+24.10	We will -
+24.10.1	treat your personal information as strictly confidential, save where we are entitled to share it as set out in this policy;
+24.10.2	take appropriate technical and organisational measures to ensure that your personal information is kept secure and is protected against unauthorised or unlawful processing, accidental loss, destruction or damage, alteration, disclosure or access;
+24.10.3	provide you with access to your personal information to view and/or update personal details;
+24.10.4	promptly notify you if we become aware of any unauthorised use, disclosure or processing of your personal information;
+24.10.5	provide you with reasonable evidence of our compliance with our obligations under this policy on reasonable notice and request; and
+24.10.6	upon your request, promptly return or destroy any and all of your personal information in our possession or control, save for that which we are legally obliged to retain.
+24.11	We will not retain your personal information longer than the period for which it was originally needed, unless we are required by law to do so, or you consent to us retaining such information for a longer period.
+24.12	Back to School undertakes never to sell or make your personal information available to any third party other than as provided for in this policy.
+24.13	Whilst we will do all things reasonably necessary to protect your rights of privacy, we cannot guarantee or accept any liability whatsoever for unauthorised or unlawful disclosures of your personal information, whilst in our possession, made by third parties who are not subject to our control, unless such disclosure is as a result of our gross negligence.
+24.14	If you disclose your personal information to a third party, such as an entity which operates a website linked to this Website or anyone other than Back to School, Back to School shall not be liable for any loss or damage, howsoever arising, suffered by you as a result of the disclosure of such information to the third party. This is because we do not regulate or control how that third party uses your personal information. You should always ensure that you read the privacy policy of any third party.
+24.15	Back to School makes use of “cookies” to automatically collect information and data through the standard operation of the Internet servers. “Cookies” are small text files a website can use (and which we may use) to recognise repeat users, facilitate the user’s on-going access to and use of a website and allow a website to track usage behaviour and compile aggregate data that will allow the website operator to improve the functionality of the website and its content, and to display more focused advertising to a user by way of third party tools. The type of information collected by cookies is not used to personally identify you. If you do not want information collected through the use of cookies, there is a simple procedure in most browsers that allows you to deny or accept the cookie feature. Please note that cookies may be necessary to provide you with certain features available on our Website, and thus if you disable the cookies on your browser you may not be able to use those features, and your access to our Website will therefore be limited. If you do not disable “cookies”, you are deemed to consent to our use of any personal information collected using those cookies, subject to the provisions of this clause 25.
+
+25 Data breach
+In the event of a data breach, Back to School will notify the members within a reasonable time thereafter. Back to School will also notify the information regulator, controller and supervisory authority in the event of a data breach or a risk to a members’ rights and freedoms within 72 (seventy two) hours.
+
+26	Changes to these Terms and Conditions
+26.1	Back to School may, in its sole discretion, change any of these Terms and Conditions at any time. It is your responsibility to regularly check these Terms and Conditions and make sure that you are satisfied with the changes. 
+26.2	 Any such change will only apply to your use of this Website after the change is displayed on the Website. If you use the Website after such amended Terms and Conditions have been displayed on the Website, you will be deemed to have accepted such changes.
+
+27 Electronic communications
+When you visit the Website or send emails to us, you consent to receiving communications from us or any of our divisions, affiliates or partners electronically in accordance with our confidentiality and privacy policy as set out in clause 24 above.
+
+28	Ownership and copyright
+28.1	The contents of the Website, including any material, information, data, software, icons, text, graphics, lay-outs, images, sound clips, advertisements, video clips, trade names, logos, trade-marks, designs and service marks which are displayed on or incorporated in this Website (“Website Content”) are protected by law, including but not limited to copyright and trade mark law. The Website Content is the property of Back to School, its advertisers and/or sponsors and/or is licensed to Back to School.
+28.2	 Members will not acquire any right, title or interest in or to the Website or the Website Content.
+28.3	Any use, distribution or reproduction of the Website Content is prohibited unless expressly authorised in terms of these Terms and Conditions or otherwise provided for in law. To obtain permissions for the commercial use of any Website Content contact us via info@backtoschool.biz.
+28.4	Where any of the Website Content has been licensed to Back to School or belongs to any third party, your rights of use will also be subject to any terms and conditions which that licensor or third party imposes from time to time and you agree to comply with such third party terms and conditions.
+
+29 Disclaimer
+29.1 The use of the Website is entirely at your own risk and you assume full responsibility for any risk or loss resulting from use of the Website or reliance on any information on the Website.
+29.2 Whilst Back to School takes reasonable measures to ensure that the content of the Website is accurate and complete, Back to School makes no representations or warranties, whether express or implied, as to the quality, timeliness, operation, integrity, availability or functionality of the Website or as to the accuracy, completeness or reliability of any information on the Website. If any such representations or warranties are made by Back to School’s representatives, Back to School shall not be bound thereby.
+29.3 Back to School disclaims liability for any damage, loss or expenses, whether direct, indirect or consequential in nature, arising out of or in connection with your access to or use of the Website and/or any content therein unless otherwise provided by law.
+29.4 The Website itself and all information provided on the Website is provided “as is” without warranty of any kind, either express or implied, including, but not limited to, the implied warranties of merchantability, fitness for a particular purpose, completeness, or non-infringement, as may be allowed in law.
+29.5 Any views or statements made or expressed on the Website are not necessarily the views of Back to School, its directors, employees and/or agents.
+29.6 In addition to the disclaimers contained elsewhere in these Terms and Conditions, Back to School also makes no warranty or representation, whether express or implied, that the information or files available on the Website are free of viruses, spyware, malware, trojans, destructive materials or any other data or code which is able to corrupt, destroy, compromise, disrupt, disable, harm, jeopardise or otherwise impede in any manner the operation, stability, security functionality or content of your computer system, computer network, hardware or software in any way. You accept all risk associated with the existence of such viruses, destructive materials or any other data or code which is able to corrupt, compromise, jeopardise, disrupt, disable, harm or otherwise impede in any manner the operation or content of a computer system, computer network, any handset or mobile device, or your hardware or software, save where such risks arise due to the gross negligence or wilful misconduct of Back to School, its employees, agents or authorised representatives. Back to School thus disclaims all liability for any damage, loss or liability of any nature whatsoever arising out of or in in connection with your access to or use of the Website.
+
+30 Linking to third party websites
+30.1 This Website may contain links or references to other websites (“Third Party Websites”) which are outside of our control, including those of advertisers. These Terms and Conditions do not apply to those Third Party Websites and Back to School is not responsible for the practices and/or privacy policies of those Third Party Websites or the “cookies” that those sites may use.
+30.2 Notwithstanding the fact that the Website may refer to or provide links to Third Party Websites, your use of such Third Party Websites is entirely at your own risk and we are not responsible for any loss, expense, claim or damage, whether direct, indirect or consequential, arising from your use of such Third Party Websites or your reliance on any information contained thereon.
+
+31 Limitation of liability third party
+31.1 Back to School cannot be held liable for any inaccurate information published on the Website and/or any incorrect prices displayed on the Website, save where such liability arises from the gross negligence or wilful misconduct of Back to School, its employees, agents or authorised representatives. You are encouraged to contact us to report any possible malfunctions or errors by way of info@backtoschool.biz
+31.2 Back to School shall not be liable for any direct, indirect, incidental, special or consequential loss or damages which might arise from your use of, or reliance upon, the website or the content contained in the website; or your inability to use the website, and/or unlawful activity on the website and/or any linked third party website.
+31.3 You hereby indemnify Back to School against any loss, claim or damage which may be suffered by yourself or any third party arising in any way from your use of this website and/or any linked third party website.
+
+
+32 Availability and termination
+32.1 We will use reasonable endeavours to maintain the availability of the Website, except during scheduled maintenance periods, and are entitled to discontinue providing the Website or any part thereof with or without notice to you.
+32.2 Back to School may in its sole discretion terminate, suspend and modify this Website, with or without notice to you. You agree that Back to School will not be liable to you in the event that it chooses to suspend, modify or terminate this Website other than for processing any packages made by you prior to such time, to the extent possible.
+32.3 If you fail to comply with your obligations under these Terms and Conditions, including any incident involving monthly contributions, this may (in our sole discretion with or without notice to you) lead to a suspension and/or termination of your access to the Website without any prejudice to any claims for damages or otherwise that we may have against you.
+32.3 Back to School is entitled, for purposes of preventing suspected fraud and/or where it suspects that you are abusing the Website and/or have created multiple user profiles to take advantage of a promotion intended by Back to School to be used once-off by you, to blacklist you on its database (including suspending or terminating your access to the Website), refuse to accept or process contributions, in whole or in part, on notice to you. 
+
+33Complaints 
+We are a participant under the Consumer Goods and Services Industry Code and are bound by it. An electronic copy of this Code is available at http://www.cgso.org.za/downloads/. If you have a complaint about the goods or services provided by us or require information regarding our internal complaints-handling process, please get in touch with us via info@backtoschool.biz. If we don’t resolve your complaint within 15 (fifteen) business days of you having notified us of it, you are entitled to approach the Consumer Goods and Services Ombud (“CGSO”), to assist in resolving the dispute. The CGSO’s contact details are:  Website: http://www.cgso.org.za/ Sharecall: 0860 000 272 Email: complaints@cgso.org.za.
+
+                </p>
+               
+              </div>
+            </div>
+           
+            </div>
+            <div class="conditions">
+              <div class="col-md-6" style="margin: auto"> 
+                  <div class="checkbutton" style="display:flex">
+                    <img src="{% static 'dashboard/images/checkout.jpg' %}" width="50%" height="50%" alt="" id="checkoutDiv"> <p style="margin-top: 3%; margin-left:3%">or go back to <a href="">Sign in</a></p>
+                  </div>
+                <p style="padding-top: 10px"><b>Accept the terms and conditions to activate "checkout" button</b></p>
+              </div>
+                
+          </div>
+        </div>
+  </div>
+  <button type="submit" hidden id="submitCheckout"></button>
+</form>
+</div>
+</div>
+  </div>
+<!--Footer-->
+{% include 'dashboard/pages/includes/footer.html' %}
+  
+
+ <script>
+    
+    $(function () {
+
+      $('[data-toggle="modal"]').hover(function () {
+        var modalId = $(this).data('target');
+        $(modalId).modal('show');
+
+      });
+
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+
+<script>
+  $('#checkoutDiv').click(function (){
+    $('#submitCheckout').click()
+  })
+
+  $('#same').click( function(){
+    address_street_name_2 = document.getElementById('address_street_name_2')
+    address_suburb_2 = document.getElementById('address_suburb_2')
+    country_2 = document.getElementById('country_2 ')
+    province_2 = document.getElementById('province_2')
+    city_2 = document.getElementById('city_2')
+    postal_code = document.getElementById('postal_code')
+    validate = document.getElementById('validate')
+
+
+    if (validate .value == 'true'){
+      address_street_name_2.value = document.getElementById('address_street_name')
+      address_suburb.value = document.getElementById('address_suburb')
+      country_2.value = document.getElementById('country')
+      province_2.value = document.getElementById('province')
+      city_2.value = document.getElementById('city')
+      postal_code_2.value = document.getElementById('postal_code')
+      validate .value = 'false'
+    } else{
+      address_street_name_2.value = document.getElementById('address_street_name')
+      address_suburb.value = document.getElementById('address_suburb')
+      country_2.value = document.getElementById('country')
+      province_2.value = document.getElementById('province')
+      city_2.value = document.getElementById('city')
+      postal_code_2.value = document.getElementById('postal_code')
+      validate .value = 'true'
+    }
+  })
+</script>
+
+</body>
+
+</html>

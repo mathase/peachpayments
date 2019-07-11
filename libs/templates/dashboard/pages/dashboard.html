@@ -1,0 +1,441 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>BackToSchool</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static '/dashboard/css/dashboard.css' %}">
+    <script src="{% static 'landing/js/main.js' %}"></script>
+	<link rel="stylesheet" href="{% static 'landing/bootstrap/css/bootstrap.min.css' %}"> <style></style>
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+	<!--Reg_Box-->
+	<!--Reg_Box-->
+	<div id="section-1" class="col-md-12">
+		
+      <div class="row col-md-12" style="margin-top: 30px">
+
+        <div id="logo3" class="col-md-4"  style=" height: 145px; margin-left: 10%;">
+          <div class="img2"></div>
+        </div>
+      </div>
+        
+        
+    
+    </div>
+
+  <!-- dashboard -->
+  <div class="container col-md-10" style="margin-top: 40px; ">
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">DashBoard</a>
+        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#my-information" role="tab" aria-controls="nav-profile" aria-selected="false">My Information</a>
+        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#my-activity" role="tab" aria-controls="nav-contact" aria-selected="false">My Activity</a>
+        <a class="nav-item nav-link" id="nav-representative-tab" data-toggle="tab" href="#representative" role="tab" aria-controls="nav-contact" aria-selected="false">Representative</a>
+      </div>
+    </nav>
+<div class="tab-content col-md-12" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+    <p class="tab-header text-left">Rep Details
+    </p>
+    <p class="text-right">{{user.first_name}} {{user.last_name}} <br> member since: {{user.date_joined}}</p>
+    <br>
+    <div class="rep-details row">
+      <div class="Amapoints-details col-md-6" style="margin-left: 4%">
+      <div class="row">
+        <div class="col-md-6">
+          <img id="amapoitnts-logo" src="{% static 'dashboard/css/images/amapoints-logo.png' %}" width="100%" height="100%" alt="">
+        </div>
+        <div class="AmaPoints-info col-md-6 text-center">
+        <p id="amapointsAmount">{{points}} <br> AmaPoints</p>
+          <p>AmaPoints mature Novermber 30</p>
+        </div>
+      </div>
+      </div>
+      <div class="rewards col-md-5 text-center">
+        <h3 id="rewards-heading">Rewards Programme</h3>
+        <p>Share this experience with friends</p>
+        <button id="referbtn" type="button" name="button" placeholder="">Refer a friend</button>
+      </div>
+    </div>
+      <div class="amapoints-links col-md-6" style="    margin-left: 2%;">
+        <p  id="amap"><a href="#">AmaPoints</a></p>
+        <p id="amap"><a href="#" >Terms and Conditions</a></p>
+      </div>
+    <div class="dash-details">
+      <div class="row">
+        <div class="col-md-4" style="margin-left: 4%; padding: 0px">
+            <h6 class="dash-heading">Date</h6>
+            <hr>
+          <div class="date-record">
+            Date goes here
+          </div>
+        </div>
+        <div class="col-md-4" style="padding: 0px">
+          <h6 class="dash-heading">Description</h6>
+          <hr>
+          <div class="description-record">
+            <p>Description goes here</p>
+          </div>
+        </div>
+        <div class="col-md-3" style="padding: 0px">
+          <h6 class="dash-heading">Points</h6>
+          <hr>
+          <div class="point-record">
+            <p>Points go here</p>
+          </div>
+        </div>
+        
+
+
+      </div>
+
+    </div>
+  </div>
+  <!-- My information tab -->
+  <div class="tab-pane fade" id="my-information" role="tabpanel" aria-labelledby="nav-profile-tab">
+      <p class="tab-header text-left" style="padding-top: 10px;font-size: 16px;margin-bottom: 0px"><b>My Information</b></p>
+      <hr class="info-line">
+
+      <div class="row">
+        <div class="col-md-3">
+        <div class="details col-md-12">
+          <p><b>{{user.first_name}} {{user.last_name}}</b>
+
+            <br>
+          
+           member ID: 12444422
+          
+            <br>
+          
+           URL subdomain: JodyS
+          
+            </p>
+          
+            <br>
+          
+            <a  href="#">Edit</a>
+          
+            </div>
+          
+            <div  class="staionary-box-info col-md-12">
+          
+            <br>
+          
+            <br>
+          
+           {% for order in data %}
+          
+           {% if order.product != 'General Membership' %}
+            {% if order.product != 'Rep membership' %}
+              <p><b>Stationary Box Info</b>
+            
+                <br>
+              
+              {{order.product}}
+              
+                <br>
+              
+              member ID: 12444422
+              
+                <br>
+              
+              URL subdomain: JodyS
+            
+              </p>
+              {% endif %}
+            {% endif %}
+          
+           {% endfor %}
+          <a href="#">Edit</a>
+        </div>
+        <br><br>
+        <a href="#"  style="margin-left: 4%;">+Add child</a>
+
+        </div>
+        <div class="col-md-3 col-sm-12">
+          <div class="row">
+            <div class="col-md-12">
+            <p><b>Contact Information</b>
+              <br>
+                <br>
+                Home Phone: 01234562659
+                <br>
+                Office Phone: 012444422
+                <br>
+                Other Cell: 0891212323
+                <br>
+                <br>
+                Email: {{user.email}}
+              </p>
+            </div>
+            <div class="shipping-address col-md-12">
+              <p><b>Shipping address</b>
+                <br>
+                  <br>
+                  {% for address in addresses%}
+						{% if address.address_number == 'shipping'%}
+                         {{address.address_street_name}}<br>
+                         {{address.address_suburb}}<br>
+                         {{address.city}}, {{address.province}}, {{address.postal_code}}<br>
+						 {{address.country}}
+						 {% endif %}
+						 {% endfor %}
+            </div>
+            
+            <div class="mailing-address col-md-12">
+              <p><b>Mailing address</b>
+                <br>
+                  <br>
+                  {% for address in addresses%}
+						{% if address.address_number == 'mailing'%}
+                         {{address.address_street_name}}<br>
+                         {{address.address_suburb}}<br>
+                         {{address.city}}, {{address.province}}, {{address.postal_code}}<br>
+						 {{address.country}}
+						 {% endif %}
+						 {% endfor %}
+            </div>
+            <div class="biling-address col-md-12">
+              <p><b>Billing address</b>
+                <br>
+                {% for address in addresses%}
+                {% if address.address_number == 'mailing'%}
+                             {{address.address_street_name}}<br>
+                             {{address.address_suburb}}<br>
+                             {{address.city}}, {{address.province}}, {{address.postal_code}}<br>
+                 {{address.country}}
+                 {% endif %}
+                 {% endfor %}
+                  <br>
+                  <br>
+                </p>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-3 col-sm-12">
+          <p><b>Payment Information</b>
+            <br>
+            <div class="card-details">
+              <br>
+              <!-- cvv --> Last four digits of credit card:
+              <br>
+             <!--transaction state--> Card Expired
+              <br>
+            </div>
+
+            </p>
+            </div>
+        <div class="col-md-3 col-sm-12">
+          <p><b>Change your</b>
+            <br>
+              <br>
+              <!-- password reset link --> <a href="#">Password/Security Questions</a>
+              <br>
+              <br>
+          </p>
+        </div>
+
+
+      </div>
+  </div>
+
+  <!-- my activity tab -->
+  <div class="tab-pane fade" id="my-activity" role="tabpanel" aria-labelledby="nav-contact-tab">
+      <p class="tab-header text-left" style="padding-top: 10px;font-size: 16px;margin-bottom: 0px"><b>My Activity</b></p>
+      <hr class="info-line">
+    <p class="tab-header"> Coming Soon</p>
+
+  </div>
+
+  <!-- representative  -->
+  <div class="tab-pane fade" id="representative" role="tabpanel" aria-labelledby="nav-contact-tab">
+    <p class="tab-header" style="padding-top: 10px;font-size: 16px;margin-bottom: 0px"><b>Earning Review</b></p>
+    <hr class="info-line">
+
+    <div class="earnings-dash">
+      <div class="earnings row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-12">
+
+            </div>
+
+          </div>
+          <div class="earnings-left row">
+            <div class="col-md-12">
+              <div class="record row">
+                <div class="Holding-text">
+                  <p>Holding Weekly Volume</p>
+                </div>
+                <div class="volume text-right">
+                  <p>:0</p>
+                </div>
+              </div>
+              <br>
+              <div class="record row">
+                <div class="Holding-text ">
+                  <p>New Weekly Volume</p>
+                </div>
+                <div class="volume text-right">
+                  <p>:0</p>
+                </div>
+              </div>
+              <br>
+              <div class="record row">
+                <div class="Holding-text">
+                  <p>New Weekly Volume</p>
+                </div>
+                <div class="volume text-right">
+                  <p>:0</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-12">
+
+            </div>
+
+          </div>
+          <div class="earnings-right row">
+            <div class="col-md-12">
+              <div class="record row">
+                <div class="Holding-text">
+                  <p>Holding Weekly Volume</p>
+                </div>
+                <div class="volume text-right">
+                  <p>:0</p>
+                </div>
+              </div>
+              <br>
+              <div class="record row">
+                <div class="Holding-text ">
+                  <p>New Weekly Volume</p>
+                </div>
+                <div class="volume text-right">
+                  <p>:0</p>
+                </div>
+              </div>
+              <br>
+              <div class="record row">
+                <div class="Holding-text">
+                  <p>New Weekly Volume</p>
+                </div>
+                <div class="volume text-right">
+                  <p>:0</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" style="font-size: 14px; font-weight:500">Weekly Commission Preview</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" style="font-size: 14px; font-weight:500">Monthly Commission Preview</a>
+  </li>
+
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    
+      <div class="commission-dash row col-lg-12"  style="margin-top: 20px;;margin-left: 1px;">
+        
+        <div class="col-md-3 col-sm-12" style="padding: 0px">
+          <h5 id="h5">Customer</h5>
+          <br>
+          <p>121324133</p>
+        </div>
+        <div class="col-md-3 col-sm-12" style="padding: 0px">
+            <h5 id="h5">Name</h5>
+            <br>
+            <p>Jermaine Markus, foundation Essential, Essential Box</p>
+        </div>
+        <div class="col-md-3 col-sm-12" style="padding: 0px">
+          <h5 id="h5">Join Pole</h5>
+          <br>
+          <p>Date</p>
+
+        </div>
+        <div class="col-md-3 col-sm-12" style="padding: 0px">
+          <h5 id="h5">Activity</h5>
+          <br>
+
+        </div>
+        <hr>
+      </div>
+
+
+  </div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="row col-md-12" style="margin-top: 20px; margin-left: 0px;margin-right: 0px;" >
+      <div class="col-md-3 col-sm-12">
+          <h5 id="h5">Customer ID</h5>
+      </div>
+      <div class="col-md-3 col-sm-12">
+          <h5 id="h5">Name</h5>
+      </div>
+      <div class="col-md-3 col-sm-12">
+          <h5 id="h5">Join Pole</h5>
+      </div>
+      <div class="col-md-3 col-sm-12">
+          <h5 id="h5">Activity</h5>
+
+      </div>
+      <hr>
+    </div>
+    <div class="row col-md-12" style="margin-top: 20px; margin-left: 0px;margin-right: 0px;" >
+      <div class="col-md-3 col-sm-12">
+          <p>251117222</p>
+      </div>
+      <div class="col-md-3 col-sm-12">
+          <p id="p1">Jermaine Markus, foundation Essential, Essential Box</p>
+      </div>
+      <div class="col-md-3 col-sm-12">
+        <p id="p1">Date</p>
+      </div>
+      <div class="col-md-3 col-sm-12">
+        <p id="p1">Active</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+    </div>
+  </div>
+
+
+</div>
+  </div>
+<!-- end dashboard -->
+  <!--Footer-->
+  {% include 'dashboard/pages/includes/footer.html' %}
+  
+
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

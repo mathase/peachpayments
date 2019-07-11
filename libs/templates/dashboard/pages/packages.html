@@ -1,0 +1,2348 @@
+{% load static %}
+<!doctype html>
+
+
+<html lang="en">
+
+<head>
+    <title>BackToSchool</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<script src="{% static 'landing/js/jquery-1.11.2/jquery.js' %}"></script>
+	<script src="{% static 'landing/js/jquery-ui-1.11.4/jquery-ui.js' %}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+	<link rel="stylesheet" href="{% static 'landing/js/jquery-ui-1.11.4/jquery-ui.css' %}" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+		<link rel="stylesheet" href="{% static 'landing/bootstrap/css/bootstrap.min.css' %}">
+		<script src="{% static 'dashboard/js/packages.js' %}"></script>
+		<link rel="stylesheet" href="{% static 'landing/Reg_page.css' %}">
+	 <link rel="stylesheet" href="{% static 'dashboard/css/packages.css' %}">
+	
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700,900&display=swap" rel="stylesheet">
+</head>
+
+<style>
+		.close-modal{
+			opacity: 0;
+		}
+</style>
+
+<body>
+
+	
+	<div id="section-1" class="col-md-12">
+		
+		<div class="row col-md-12" style=" height: 50px;">
+			<div class="col-md-2" ></div>
+			<div id="logo3" class="col-md-4">
+				
+			</div>
+		</div>
+			<div class="col-md-6" style="    height: 0;"></div>
+			
+	
+	</div> 
+	
+	<div id="section-2" class="col-md-12">
+		
+		<div class="container1 col-md-8 ">
+				<div class="textbox1"  style="border-bottom: 1px solid" >
+					<div class="one">
+					<p id="text1">Back to School Products</p>
+					<p id="text2">Representative ID number</p>
+					</div>
+					<div class="two">
+					<p id="text3">Sign-up fee</p>
+					</div>
+					
+					{% if remove_membership_sign_up == "False" %}
+					<div id="container" class=" col-md-12">
+							<form class="membership-form" id="membership-form">
+								{% csrf_token %}
+						<div class="sec1 col-md-1">
+							<input type="checkbox"  name="membership" id="members-check" required>
+						</div>
+						<div class="sec2 col-md-4">
+							<div class="block"></div>
+						</div>
+						<div class="sec3 col-md-7">
+							<div class="contain">
+											
+										
+											<p id="p4">Select this item to take advantage of an amazing promotional price for any of our memberships!It's our way of sayiong welcome.</p>
+										
+										<div class="block31">
+											<p id="p3">Price: R99.00</p>
+										</div>
+											
+										<div class="block41">
+											<p id="p3">July Promo: -R99.00</p>
+										</div>
+											
+										<div class="block512"  style="float: right; font-size: 12px;border-top: 1px solid black;width: 150px;height: 3px;margin-top: 5px;">
+										</div>
+											
+										<div class="block6">
+											<p id="p3">
+											Due total cost: R 0.00</p>
+										</div>
+											
+										</div>
+
+										<input name="image" id="image" value="images/logo.jpg" hidden>
+										<input name="isRecurring" id="isRecurring" value="False" hidden>
+										<input name="isSettled" id="isSettled" value="False" hidden>
+										<input name="order_level" id="order_level" value="membership" hidden>
+										<input name="price " id="price " value="99" hidden>
+										<input name="order_type" id="order_type" value="membership" hidden>
+										<input name="product" id="product" value="General Membership" hidden>
+										<button type="submit" hidden id="membership-submit"></button>
+						</div> </form>
+					</div>
+					{% endif %}
+					
+			
+				</div>
+				{% if remove_rep_sign_up == "False" %}
+				<div class=" col-md-12 textbox4">
+						<div class="two">
+						<p id="text3">Become a Representative</p>
+						</div>
+						
+						<form class="rep-form" id="rep-form">
+								{% csrf_token %}
+						<div id="container" class=" col-md-12">
+							<div class="sec1 col-md-1">
+								<input type="checkbox" name="rep-membership" id="rep-membership"></div>
+								<input type="text" name="rep-mem" id="rep-mem" value="false" hidden>
+	
+								
+							<div class="sec2 col-md-4">
+								<div class="block7"></div>
+							</div>
+							<div class="sec3 col-md-5">
+								<div class="contain">
+												
+											
+												<p id="p4">Select this item to take advantage of an amazing promotional price for any of our memberships!It's our way of sayiong welcome.</p>
+											
+											<div class="block3">
+												<p id="p3">Price: R99.00</p>
+											</div>
+												
+											
+												
+											<div class="block5"  style="float: right; font-size: 12px;border-top: 1px solid black;width: 150px;height: 3px">
+											</div>
+												
+											<div class="block6">
+												<p id="p3">
+												Due total cost: R 90.00</p>
+											</div>
+												
+											</div>
+								
+							</div>
+						</div>
+										<input name="image" id="image" value="images/representative.png" hidden>
+										<input name="isRecurring" id="isRecurring" value="False" hidden>
+										<input name="isSettled" id="isSettled" value="False" hidden>
+										<input name="order_level" id="order_level" value="rep" hidden>
+										<input name="price " id="price " value="99" hidden>
+										<input name="order_type" id="order_type" value="Rep membership" hidden>
+										<input name="product" id="product" value="membership" hidden>
+										<button type="submit" hidden id="rep-submit"></button>
+						</form>
+				
+					</div>{% endif %}
+				<div class="textbox3">
+						<form action="/dashboard/packages/" method="POST">
+							{% csrf_token %}
+					<div id="accordion">
+						<!-- Begining of Foundation Phase-->
+						<h3 style="background-color: #f58634;color: white;">FOUNDATION</h3>
+						<div>
+
+						<!-- .......................... Foundation Comprehensive ................................ -->
+							<div class="row" id="row">
+								
+								<div class="sec1 col-md-1">
+									<input type="radio"  name="product-name" id="comprehensive" value="comprehensive-foundation"></td>
+								</div>
+							
+								<div class="sec2 col-md-11">
+									<div class="imgblock">
+									<div class="block1"></div>
+										<div class="info">
+											<p id="p">Back to School Comprehensive</p>
+											
+											<abbr id="foundComp" href="#">
+													<img src="{% static 'landing/images/info-icon%20(1).png' %}"
+														width="10px" height="10px" alt=""
+														style="float: left;margin-top: 2px;">
+												</a>
+	
+	
+											<!-- The Modal -->
+											<div id="foundCompMod" class="modal col-md-12">
+	
+												<!-- Modal content -->
+												<div class="modal-content">
+														<a href="#" rel="modal:close" class="close">Close</a>
+													<div id="img">
+														<img src="{% static 'landing/images/foundation-popup_1@300x.png' %}"
+															id="img1">
+													</div>
+												</div>
+	
+											</div>
+											
+											<p  id="p2">More info</p>
+											
+										</div>
+									</div>
+									<div class="txt-block">
+									<div class="block3">
+											<p id="p3">Price: R1682.52</p>
+										</div>
+											
+										<div class="block4">
+											<p id="p3">Monthly Fee: R152.96</p>
+										</div>
+											
+										<div class="block51" >
+											<input type="text" placeholder="Monthly Amount" id="amount" name="amount-comprehensive-foundation" style="float: right;
+																												   font-size: 11px;
+																												   width: 150px;
+																												   height: 15px;
+																												   border-radius: 15px;
+																												   border: transparent;
+																												   text-align: center;
+																												   margin-top: 1%;
+																												   background-color: #e6e7ea">
+											<input type="radio"  name="amount-radio" value="own-foundation" id="own-foundation" style="float: right;margin-top: 4px;margin-right: 4px;">
+										</div>
+										
+										<div class="block41" style=" margin-top: -13px;">
+											<p id="p5">Only use numeric characters*</p>
+										</div>
+											
+										<div class="block6">
+											
+											<div class="block10" ><p id="p4">Once off payment</p></div>
+											<input type="radio"  name="amount-radio" value="once-off-foundation" id="once-off-foundation"  value="once-off-foundation" style="float: right;margin-top: 4px;margin-right: 4px;">
+										</div>
+									</div>
+								</div>
+							
+								
+								
+							</div>
+							
+
+							<!-- .......................... Foundation Essentials ................................ -->
+							<div class="row" id="row">
+								
+								<div class="sec1 col-md-1">
+									<input type="radio"  name="product-name" id="essentials" value="essentials-foundation">
+								</div>
+							
+								<div class="sec2 col-md-11">
+									<div class="imgblock">
+									<div class="block1"></div>
+										<div class="info">
+											<p id="p">Back to School Essentials</p>
+										
+										
+											<abbr id="foundEssen" href="#">
+													<img src="{% static 'landing/images/info-icon%20(1).png' %}"
+														width="10px" height="10px" alt=""
+														style="float: left;margin-top: 2px;">
+												</a>
+	
+												<!-- The Modal -->
+												<div id="foundEssenMod" class="modal col-md-12">
+													<!-- Modal content -->
+													<div class="modal-content">
+															<a href="#" rel="modal:close" class="close">Close</a>
+														<div id="img">
+															<img src="{% static 'landing/images/foundation-popup_1@300x.png' %}"
+																id="img1">
+														</div>
+													</div>
+												</div>
+										
+										
+
+											
+											
+											<p  id="p2">More info</p>
+											
+										</div>
+										
+									</div>
+									<div class="txt-block">
+									<div class="block3">
+											<p id="p3">Price: R796,07</p>
+										</div>
+											
+										<div class="block4">
+											<p id="p3">Monthly Fee: R72.37</p>
+										</div>
+											
+										<div class="block51" >
+											<input type="text" placeholder="Monthly Amount" id="amount-essentials" name="amount-essentials-foundation" style="float: right;
+																												   font-size: 11px;
+																												   width: 150px;
+																												   height: 15px;
+																												   border-radius: 15px;
+																												   border: transparent;
+																												   text-align: center;
+																												   margin-top: 1%;
+																												   background-color: #e6e7ea">
+											<input type="radio"  name="amount-radio" value="own-essentials" id="own-essentials" style="float: right;margin-top: 4px;margin-right: 4px;">
+										</div>
+										
+										<div class="block41" style=" margin-top: -13px;">
+											<p id="p5">Only use numeric characters*</p>
+										</div>
+											
+										<div class="block6">
+											
+											<div class="block10" ><p id="p4">Once off payment</p></div>
+											<input type="radio"  name="amount-radio" value="once-off-essentials" id="once-off-essentials" style="float: right;margin-top: 4px;margin-right: 4px;">
+										</div>
+									</div>
+								</div>
+							
+								
+								
+							</div>
+							
+							<!-- .......................... Foundation Mybox ................................ -->
+							<div class="row" id="row">
+								
+								<div class="sec1 col-md-1">
+									<input type="radio"  name="product-name" id="mybox" value="myBox-foundation">
+								</div>
+							
+								<div class="sec2 col-md-11">
+									<div class="imgblock">
+									<div class="block11"></div>
+										
+									<div class="info">
+										
+										<p id="p">My Box</p>
+										
+										<abbr id="myBtn3" href="#">
+												<img src="{% static 'landing/images/info-icon%20(1).png' %}"
+													width="10px" height="10px" alt=""
+													style="float: left;margin-top: 2px;">
+											</a>
+											<input id='fileid' type='file' hidden />
+											<input id='buttonid' type='button' value='Upload MB'
+												style="position: absolute; opacity:0" />
+	
+											<!-- The Modal -->
+											<div id="myModal" class="modal">
+	
+												<!-- Modal content -->
+												<div class="modal-content">
+														<a href="#" rel="modal:close" class="close">Close</a>
+	
+												</div>
+	
+											</div>
+
+										<p  id="p2">Upload list</p>
+										
+										
+									</div>
+										
+										
+										
+									</div>
+									
+									<div class="txt-block">
+									<div class="block51" >
+										<!--<input type="text" placeholder="Average Spend" id="comprehensive-average-spend" name="amount-mybox-foundation" style="float: right;>-->
+											<input type="text" placeholder="Average Spend" id="amount-mybox-average-foundation" name="amount-mybox-foundation" style="float: right;
+																												   font-size: 11px;
+																												   width: 150px;
+																												   height: 15px;
+																												   border-radius: 15px;
+																												   border: transparent;
+																												   text-align: center;
+																												   margin-top: 1%;
+																												   background-color: #e6e7ea">
+											<!--<input type="radio"  name="amount-radio" id="own-mybox" style="float: right;margin-top: 4px;margin-right: 4px;">-->
+										</div>
+										
+										<div class="block41" style=" margin-top: -14px;">
+											<p id="p5">Only use numeric characters*</p>
+										</div>
+										<div class="block41">
+											<p id="p5" style="margin-right: 18px;margin-top: 6px">Suggested monthly contribution R</p>
+											<p id="amount-mybox-f" style="    position: absolute;
+    left: 96.5%;     top: 36.5%;
+    
+    font-size: 10px;
+    color: green;
+"></p>
+										</div>
+											
+										<div class="block6">
+											
+											<input type="text" placeholder="Monthly Spend" id="amount-mybox" name="amount-mybox-foundation" style="float: right;
+																												   font-size: 11px;
+																												   width: 150px;
+																												   height: 15px;
+																												   border-radius: 15px;
+																												   border: transparent;
+																												   text-align: center;
+																												   margin-top: 1%;
+																												   background-color: #e6e7ea">
+											<input type="radio"  name="amount-radio" id="own-mybox" style="float: right;margin-top: 4px;margin-right: 4px;">
+										</div>
+										<div class="block41"  style="margin-top: 10px;">
+											<p id="p5" style="margin-top: -10px;">Only use numeric characters*</p>
+										</div>
+										<div class="block6">
+											
+											<div class="block10" ><p id="p4">Once off payment</p></div>
+											<input type="radio"  name="amount-radio" value="once-off-mybox" id="once-off-mybox" style="float: right;margin-top: 4px;margin-right: 4px;">
+										
+										</div>
+									</div>
+								</div>
+							
+								
+								
+							</div>
+										
+						</div><!-- End of Foundation Phase-->
+						
+						
+						<!-- Begining of Intermediate Phase-->
+						<h3 style="background-color: #5f3d91; color: white;">INTERMEDIATE</h3>
+						<div>
+							
+							<div class="row" id="row">
+								
+								<div class="sec1 col-md-1">
+									<input type="radio"  name="product-name" id="comprehensive-2" value="comprehensive-intermediate">
+								</div>
+							
+								<div class="sec2 col-md-11">
+									<div class="imgblock">
+									<div class="block1-1"></div>
+										<div class="info">
+											<p id="p">Back to School Comprehensive</p>
+											
+									
+											<abbr id="interCompre" href="#">
+													<img src="{% static 'landing/images/info-icon%20(1).png' %}"
+														width="10px" height="10px" alt=""
+														style="float: left;margin-top: 2px;">
+												</a>
+												<!-- Button trigger modal -->
+	
+	
+	
+												<!-- The Modal -->
+												<div id="interCompreMod" class="modal col-md-12">
+	
+													<!-- Modal content -->
+													<div class="modal-content">
+															<a href="#" rel="modal:close" class="close">Close</a>
+														<div id="img">
+															<img src="{% static 'landing/images/intermediate-popup@300x.png' %}"
+																id="img1">
+														</div>
+													</div>
+	
+												</div>
+												
+											
+											<p  id="p2">More info</p>
+											
+										</div>
+									</div>
+									<div class="txt-block">
+									<div class="block3">
+											<p id="p3">Price: R2402.17</p>
+										</div>
+											
+										<div class="block4">
+											<p id="p3">Monthly Fee: R218.38</p>
+										</div>
+											
+										<div class="block51" >
+											<input type="text" placeholder="Monthly Amount" id="amount-comprehensive-intermediate" name="amount-comprehensive-intermediate" style="float: right;
+																												   font-size: 11px;
+																												   width: 150px;
+																												   height: 15px;
+																												   border-radius: 15px;
+																												   border: transparent;
+																												   text-align: center;
+																												   margin-top: 1%;
+																												   background-color: #e6e7ea;
+																												   margin-bottom: 0px;">
+										<input type="radio"  name="amount-radio" value="own-compresenive-intermediate" id="own-compresenive-intermediate" style="float: right;margin-top: 4px;margin-right: 4px;">
+										</div>
+										
+										<div class="block41">
+											<p id="p5">Only use numeric characters*</p>
+										</div>
+											
+										<div class="block6">
+											
+											<div class="block10" ><p id="p4">Once off payment</p></div>
+											<input type="radio"  name="amount-radio" value="once-off-comprehensive-intermediate" id="once-off-comprehensive-intermediate" style="float: right;margin-top: 4px;margin-right: 4px;">
+											
+										</div>
+									</div>
+								</div>
+							
+								
+								
+							</div>
+							
+							<div class="row" id="row">
+								
+								<div class="sec1 col-md-1">
+									<input type="radio"  name="product-name" id="essentials-2" value="essentials-intermediate">
+								</div>
+							
+								<div class="sec2 col-md-11">
+									<div class="imgblock">
+									<div class="block1-1"></div>
+										<div class="info">
+											<p id="p">Back to School Essentials</p>
+											
+											<abbr id="interEssen" href="#">
+													<img src="{% static 'landing/images/info-icon%20(1).png' %}"
+														width="10px" height="10px" alt=""
+														style="float: left;margin-top: 2px;">
+												</a>
+	
+												<!-- The Modal -->
+												<div id="interEssenMod" class="modal col-md-12">
+	
+													<!-- Modal content -->
+													<div class="modal-content">
+															<a href="#" rel="modal:close" class="close">Close</a>
+														<div id="img">
+															<img src="{% static 'landing/images/intermediate-popup@300x.png' %}"
+																id="img1">
+														</div>
+													</div>
+	
+												</div>
+											<p  id="p2">More info</p>
+										</div>
+										
+									</div>
+									<div class="txt-block">
+									<div class="block3">
+											<p id="p3">Price: R1184.00</p>
+										</div>
+											
+										<div class="block4">
+											<p id="p3">Monthly Fee: R107.64</p>
+										</div>
+											
+										<div class="block51" >
+											<input type="text" placeholder="Monthly Amount" id="amount-essentials-intermediate" name="amount-essentials-intermediate" style="float: right;
+																												   font-size: 11px;
+																												   width: 150px;
+																												   height: 15px;
+																												   border-radius: 15px;
+																												   border: transparent;
+																												   text-align: center;
+																												   margin-top: 1%;
+																												   background-color: #e6e7ea;">
+											<input type="radio"  name="amount-radio" id="own-essentials-intermediate" value="own-essentials-intermediate" style="float: right;margin-top: 4px;margin-right: 4px;">
+										</div>
+										
+										<div class="block41" style="margin-top: -13px;">
+											<p id="p5">Only use numeric characters*</p>
+										</div>
+											
+										<div class="block6">
+											
+											<div class="block10" ><p id="p4">Once off payment</p></div>
+											<input type="radio"  name="amount-radio" value="once-off-essentials-intermediate"id="once-off-essentials-intermediate" style="float: right;margin-top: 4px;margin-right: 4px;">
+										
+										</div>
+									</div>
+								</div>
+							
+								
+								
+							</div>
+							
+							<div class="row" id="row">
+								
+								<div class="sec1 col-md-1">
+									<input type="radio"  name="product-name" id="mybox-2" value="mybox-intermediate">
+								</div>
+							
+								<div class="sec2 col-md-11">
+									<div class="imgblock">
+									<div class="block11"></div>
+										
+									<div class="info">
+										
+										<p id="p">My Box</p>
+										
+										<abbr id="myBtn6" href="#">
+												<img src="{% static 'landing/images/info-icon%20(1).png' %}"
+													width="10px" height="10px" alt=""
+													style="float: left;margin-top: 2px;">
+											</a>
+											<input id='fileid2' type='file' hidden />
+											<input id='buttonid2' type='button' value='Upload MB'
+												style="position: absolute; opacity:0" />
+	
+	
+											<!-- The Modal -->
+											<div id="myModal" class="modal">
+	
+												<!-- Modal content -->
+												<div class="modal-content">
+														<a href="#" rel="modal:close" class="close">Close</a>
+	
+												</div>
+	
+											</div>
+	
+
+										<p  id="p2">Upload list</p>
+										
+										
+									</div>
+										
+										
+										
+									</div>
+									
+									<div class="txt-block">
+									<div class="block51" >
+											<input type="text" placeholder="Average Spend" id="amount-mybox-average-intermediate" name="amount-mybox-intermediate" style="float: right;
+																												   font-size: 11px;
+																												   width: 150px;
+																												   height: 15px;
+																												   border-radius: 15px;
+																												   border: transparent;
+																												   text-align: center;
+																												   margin-top: 1%;
+																												background-color: #e6e7ea;
+																												margin-bottom: 0px;">
+											<!--<input type="radio"  name="amount-radio" id="own-mybox-intermediate" style="float: right;margin-top: 4px;margin-right: 4px;">-->
+										</div>
+										
+										<div class="block41">
+											<p id="p5" >Only use numeric characters*</p>
+										</div>
+										<div class="block41"  >
+											<p id="p5" style="margin-top: 6px;
+    											margin-right: 20px;">Suggested monthly contribution R</p>  <p id="amount-mybox-intermediate-i" style=" position: absolute;
+    																																			left: 96%;
+    																																			top: 34%;
+																																			    font-size: 10px;
+																																			    color: green;"></p>
+										</div>
+											
+										<div class="block6">
+											
+											<input type="text" placeholder="Own Monthly Spend" id="amount-mybox-intermediate" name="amount-mybox-intermediate" style="float: right;
+																												   font-size: 11px;
+																												   width: 150px;
+																												   height: 15px;
+																												   border-radius: 15px;
+																												   border: transparent;
+																												   text-align: center;
+																												   margin-top: 1%;
+																													background-color: #e6e7ea;">
+											<input type="radio"  name="amount-radio" value="once-off-mybox-intermediate" id="own-mybox-intermediate" style="float: right;margin-top: 4px;margin-right: 4px;">
+										</div>
+										<div class="block41">
+											<p id="p5" style="margin-top: 3px;">Only use numeric characters*</p>
+										</div>
+										<div class="block6">
+											
+											<div class="block10" ><p id="p4">Once off payment</p></div>
+											
+											<input type="radio"  name="amount-radio" value="once-off-mybox-intermediate" id="once-off-mybox-intermediate" style="float: right;margin-top: 4px;margin-right: 4px;">
+										</div>
+									</div>
+								</div>
+							
+								
+								
+							</div>
+						</div><!-- End of Intermediate Phase-->
+						
+						<!-- Begining of Junior High-->
+						<h3 style="background-color: #57b952; color: white;">JUNIOR HIGH</h3>
+						<div>
+					<div class="row" id="row">
+								
+								<div class="sec1 col-md-1">
+									<input type="radio"  name="product-name" id="comprehensive-3" value="comprehensive-junior">
+								</div>
+							
+								<div class="sec2 col-md-11">
+									<div class="imgblock">
+									<div class="block1-2"></div>
+										<div class="info">
+											<p id="p">Back to School Comprehensive</p>
+											
+											<abbr id="juniorCompre" href="#">
+													<img src="{% static 'landing/images/info-icon%20(1).png' %}"
+														width="10px" height="10px" alt=""
+														style="float: left;margin-top: 2px;">
+												</a>
+	
+												<!-- The Modal -->
+												<div id="juniorCompreMod" class="modal col-md-12">
+	
+													<!-- Modal content -->
+													<div class="modal-content">
+															<a href="#" rel="modal:close" class="close">Close</a>
+														<div id="img">
+															<img src="{% static 'landing/images/juinior-popup@300x.png' %}"
+																id="img1">
+														</div>
+													</div>
+	
+												</div>
+											
+											<p  id="p2">More info</p>
+											
+										</div>
+									</div>
+									<div class="txt-block">
+									<div class="block3">
+											<p id="p3">Price: R1600.41</p>
+										</div>
+											
+										<div class="block4">
+											<p id="p3">Monthly Fee: R145.49</p>
+										</div>
+											
+										<div class="block51" >
+											<input type="text" placeholder="Monthly Amount" id="amount-comprehensive-junior" name="amount-comprehensive-junior" style="float: right;
+																												   font-size: 11px;
+																												   width: 150px;
+																												   height: 15px;
+																												   border-radius: 15px;
+																												   border: transparent;
+																												   text-align: center;
+																												   margin-top: 1%;
+																												   background-color: #e6e7ea;
+																												   margin-bottom: 0px;">
+											<input type="radio"  name="amount-radio" value="own-comprehensive-junior" id="own-comprehensive-junior" style="float: right;margin-top: 4px;margin-right: 4px;">
+										</div>
+										
+										<div class="block41">
+											<p id="p5">Only use numeric characters*</p>
+										</div>
+											
+										<div class="block6">
+											
+											<div class="block10" ><p id="p4">Once off payment</p></div>
+											<input type="radio"  name="amount-rado" value="once-off-comprehensive-junior" id="once-off-comprehensive-junior" style="float: right;margin-top: 4px;margin-right: 4px;">
+										
+										</div>
+									</div>
+								</div>
+							
+								
+								
+							</div>
+							
+							<div class="row" id="row">
+								
+								<div class="sec1 col-md-1">
+									<input type="radio"  name="product-name" id="essentials-3" value="essentials-junior">
+								</div>
+							
+								<div class="sec2 col-md-11">
+									<div class="imgblock">
+									<div class="block1-2"></div>
+										<div class="info">
+											<p id="p">Back to School Essentials</p>
+											
+											<abbr id="juniorEssen" href="#">
+													<img src="{% static 'landing/images/info-icon%20(1).png' %}"
+														width="10px" height="10px" alt=""
+														style="float: left;margin-top: 2px;">
+												</a>
+	
+												<!-- The Modal -->
+												<div id="JuniorEssenMod" class="modal col-md-12">
+	
+													<!-- Modal content -->
+													<div class="modal-content">
+															<a href="#" rel="modal:close" class="close">Close</a>
+														<img src="{% static 'landing/images/juinior-popup@300x.png' %}"
+															id="img">
+													</div>
+	
+												</div>
+											
+											<p  id="p2">More info</p>
+										</div>
+										
+									</div>
+									<div class="txt-block">
+									<div class="block3">
+											<p id="p3">Price: R807.41</p>
+										</div>
+											
+										<div class="block4">
+											<p id="p3">Monthly Fee: R73.40</p>
+										</div>
+											
+										<div class="block51" >
+											<input type="text" placeholder="Monthly Amount" id="amount-essentials-junior"  name="amount-essentials-junior" style="float: right;
+																												   font-size: 11px;
+																												   width: 150px;
+																												   height: 15px;
+																												   border-radius: 15px;
+																												   border: transparent;
+																												   text-align: center;
+																												   margin-top: 1%;
+																												   background-color: #e6e7ea;
+																												   margin-bottom: 0px;">
+											<input type="radio"  name="amount-radio" value="own-essentials-junior" id="own-essentials-junior" style="float: right;margin-top: 4px;margin-right: 4px;">
+										</div>
+										
+										<div class="block41">
+											<p id="p5">Only use numeric characters*</p>
+										</div>
+											
+										<div class="block6">
+											
+											<div class="block10" ><p id="p4">Once off payment</p></div>
+											<input type="radio" value="once-off-essentials-junior"  name="amount-radio" id="once-off-essentials-junior" style="float: right;margin-top: 4px;margin-right: 4px;">
+											
+										</div>
+									</div>
+								</div>
+							
+								
+								
+							</div>
+							
+							<div class="row" id="row">
+								
+								<div class="sec1 col-md-1">
+									<input type="radio"  name="product-name" id="mybox-3" value="mybox-comprehensive">
+								</div>
+							
+								<div class="sec2 col-md-11">
+									<div class="imgblock">
+									<div class="block11"></div>
+										
+									<div class="info">
+										
+										<p id="p">My Box</p>
+										
+										
+										<abbr id="myBtn9" href="#">
+												<img src="{% static 'landing/images/info-icon%20(1).png' %}"
+													width="10px" height="10px" alt=""
+													style="float: left;margin-top: 2px;">
+											</a>
+											<input id='fileid3' type='file' hidden />
+											<input id='buttonid3' type='button' value='Upload MB'
+												style="position: absolute; opacity:0" />
+	
+											<!-- The Modal -->
+											<div id="myModal" class="modal">
+	
+												<!-- Modal content -->
+												<div class="modal-content">
+														<a href="#" rel="modal:close" class="close">Close</a>
+	
+												</div>
+	
+											</div>
+
+										<p  id="p2">Upload list</p>
+										
+										
+									</div>
+										
+										
+										
+									</div>
+									
+									<div class="txt-block">
+									<div class="block51" >
+											<input type="text" placeholder="Average Spend" id="amount-mybox-average-junior" name="amount-mybox-junior" style="float: right;
+																												   font-size: 11px;
+																												   width: 150px;
+																												   height: 15px;
+																												   border-radius: 15px;
+																												   border: transparent;
+																												   text-align: center;
+																												   margin-top: 1%;
+																												   background-color: #e6e7ea">
+											<!--<input type="radio"  name="amount-radio" id="own-mybox-junior" style="float: right;margin-top: 4px;margin-right: 4px;">-->
+										</div>
+										
+										<div class="block41">
+											<p id="p5" style=" margin-top: -10px;">Only use numeric characters*</p>
+										</div>
+										<div class="block41">
+											<p id="p5" style="margin-top: 7px;margin-right: 15px;">Suggested monthly contribution R</p>
+											<p id="amount-mybox-junior-j" style="    position: absolute;
+    left: 97%;     top: 46.5%;
+    
+    font-size: 10px;
+    color: green;
+"></p>
+										</div>
+											
+										<div class="block6">
+											
+											<input type="text" placeholder="Own Monthly Spend" id="amount-mybox-junior" name="amount-mybox-junior" style="float: right;
+																												   font-size: 11px;
+																												   width: 150px;
+																												   height: 15px;
+																												   border-radius: 15px;
+																												   border: transparent;
+																												   text-align: center;
+																												   margin-top: 1%;
+																												background-color: #e6e7ea">
+											<input type="radio"  name="amount-radio" id="own-mybox-junior" style="float: right;margin-top: 4px;margin-right: 4px;">
+										</div>
+										<div class="block41">
+											<p id="p5" style="    margin-top: 3.5px;">Only use numeric characters*</p>
+										</div>
+										<div class="block6">
+											
+											<div class="block10" ><p id="p4">Once off payment</p></div>
+											<input type="radio"  name="amount-radio" id="own-mybox-junior" style="float: right;margin-top: 4px;margin-right: 4px;">
+										
+										</div>
+									</div>
+								</div>
+							
+								
+								
+							</div>
+						</div><!-- End of Junior High-->
+						
+						<!-- Begining of Senior High-->
+						<h3 style="background-color: #00aff0; color: white;">SENIOR HIGH</h3>
+						<div>
+						<div class="row" id="row">
+								
+								<div class="sec1 col-md-1">
+									<input type="radio"  name="product-name" id="comprehensive-4" value="comprehensive-senior">
+								</div>
+							
+								<div class="sec2 col-md-11">
+									<div class="imgblock">
+									<div class="block1-3"></div>
+										<div class="info">
+											<p id="p">Back to School Comprehensive</p>
+											
+											<abbr id="seniorCompre" href="#">
+													<img src="{% static 'landing/images/info-icon%20(1).png' %}"
+														width="10px" height="10px" alt=""
+														style="float: left;margin-top: 2px;">
+												</a>
+	
+												<!-- The Modal -->
+												<div id="seniorCompreMod" class="modal col-md-12">
+	
+													<!-- Modal content -->
+													<div class="modal-content">
+															<a href="#" rel="modal:close" class="close">Close</a>
+														<div id="img">
+															<img src="{% static 'landing/images/senior-popup@300x.png' %}"
+																id="img1">
+														</div>
+													</div>
+	
+												</div>
+											
+											<p  id="p2">More info</p>
+											
+										</div>
+									</div>
+									<div class="txt-block">
+									<div class="block3">
+											<p id="p3">Price: R1566.42</p>
+										</div>
+											
+										<div class="block4">
+											<p id="p3">Monthly Fee: R142.40</p>
+										</div>
+											
+										<div class="block51" >
+											<input type="text" placeholder="Monthly Amount" id="amount-comprehensive-senior" name="phone number" style="float: right;
+																												   font-size: 11px;
+																												   width: 150px;
+																												   height: 15px;
+																												   border-radius: 15px;
+																												   border: transparent;
+																												   text-align: center;
+																												   margin-top: 1%;
+																												   background-color: #e6e7ea;
+																												   margin-bottom: 0px;">
+											<input type="radio"  name="amount-radio" id="own-comprehensive-senior" value="own-comprehensive-senior" style="float: right;margin-top: 4px;margin-right: 4px;">
+										</div>
+										
+										<div class="block41">
+											<p id="p5">Only use numeric characters*</p>
+										</div>
+											
+										<div class="block6">
+											
+											<div class="block10" ><p id="p4">Once off payment</p></div>
+											<input type="radio"  name="amount-radio" id="once-off-comprehensive-senior" value="once-off-comprehensive-senior" style="float: right;margin-top: 4px;margin-right: 4px;">
+							
+										</div>
+									</div>
+								</div>
+							
+								
+								
+							</div>
+							
+							<div class="row" id="row">
+								
+								<div class="sec1 col-md-1">
+									<input type="radio" name="product-name" id="essentials-4" value="essentials-senior">
+								</div>
+							
+								<div class="sec2 col-md-11">
+									<div class="imgblock">
+									<div class="block1-3"></div>
+										<div class="info">
+											<p id="p">Back to School Essentials</p>
+											
+											<abbr id="seniorEssen" href="#">
+													<img src="{% static 'landing/images/info-icon%20(1).png' %}"
+														width="10px" height="10px" alt=""
+														style="float: left;margin-top: 2px;">
+												</a>
+	
+												<!-- The Modal -->
+												<div id="seniorEssenMod" class="modal col-md-12">
+	
+													<!-- Modal content -->
+													<div class="modal-content">
+															<a href="#" rel="modal:close" class="close">Close</a>
+														<img src="{% static 'landing/images/senior-popup@300x.png' %}"
+															id="img">
+													</div>
+	
+												</div>
+												
+											
+											<p  id="p2">More info</p>
+										</div>
+										
+									</div>
+									<div class="txt-block">
+									<div class="block3">
+											<p id="p3">Price: R745.14</p>
+										</div>
+											
+										<div class="block4">
+											<p id="p3">Monthly Fee: R67.74</p>
+										</div>
+											
+										<div class="block51" >
+											<input type="text" placeholder="Monthly Amount" id="amount-essentials-senior"  name="phone number" style="float: right;
+																												   font-size: 11px;
+																												   width: 150px;
+																												   height: 15px;
+																												   border-radius: 15px;
+																												   border: transparent;
+																												   text-align: center;
+																												   margin-top: 1%;
+																												   background-color: #e6e7ea;
+																												   margin-bottom: 0px;">
+											<input type="radio"  name="amount-radio" id="own-essentials-senior" value="own-essentials-senior" style="float: right;margin-top: 4px;margin-right: 4px;">
+										</div>
+										
+										<div class="block41">
+											<p id="p5">Only use numeric characters*</p>
+										</div>
+											
+										<div class="block6">
+											
+											<div class="block10" ><p id="p4">Once off payment</p></div>
+											<input type="radio"  name="amount-radio" id="once-off-essentials-senior" value="once-off-essentials-senior" style="float: right;margin-top: 4px;margin-right: 4px;">
+										</div>
+									</div>
+								</div>
+							
+								
+								
+							</div>
+							
+							<div class="row" id="row">
+								
+								<div class="sec1 col-md-1">
+									<input type="radio" name="product-name" id="mybox-4" value="mybox-senior">
+								</div>
+							
+								<div class="sec2 col-md-11">
+									<div class="imgblock">
+									<div class="block11"></div>
+										
+									<div class="info">
+										
+										<p id="p">My Box</p>
+										
+										<abbr id="myBtn" href="#">
+												<img src="{% static 'landing/images/info-icon%20(1).png' %}"
+													width="10px" height="10px" alt=""
+													style="float: left;margin-top: 2px;">
+											</a>
+											<input id='fileid4' type='file' hidden />
+											 <input id='buttonid4' type='button' value='Upload MB'
+												style="position: absolute; opacity:0" />
+	
+	
+											<!-- The Modal -->
+											<div id="myModal" class="modal">
+	
+												<!-- Modal content -->
+												<div class="modal-content">
+														<a href="#" rel="modal:close" class="close">Close</a>
+	
+												</div>
+	
+											</div>
+	
+
+										<p  id="p2">Upload list</p>
+										
+										
+									</div>
+										
+										
+										
+									</div>
+									
+									<div class="txt-block">
+									<div class="block51" >
+											<input type="text" placeholder="Average Spend" id="amount-mybox-average-senior" name="phone number" style="float: right;
+																												   font-size: 11px;
+																												   width: 150px;
+																												   height: 15px;
+																												   border-radius: 15px;
+																												   border: transparent;
+																												   text-align: center;
+																												   margin-top: 1%;
+																												    background-color: #e6e7ea">
+											<!--<input type="radio"  name="amount-radio" id="own-mybox-senior" style="float: right;margin-top: 4px;margin-right: 4px;">-->
+										</div>
+										
+										<div class="block41">
+											<p id="p5" style="margin-top: -15px;">Only use numeric characters*</p>
+										</div>
+										<div class="block41">
+											<p id="p5" style="margin-top: 8px;margin-right: 15px;">Suggested monthly contribution R</p>
+											<p id="amount-mybox-senior-s" style="    position: absolute;
+    left: 97%;     top: 47.5%;
+    
+    font-size: 10px;
+    color: green;
+"></p>
+											
+										</div>
+											
+										<div class="block6">
+											
+											<input type="text" placeholder="Own Monthly Spend" id="amount-mybox-senior" name="phone number" style="float: right;
+																												   font-size: 11px;
+																												   width: 150px;
+																												   height: 15px;
+																												   border-radius: 15px;
+																												   border: transparent;
+																												   text-align: center;
+																												   margin-top: 1%;
+																												  background-color: #e6e7ea">
+											<input type="radio"  name="amount-radio" id="own-mybox-senior" style="float: right;margin-top: 4px;margin-right: 4px;">
+											
+										</div>
+										<div class="block41">
+											<p id="p5" style="    margin-top: 3px;">Only use numeric characters*</p>
+										</div>
+										<div class="block6">
+											
+											<div class="block10" ><p id="p4">Once off payment</p></div>
+											<input type="radio"  name="amount-radio" id="once-off-mybox-senior" style="float: right;margin-top: 4px;margin-right: 4px;">
+										</div>
+									</div>
+								</div>
+							
+								
+								
+							</div>
+						</div><!-- End of Senior High-->
+					</div>
+					<button type="submit" id='submit-box' hidden></button>
+					</form>
+				</div>
+				<div class=" col-md-12 textbox4">
+					<div class="one1">
+						<p id="text4"><a href="#" id="add-child" style="background-image: url()">+ Add Child</a></p>
+					</div>
+					<div style="margin-top:15px">
+							<center>
+									<a href="/dashboard/cart">
+									<button 
+										style="background-image: url({% static 'landing/images/continue-here.png' %}) ; height:50px;
+										width: 200px; background-size: contain; background-repeat: no-repeat;
+										background-color: transparent;border: none;margin-top: 15px;">
+											</button>
+									</a>
+									
+									
+									</center>
+									
+					</div>
+					
+						</div>
+					
+					
+				
+		</div>
+
+	
+	
+	
+	
+	
+	</div>
+
+	<!--Footer-->
+  {% include 'dashboard/pages/includes/footer.html' %}
+
+	<script>
+//POPUP1
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+	</script>
+	
+<script>
+//POPUP2
+// Get the modal
+var modal = document.getElementById("myModal2");
+
+// Get the button that opens the modal
+//var btn = document.getElementById("myBtn2");
+
+
+// When the user clicks the button, open the modal 
+//btn.onclick = function() {
+ // modal.style.display = "block";
+//}
+
+$('#myBtn2').click(function () {
+	modal.style.display = "block";
+})
+
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+	
+
+	<script>
+		$(document).ready(function (){
+			//foundation
+			$('#amount-essentials').prop('readonly', true)
+			$('#amount-mybox').prop('readonly', true)
+
+			// Intermediate
+			$('#amount-comprehensive-intermediate').prop('readonly', true)
+			$('#amount-essentials-intermediate').prop('readonly', true)
+			$('#amount-mybox-intermediate').prop('readonly', true)
+
+			//junior
+			$('#amount-comprehensive-junior').prop('readonly', true)
+			$('#amount-essentials-junior').prop('readonly', true)
+			$('#amount-mybox-junior').prop('readonly', true)
+
+			//senior
+			$('#amount-comprehensive-senior').prop('readonly', true)
+			$('#amount-essentials-senior').prop('readonly', true)
+			$('#amount-mybox-senior').prop('readonly', true)
+		})
+
+	  // Foundations
+	  function once_off_foundation(){
+		  //$('#amount').('1682.52')
+		  $('#amount').val('')
+		  $('#amount').prop('readonly', true)
+	  }
+
+	  function own_foundation(){
+		  $('#amount').val('')
+		  $('#amount').prop('readonly', false)
+	  }
+
+	  
+	  $('#once-off-foundation').click(function (){
+		  once_off_foundation()
+
+
+		  own_essentials()
+		  own_mybox()
+	  })
+
+	  $('#own-foundation').click(function (){
+			own_foundation()
+
+			own_essentials()
+			own_mybox()
+	  })
+
+	  // Essentials
+	  function once_off_essentials(){
+		  //$('#amount-essentials').val('796,07')
+		  $('#amount-essentials').val('')
+		  $('#amount-essentials').prop('readonly', true)
+	  }
+	  // Intermediate- Comprehensive
+function once_off_comprehensive_intermediate(){
+		  //$('#amount-essentials').val('796,07')
+		  $('#amount-comprehensive-intermediate').val('')
+		  $('#amount-comprehensive-intermediate').prop('readonly', true)
+	  }
+	  $('#once-off-comprehensive-intermediate').click(function (){
+		  once_off_essentials()
+
+		  own_foundation()
+		  own_mybox()
+		  once_off_essentials_intermediate()
+		  once_off_comprehensive_intermediate()
+	  })
+// Essentials- Junior
+function once_off_essentials_junior(){
+		  //$('#amount-essentials').val('796,07')
+		  $('#amount-essentials-junior').val('')
+		  $('#amount-essentials-junior').prop('readonly', true)
+	  }
+	  $('#once-off-essentials-junior').click(function (){
+		  once_off_essentials()
+
+		  own_foundation()
+		  own_mybox()
+		  once_off_essentials_intermediate()
+		  once_off_comprehensive_intermediate()
+		  once_off_essentials_junior()
+	  })
+	  // Comprehensive - Junior
+function once_off_comprehensive_junior(){
+		  //$('#amount-essentials').val('796,07')
+		  $('#amount-comprehensive-junior').val('')
+		  $('#amount-comprehensive-junior').prop('readonly', true)
+	  }
+	  $('#once-off-comprehensive-junior').click(function (){
+		  once_off_essentials()
+
+		  own_foundation()
+		  own_mybox()
+		  once_off_essentials_intermediate()
+		  once_off_comprehensive_intermediate()
+		  once_off_essentials_junior()
+		  once_off_comprehensive_junior()
+	  })
+ // Senior- Comprehensive
+ function once_off_comprehensive_senior(){
+		  //$('#amount-essentials').val('796,07')
+		  $('#amount-comprehensive-senior').val('')
+		  $('#amount-comprehensive-senior').prop('readonly', true)
+	  }
+	  $('#once-off-comprehensive-senior').click(function (){
+		  once_off_essentials()
+
+		  own_foundation()
+		  own_mybox()
+		  once_off_essentials_intermediate()
+		  once_off_comprehensive_intermediate()
+		  once_off_comprehensive_senior()
+	  })
+	  // Senior- Essentials
+ function once_off_essentials_senior(){
+		  //$('#amount-essentials').val('796,07')
+		  $('#amount-essentials-senior').val('')
+		  $('#amount-essentials-senior').prop('readonly', true)
+	  }
+	  $('#once-off-essentials-senior').click(function (){
+		  once_off_essentials()
+
+		  own_foundation()
+		  own_mybox()
+		  once_off_essentials_intermediate()
+		  once_off_comprehensive_intermediate()
+		  once_off_essentials_senior()
+		  once_off_comprehensive_senior()
+	  })
+// Essentials- Intermediate
+function once_off_essentials_intermediate(){
+		  //$('#amount-essentials').val('796,07')
+		  $('#amount-essentials-intermediate').val('')
+		  $('#amount-essentials-intermediate').prop('readonly', true)
+	  }
+	  $('#once-off-essentials-intermediate').click(function (){
+		  once_off_essentials()
+
+		  own_foundation()
+		  own_mybox()
+		  once_off_essentials_intermediate()
+		  once_off_comprehensive_intermediate()
+	  })
+	   // Intermediate- Comprehensive
+function once_off_essentials_comprehensive(){
+		  //$('#amount-essentials').val('796,07')
+		  $('#amount-comprehensive-intermediate').val('')
+		  $('#amount-comprehensive-intermediate').prop('readonly', true)
+	  }
+	  $('#once-off-comprehensive-intermediate').click(function (){
+		  once_off_essentials()
+
+		  own_foundation()
+		  own_mybox()
+		  once_off_essentials_intermediate()
+		  once_off_comprehensive_intermediate()
+	  })
+// Essentials- Intermediate
+function once_off_essentials_intermediate(){
+		  //$('#amount-essentials').val('796,07')
+		  $('#amount-essentials-intermediate').val('')
+		  $('#amount-essentials-intermediate').prop('readonly', true)
+	  }
+	  $('#once-off-essentials-intermediate').click(function (){
+		  once_off_essentials()
+
+		  own_foundation()
+		  own_mybox()
+		  once_off_essentials_intermediate()
+		  once_off_comprehensive_intermediate()
+	  })
+	  function own_essentials(){
+		  $('#amount-essentials').val('')
+		  $('#amount-essentials').prop('readonly', false)
+	  }
+
+	  $('#once-off-essentials').click(function (){
+		  once_off_essentials()
+
+		  own_foundation()
+		  own_mybox()
+	  })
+
+	  $('#own-essentials').click(function (){
+			own_essentials()
+
+			own_foundation()
+			own_mybox()
+	  })
+
+	  // Mybox
+	  function once_off_mybox(){
+		  //$('#amount-mybox').val('1782.52')
+		  $('#amount-mybox').val('')
+		  $('#amount-mybox').prop('readonly', true)
+	  }
+
+	  function own_mybox(){
+		  $('#amount-mybox').val('')
+		  $('#amount-mybox-average-foundation').val('')
+		  $('#amount-mybox').prop('readonly', true)
+		  $('#amount-mybox-average-foundation').prop('readonly', false)
+	  }
+
+	  $('#once-off-mybox').click(function (){
+		  once_off_mybox()
+		  own_foundation()
+		  own_essentials()
+	  })
+
+	  $('#own-mybox').click(function (){
+		  own_mybox()
+
+		  own_foundation()
+		  own_essentials()
+	  })
+	  
+
+	  $('#comprehensive').click(function (){
+
+		  $('#own-foundation').prop('checked',true)
+		  $('#once-off-comprehensive-junior').prop('checked', false)
+		  //foundation
+		  own_essentials()
+		  own_mybox()
+		  spend = 1682.52
+		  d = new Date();
+		  month = d.getMonth()+1;
+
+		  suggestion = spend/(12-month)
+		  document.getElementById('amount').value = ((suggestion).toFixed(2))
+
+		  document.getElementById('amount-mybox-intermediate-i').innerHTML = " "
+		  document.getElementById('amount-mybox-junior-j').innerHTML = " "
+		  document.getElementById('amount-mybox-senior-s').innerHTML = " "
+		  document.getElementById('amount-mybox-foundation-f').innerHTML = " "
+		  
+			$('#amount').prop('readonly', true)
+			$('#amount-essentials').prop('readonly', true)
+			$('#amount-mybox').prop('readonly', true)
+			$('#amount-mybox-average-foundation').prop('readonly', true)
+
+			// Intermediate
+			$('#amount-comprehensive-intermediate').prop('readonly', true)
+			$('#amount-essentials-intermediate').prop('readonly', true)
+			$('#amount-mybox-intermediate').prop('readonly', true)
+			$('#amount-mybox-average-intermediate').prop('readonly', true)
+
+			//junior
+			$('#amount-comprehensive-junior').prop('readonly', true)
+			$('#amount-essentials-junior').prop('readonly', true)
+			$('#amount-mybox-junior').prop('readonly', true)
+			$('#amount-mybox-average-junior').prop('readonly', true)
+
+			//senior
+			$('#amount-comprehensive-senior').prop('readonly', true)
+			$('#amount-essentials-senior').prop('readonly', true)
+			$('#amount-mybox-senior').prop('readonly', true)
+			$('#amount-mybox-average-senior').prop('readonly', true)
+	  })
+
+	  $('#essentials').click(function (){
+
+		  
+		  $('#own-essentials').prop('checked',true)
+		  $('#once-off-comprehensive-junior').prop('checked', false)
+
+		  spend = 796.07
+		  d = new Date();
+		  month = d.getMonth()+1;
+
+		  suggestion = spend/(12-month)
+		  document.getElementById('amount-essentials').value = ((suggestion).toFixed(2))	
+
+		  //foundation
+		  own_foundation()
+		  own_mybox()
+		  $('#amount').prop('readonly', true)
+		  $('#amount-essentials').prop('readonly', true)
+			$('#amount-mybox').prop('readonly', true)
+			$('#amount-mybox-average-foundation').prop('readonly', true)
+
+			// Intermediate
+			$('#amount-comprehensive-intermediate').prop('readonly', true)
+			$('#amount-essentials-intermediate').prop('readonly', true)
+			$('#amount-mybox-intermediate').prop('readonly', true)
+			$('#amount-mybox-average-intermediate').prop('readonly', true)
+			
+			//junior
+			$('#amount-comprehensive-junior').prop('readonly', true)
+			$('#amount-essentials-junior').prop('readonly', true)
+			$('#amount-mybox-junior').prop('readonly', true)
+			$('#amount-mybox-average-junior').prop('readonly', true)
+
+			//senior
+			$('#amount-comprehensive-senior').prop('readonly', true)
+			$('#amount-essentials-senior').prop('readonly', true)
+			$('#amount-mybox-senior').prop('readonly', true)
+			$('#amount-mybox-average-senior').prop('readonly', true)
+	  })
+	  $('#mybox').click(function (){
+		  $('#own-mybox').prop('checked',true)
+		  $('#once-off-comprehensive-junior').prop('checked', false)
+		  //foundation
+		  own_foundation()
+		  own_essentials()
+		  $('#amount').prop('readonly', true)
+		  $('#amount-essentials').prop('readonly', true)
+			$('#amount-mybox').prop('readonly', true)
+			$('#amount-mybox-average-foundation').prop('readonly', false)
+
+			// Intermediate
+			$('#amount-comprehensive-intermediate').prop('readonly', true)
+			$('#amount-essentials-intermediate').prop('readonly', true)
+			$('#amount-mybox-intermediate').prop('readonly', true)
+			$('#amount-mybox-average-intermediate').prop('readonly', true)
+			
+			//junior
+			$('#amount-comprehensive-junior').prop('readonly', true)
+			$('#amount-essentials-junior').prop('readonly', true)
+			$('#amount-mybox-junior').prop('readonly', true)
+			$('#amount-mybox-average-junior').prop('readonly', true)
+
+			//senior
+			$('#amount-comprehensive-senior').prop('readonly', true)
+			$('#amount-essentials-senior').prop('readonly', true)
+			$('#amount-mybox-senior').prop('readonly', true)
+			$('#amount-mybox-average-senior').prop('readonly', true)
+	  })
+
+
+	  //Intermediate
+	  function own_comprehensive_intermediate(){
+		  $('#amount-comprehensive-intermediate').val('')
+		  $('#amount-comprehensive-intermediate').prop('readonly', false)
+	  }
+	  function own_essentials_intermediate(){
+		  $('#amount-essentials-intermediate').val('')
+		  $('#amount-essentials-intermediate').prop('readonly', false)
+	  }
+	  function own_mybox_intermediate(){
+		  $('#amount-mybox-intermediate').val('')
+		  $('#amount-mybox-average-intermediate').val('')
+		  $('#amount-mybox-intermediate').prop('readonly', true)
+		  $('#amount-mybox-average-intermediate').prop('readonly', false)
+	  }
+	  $('#comprehensive-2').click(function (){
+		  $('#own-compresenive-intermediate').prop('checked',true)
+		  $('#once-off-comprehensive-junior').prop('checked', false)
+		  //foundation
+		  own_foundation()
+		  own_mybox()
+		  own_essentials()
+		  own_essentials_intermediate()
+		  own_mybox_intermediate()
+
+		  spend = 2402.17
+		  d = new Date();
+		  month = d.getMonth()+1;
+
+		  suggestion = spend/(12-month)
+		  document.getElementById('amount-comprehensive-intermediate').value = ((suggestion).toFixed(2))
+		  $('#amount').prop('readonly', true)
+		  $('#amount-essentials').prop('readonly', true)
+			$('#amount-mybox').prop('readonly', true)
+			$('#amount-mybox-average-foundation').prop('readonly', true)
+
+			// Intermediate
+			$('#amount-comprehensive-intermediate').prop('readonly', true)
+			$('#amount-essentials-intermediate').prop('readonly', true)
+			$('#amount-mybox-intermediate').prop('readonly', true)
+			$('#amount-mybox-average-intermediate').prop('readonly', true)
+
+			//junior
+			$('#amount-comprehensive-junior').prop('readonly', true)
+			$('#amount-essentials-junior').prop('readonly', true)
+			$('#amount-mybox-junior').prop('readonly', true)
+			$('#amount-mybox-average-junior').prop('readonly', true)
+
+			//senior
+			$('#amount-comprehensive-senior').prop('readonly', true)
+			$('#amount-essentials-senior').prop('readonly', true)
+			$('#amount-mybox-senior').prop('readonly', true)
+			$('#amount-mybox-average-senior').prop('readonly', true)
+	  })
+
+	  $('#essentials-2').click(function (){
+		  $('#own-essentials-intermediate').prop('checked', true)
+		  $('#once-off-comprehensive-junior').prop('checked', false)
+		  //foundation
+		  own_foundation()
+		  own_mybox()
+		  own_essentials()
+		  own_comprehensive_intermediate()
+		  own_mybox_intermediate()
+
+		   spend = 1184.00
+		  d = new Date();
+		  month = d.getMonth()+1;
+
+		  suggestion = spend/(12-month)
+		  document.getElementById('amount-essentials-intermediate').value = ((suggestion).toFixed(2))
+
+		  $('#amount').prop('readonly', true)
+		  $('#amount-essentials').prop('readonly', false)
+			$('#amount-mybox').prop('readonly', true)
+			$('#amount-mybox-average-foundation').prop('readonly', true)
+
+			// Intermediate
+			$('#amount-comprehensive-intermediate').prop('readonly', true)
+			$('#amount-essentials-intermediate').prop('readonly', true)
+			$('#amount-mybox-intermediate').prop('readonly', true)
+			$('#amount-mybox-average-intermediate').prop('readonly', true)
+			
+			//junior
+			$('#amount-comprehensive-junior').prop('readonly', true)
+			$('#amount-essentials-junior').prop('readonly', true)
+			$('#amount-mybox-junior').prop('readonly', true)
+			$('#amount-mybox-average-junior').prop('readonly', true)
+
+			//senior
+			$('#amount-comprehensive-senior').prop('readonly', true)
+			$('#amount-essentials-senior').prop('readonly', true)
+			$('#amount-mybox-senior').prop('readonly', true)
+			$('#amount-mybox-average-senior').prop('readonly', true)
+	  })
+	  $('#mybox-2').click(function (){
+		  $('#own-mybox-intermediate').prop('checked', true)
+		  $('#once-off-comprehensive-junior').prop('checked', false)
+		  //foundation
+		  own_foundation()
+		  own_mybox()
+		  own_essentials()
+		  own_comprehensive_intermediate()
+		  own_essentials_intermediate()
+		  $('#amount').prop('readonly', true)
+		  $('#amount-essentials').prop('readonly', true)
+			$('#amount-mybox').prop('readonly', true)
+			$('#amount-mybox-average-foundation').prop('readonly', true)
+
+			// Intermediate
+			$('#amount-comprehensive-intermediate').prop('readonly', true)
+			$('#amount-essentials-intermediate').prop('readonly', true)
+			$('#amount-mybox-intermediate').prop('readonly', true)
+			$('#amount-mybox-average-intermediate').prop('readonly', false)
+			
+			//junior
+			$('#amount-comprehensive-junior').prop('readonly', true)
+			$('#amount-essentials-junior').prop('readonly', true)
+			$('#amount-mybox-junior').prop('readonly', true)
+			$('#amount-mybox-average-junior').prop('readonly', true)
+
+			//senior
+			$('#amount-comprehensive-senior').prop('readonly', true)
+			$('#amount-essentials-senior').prop('readonly', true)
+			$('#amount-mybox-senior').prop('readonly', true)
+			$('#amount-mybox-average-senior').prop('readonly', true)
+	  })
+
+
+	  //Junior
+  
+	  function own_comprehensive_junior(){
+		  $('#amount-comprehensive-junior').val('')
+		  $('#amount-comprehensive-junior').prop('readonly', false)
+	  }
+	  function own_essentials_junior(){
+		  $('#amount-essentials-junior').val('')
+		  $('#amount-essentials-junior').prop('readonly', false)
+	  }
+	  function own_mybox_junior(){
+		  $('#amount-mybox-junior').val('')
+		  $('#amount-mybox-average-junior').val('')
+		  $('#amount-mybox-junior').prop('readonly', true)
+		  $('#amount-mybox-average-junior').prop('readonly', false)
+	  }
+	  $('#own-comprehensive-junior').click(function (){
+	  	$('#once-off-comprehensive-junior').prop('checked', false)
+	  });
+	  $('#once-off-comprehensive-junior').click(function (){
+	  	$('#own-comprehensive-junior').prop('checked', false)
+	  });
+	  $('#comprehensive-3').click(function (){
+		  $('#own-comprehensive-junior').prop('checked', true)
+		  
+		  $('#once-off-comprehensive-junior').prop('checked', false)
+		  //foundation
+		  own_foundation()
+		  own_mybox()
+		  own_essentials()
+		  own_essentials_intermediate()
+		  own_mybox_intermediate()
+		  own_comprehensive_intermediate()
+		  own_essentials_junior()
+		  own_mybox_junior()
+
+		   spend = 1600.41
+		  d = new Date();
+		  month = d.getMonth()+1;
+
+		  suggestion = spend/(12-month)
+		  document.getElementById('amount-comprehensive-junior').value = ((suggestion).toFixed(2))
+
+		  $('#amount').prop('readonly', true)
+		  $('#amount-essentials').prop('readonly', true)
+			$('#amount-mybox').prop('readonly', true)
+			$('#amount-mybox-average-foundation').prop('readonly', true)
+
+			// Intermediate
+			$('#amount-comprehensive-intermediate').prop('readonly', true)
+			$('#amount-essentials-intermediate').prop('readonly', true)
+			$('#amount-mybox-intermediate').prop('readonly', true)
+			$('#amount-mybox-average-intermediate').prop('readonly', true)
+
+			//junior
+			$('#amount-comprehensive-junior').prop('readonly', true)
+			$('#amount-essentials-junior').prop('readonly', true)
+			$('#amount-mybox-junior').prop('readonly', true)
+			$('#amount-mybox-average-junior').prop('readonly', true)
+
+			//senior
+			$('#amount-comprehensive-senior').prop('readonly', true)
+			$('#amount-essentials-senior').prop('readonly', true)
+			$('#amount-mybox-senior').prop('readonly', true)
+			$('#amount-mybox-average-senior').prop('readonly', true)
+	  })
+
+	  $('#essentials-3').click(function (){
+		  $('#own-essentials-junior').prop('checked', true)
+		  $('#once-off-comprehensive-junior').prop('checked', false)
+		  //foundation
+		  own_foundation()
+		  own_mybox()
+		  own_essentials()
+		  own_comprehensive_intermediate()
+		  own_essentials_intermediate()
+		  own_mybox_intermediate()
+		  own_comprehensive_junior()
+		  own_mybox_junior()
+
+		  spend = 807.41
+		  d = new Date();
+		  month = d.getMonth()+1;
+
+		  suggestion = spend/(12-month)
+		  document.getElementById('amount-essentials-junior').value = ((suggestion).toFixed(2))
+
+		  $('#amount').prop('readonly', true)
+		  $('#amount-essentials').prop('readonly', false)
+			$('#amount-mybox').prop('readonly', true)
+			$('#amount-mybox-average-foundation').prop('readonly', true)
+
+			// Intermediate
+			$('#amount-comprehensive-intermediate').prop('readonly', true)
+			$('#amount-essentials-intermediate').prop('readonly', true)
+			$('#amount-mybox-intermediate').prop('readonly', true)
+			$('#amount-mybox-average-intermediate').prop('readonly', true)
+			
+			//junior
+			$('#amount-comprehensive-junior').prop('readonly', true)
+			$('#amount-essentials-junior').prop('readonly', true)
+			$('#amount-mybox-junior').prop('readonly', true)
+			$('#amount-mybox-average-junior').prop('readonly', true)
+
+			//senior
+			$('#amount-comprehensive-senior').prop('readonly', true)
+			$('#amount-essentials-senior').prop('readonly', true)
+			$('#amount-mybox-senior').prop('readonly', true)
+			$('#amount-mybox-average-senior').prop('readonly', true)
+	  })
+	  $('#mybox-3').click(function (){
+		  $('#own-mybox-junior').prop('checked', true)
+		  $('#once-off-comprehensive-junior').prop('checked', false)
+		  //foundation
+		  
+		  own_foundation()
+		  own_mybox()
+		  own_essentials()
+		  own_comprehensive_intermediate()
+		  own_essentials_intermediate()
+		  own_mybox_intermediate()
+		  own_essentials_junior()
+		  own_comprehensive_junior()
+
+		  $('#amount').prop('readonly', true)
+		  $('#amount-essentials').prop('readonly', true)
+			$('#amount-mybox').prop('readonly', true)
+			$('#amount-mybox-average-foundation').prop('readonly', true)
+
+			// Intermediate
+			$('#amount-comprehensive-intermediate').prop('readonly', true)
+			$('#amount-essentials-intermediate').prop('readonly', true)
+			$('#amount-mybox-intermediate').prop('readonly', true)
+			$('#amount-mybox-average-intermediate').prop('readonly', true)
+			
+			//junior
+			$('#amount-comprehensive-junior').prop('readonly', true)
+			$('#amount-essentials-junior').prop('readonly', true)
+			$('#amount-mybox-junior').prop('readonly', true)
+			$('#amount-mybox-average-junior').prop('readonly', false)
+
+			//senior
+			$('#amount-comprehensive-senior').prop('readonly', true)
+			$('#amount-essentials-senior').prop('readonly', true)
+			$('#amount-mybox-senior').prop('readonly', true)
+			$('#amount-mybox-average-senior').prop('readonly', true)
+	  })
+
+
+
+	  //Senior High
+  
+	  function own_comprehensive_senior(){
+		  $('#amount-comprehensive-senior').val('')
+		  $('#amount-comprehensive-senior').prop('readonly', false)
+	  }
+	  function own_essentials_senior(){
+		  $('#amount-essentials-senior').val('')
+		  $('#amount-essentials-senior').prop('readonly', false)
+	  }
+	  function own_mybox_senior(){
+		  $('#amount-mybox-senior').val('')
+		  $('#amount-mybox-average-senior').val('')
+		  $('#amount-mybox-senior').prop('readonly', true)
+		  $('#amount-mybox-average-senior').prop('readonly', false)
+	  }
+	  $('#comprehensive-4').click(function (){
+		  $('#own-comprehensive-senior').prop('checked',true)
+		  $('#once-off-comprehensive-junior').prop('checked', false)
+		  //foundation
+		  own_foundation()
+		  own_mybox()
+		  own_essentials()
+		  own_essentials_intermediate()
+		  own_mybox_intermediate()
+		  own_comprehensive_intermediate()
+		  own_comprehensive_junior()
+		  own_essentials_junior()
+		  own_mybox_junior()
+		  own_mybox_senior()
+		  own_essentials_senior()
+
+		  spend = 1566.42
+		  d = new Date();
+		  month = d.getMonth()+1;
+
+		  suggestion = spend/(12-month)
+		  document.getElementById('amount-comprehensive-senior').value = ((suggestion).toFixed(2))
+
+		  $('#amount').prop('readonly', true)
+		  $('#amount-essentials').prop('readonly', true)
+			$('#amount-mybox').prop('readonly', true)
+			$('#amount-mybox-average-foundation').prop('readonly', true)
+
+			// Intermediate
+			$('#amount-comprehensive-intermediate').prop('readonly', true)
+			$('#amount-essentials-intermediate').prop('readonly', true)
+			$('#amount-mybox-intermediate').prop('readonly', true)
+			$('#amount-mybox-average-intermediate').prop('readonly', true)
+
+			//junior
+			$('#amount-comprehensive-junior').prop('readonly', true)
+			$('#amount-essentials-junior').prop('readonly', true)
+			$('#amount-mybox-junior').prop('readonly', true)
+			$('#amount-mybox-average-junior').prop('readonly', true)
+
+			//senior
+			$('#amount-comprehensive-senior').prop('readonly', true)
+			$('#amount-essentials-senior').prop('readonly', true)
+			$('#amount-mybox-senior').prop('readonly', true)
+			$('#amount-mybox-average-senior').prop('readonly', true)
+	  })
+
+	  $('#essentials-4').click(function (){
+		  $('#own-essentials-senior').prop('checked', true)
+		  $('#once-off-comprehensive-junior').prop('checked', false)
+		  //foundation
+		  own_foundation()
+		  own_mybox()
+		  own_essentials()
+		  own_comprehensive_intermediate()
+		  own_essentials_intermediate()
+		  own_mybox_intermediate()
+		  own_comprehensive_junior()
+		  own_essentials_junior()
+		  own_mybox_junior()
+		  own_comprehensive_senior()
+		  own_mybox_senior()
+
+		  spend = 745.14
+		  d = new Date();
+		  month = d.getMonth()+1;
+
+		  suggestion = spend/(12-month)
+		  document.getElementById('amount-essentials-senior').value = ((suggestion).toFixed(2))
+		  $('#amount').prop('readonly', true)
+		  $('#amount-essentials').prop('readonly', false)
+			$('#amount-mybox').prop('readonly', true)
+			$('#amount-mybox-average-foundation').prop('readonly', true)
+
+			// Intermediate
+			$('#amount-comprehensive-intermediate').prop('readonly', true)
+			$('#amount-essentials-intermediate').prop('readonly', true)
+			$('#amount-mybox-intermediate').prop('readonly', true)
+			$('#amount-mybox-average-intermediate').prop('readonly', true)
+			
+			//junior
+			$('#amount-comprehensive-junior').prop('readonly', true)
+			$('#amount-essentials-junior').prop('readonly', true)
+			$('#amount-mybox-junior').prop('readonly', true)
+			$('#amount-mybox-average-junior').prop('readonly', true)
+
+			//senior
+			$('#amount-comprehensive-senior').prop('readonly', true)
+			$('#amount-essentials-senior').prop('readonly', true)
+			$('#amount-mybox-senior').prop('readonly', true)
+			$('#amount-mybox-average-senior').prop('readonly', true)
+	  })
+	  $('#mybox-4').click(function (){
+		  $('#own-mybox-senior').prop('checked', true)
+		  $('#once-off-comprehensive-junior').prop('checked', false)
+		  //foundation
+		  
+		  own_foundation()
+		  own_mybox()
+		  own_essentials()
+		  own_comprehensive_intermediate()
+		  own_essentials_intermediate()
+		  own_mybox_intermediate()
+		  own_comprehensive_junior()
+		  own_essentials_junior()
+		  own_mybox_junior()
+		  own_comprehensive_senior()
+		  own_essentials_senior()
+
+		  $('#amount').prop('readonly', true)
+		  $('#amount-essentials').prop('readonly', true)
+			$('#amount-mybox').prop('readonly', true)
+			$('#amount-mybox-average-foundation').prop('readonly', true)
+
+			// Intermediate
+			$('#amount-comprehensive-intermediate').prop('readonly', true)
+			$('#amount-essentials-intermediate').prop('readonly', true)
+			$('#amount-mybox-intermediate').prop('readonly', true)
+			$('#amount-mybox-average-intermediate').prop('readonly', true)
+			
+			//junior
+			$('#amount-comprehensive-junior').prop('readonly', true)
+			$('#amount-essentials-junior').prop('readonly', true)
+			$('#amount-mybox-junior').prop('readonly', true)
+			$('#amount-mybox-average-junior').prop('readonly', true)
+
+			//senior
+			$('#amount-comprehensive-senior').prop('readonly', true)
+			$('#amount-essentials-senior').prop('readonly', true)
+			$('#amount-mybox-senior').prop('readonly', true)
+			$('#amount-mybox-average-senior').prop('readonly', false)
+	  })
+
+	  // Own amount, average spend
+	  $('#amount-mybox-average-foundation').change( function(){
+		spend = document.getElementById('amount-mybox-average-foundation').value
+		d = new Date();
+		month = d.getMonth()+1;
+		monthsCal=12-month;
+		
+		if(monthCal == 0)
+		{
+			monthsCal=1;
+		}
+
+		suggestion = spend/monthsCal
+		document.getElementById('amount-mybox-f').innerHTML = ((suggestion).toFixed(2))
+		document.getElementById('amount-mybox').value = ((suggestion).toFixed(2))
+	})
+
+	// Own amount, average spend
+	$('#amount-mybox-average-intermediate').change( function(){
+		spend = document.getElementById('amount-mybox-average-intermediate').value
+		d = new Date();
+		month = d.getMonth()+1;
+		monthsCal=12-month;
+
+		if(monthCal == 0)
+		{
+			monthsCal=1;
+		}
+
+		suggestion = spend/monthsCal
+		document.getElementById('amount-mybox-intermediate-i').innerHTML = ((suggestion).toFixed(2))
+		document.getElementById('amount-mybox-intermediate').value = ((suggestion).toFixed(2))
+		
+	})
+
+	// Own amount, average spend
+	$('#amount-mybox-average-junior').change( function(){
+		spend = document.getElementById('amount-mybox-average-junior').value
+		d = new Date();
+		month = d.getMonth()+1;
+		monthsCal=12-month;
+
+		if(monthCal == 0)
+		{
+			monthsCal=1;
+		}
+
+suggestion = spend/monthsCal
+		document.getElementById('amount-mybox-junior-j').innerHTML = ((suggestion).toFixed(2))
+		document.getElementById('amount-mybox-junior').value = ((suggestion).toFixed(2))
+	})
+
+	// Own amount, average spend
+	$('#amount-mybox-average-senior').change( function(){
+		spend = document.getElementById('amount-mybox-average-senior').value
+		d = new Date();
+		month = d.getMonth()+1;
+		monthsCal=12-month;
+
+		if(monthCal == 0)
+		{
+			monthsCal=1;
+		}
+
+		suggestion = spend/monthsCal
+		document.getElementById('amount-mybox-senior-s').innerHTML = ((suggestion).toFixed(2))
+		document.getElementById('amount-mybox-senior').value = ((suggestion).toFixed(2))
+		
+	})
+
+	$('#rep-membership').click( function(){
+		rep_mem = document.getElementById('rep-mem')
+
+		if(rep_mem.value == "false"){
+			rep_mem.value = 'true'
+		}else if (rep_mem.value == 'true'){
+			rep_mem.value = 'false'
+		}
+
+	})
+
+	$('#add-child').click( function(){
+		//e.prevendDefault()
+
+		$('#submit-box').click()
+	})
+
+
+$('#members-check').click(function(){
+	$('#membership-submit').click()
+})
+
+$('#rep-membership').click(function(){
+	$('#rep-submit').click()
+})
+
+$(document).on('submit', '#membership-form', function(e){
+			e.preventDefault();
+
+			$.ajax({
+				type:'POST',
+				url:'/dashboard/membership/',
+				data:{
+						product:$('#product').val(),
+						price:$('#price').val(),
+						isRecurring:$('#isRecurring').val(),
+						isSettled:$('#isSettled').val(),
+						order_level:$('#order_level').val(),
+						order_type:$('#order_type').val(),
+						image:$('#image').val(),
+						csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+				},
+				success:function(){
+					
+				}
+			});
+		});
+
+		$(document).on('submit', '#rep-form', function(e){
+			e.preventDefault();
+
+			$.ajax({
+				type:'POST',
+				url:'/dashboard/rep/',
+				data:{
+						product:$('#product').val(),
+						price:$('#price').val(),
+						isRecurring:$('#isRecurring').val(),
+						isSettled:$('#isSettled').val(),
+						order_level:$('#order_level').val(),
+						order_type:$('#order_type').val(),
+						image:$('#image').val(),
+						csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+				},
+				success:function(){
+					
+				}
+			});
+		});
+	
+	</script>
+	    <!-- upload btn -->
+<script>
+	        document.getElementById('buttonid').addEventListener('click', openDialog);
+	
+	        function openDialog() {
+	            document.getElementById('fileid').click();
+	        }
+	        // intermediate btn
+	
+	        document.getElementById('buttonid2').addEventListener('click', openDialog);
+	
+	        function openDialog() {
+	            document.getElementById('fileid2').click();
+	        }
+	
+	        // junior high
+	        document.getElementById('buttonid3').addEventListener('click', openDialog);
+	
+	        function openDialog() {
+	            document.getElementById('fileid3').click();
+	        }
+	        // junior high
+	        document.getElementById('buttonid4').addEventListener('click', openDialog);
+	
+	        function openDialog() {
+	            document.getElementById('fileid4').click();
+	        }
+</script>
+
+<script>
+		$(document).ready(function(){
+		  $("#myBtn2").click(function(){
+			$("#myModal").modal();
+		  });
+		});
+		</script>
+
+<script>
+		$(document).ready(function(){
+		  $("#foundEssen").click(function(){
+			$("#foundEssenMod").modal();
+		  });
+		});
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function (event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+		</script>
+	
+	<script>
+			$(document).ready(function(){
+			  $("#foundComp").click(function(){
+				$("#foundCompMod").modal();
+			  });
+			});
+			$("#close").click(function(){
+				$("#foundCompMod").modal().style.display = "none";
+			  });
+				// When the user clicks anywhere outside of the modal, close it
+				window.onclick = function (event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+			}
+			</script>
+			<script>
+				$(document).ready(function () {
+					$("#interCompre").click(function () {
+						$("#interCompreMod").modal();
+					});
+				});
+				// When the user clicks anywhere outside of the modal, close it
+				window.onclick = function (event) {
+					if (event.target == modal) {
+						modal.style.display = "none";
+					}
+				}
+			</script>
+		<script>
+			$(document).ready(function () {
+				$("#interEssen").click(function () {
+					$("#interEssenMod").modal();
+				});
+			});
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function (event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+			}
+		</script>
+		<script>
+			$(document).ready(function () {
+				$("#juniorCompre").click(function () {
+					$("#juniorCompreMod").modal();
+				});
+			});
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function (event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+			}
+		</script>
+		<script>
+			$(document).ready(function () {
+				$("#juniorEssen").click(function () {
+					$("#juniorEssenMod").modal();
+				});
+			});
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function (event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+			}
+		</script>
+		<script>
+			$(document).ready(function () {
+				$("#seniorCompre").click(function () {
+					$("#seniorCompreMod").modal();
+				});
+			});
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function (event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+			}
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function () {
+				modal.style.display = "none";
+			}
+	
+		</script>
+		<script>
+			$(document).ready(function () {
+				$("#seniorEssen").click(function () {
+					$("#seniorEssenMod").modal();
+				});
+			});
+		
+		</script>
+		<script></script>
+	
+		
+	
+</body>
+</html>

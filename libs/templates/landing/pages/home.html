@@ -1,0 +1,214 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>BackToSchool</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+       
+        <script src="{% static 'landing/js/main.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'landing/bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'landing/landing.css' %}">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700,900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	
+	<div class="row col-md-12 col-sm-6">
+		<div id="sect1" class="col-md-4 col-sm-2">
+			<div id="logo">
+				<div class="img2"></div>
+			</div>
+		</div>
+		
+		<div id="sect2" class="col-md-6 col-s-2">
+		 <div class="heading text-center">
+            <p id="slogan">Finally! Peace of mind from stationery shopping!
+              </p>
+              <p id="slogan2">Finally! Peace of mind from stationery shopping!
+                </p>
+          </div>
+		</div>
+		
+		<div id="sect3" class="col-md-2 col-s-2">
+		
+            <div class="sign-in">
+           
+                <!-- Trigger/Open The Modal -->
+               
+             <!--  <div id="myModal" class="modal">
+
+                    <!-- Modal content 
+                    <div class="modal-content text-center">
+                        <span class="close">&times;</span>
+                        <div class="div">                           
+                             <img src="{% static 'landing/images/logo.jpg' %} " width="100" height="100" alt="">
+                        </div>
+                        <br>
+                        <br>
+                        <p><b>Welcome</b>| Please Sign in</p>
+
+                        <div class="form-group">
+                                <input id="input" type="email" class="login-input form-control" name="" id="" placeholder="Email">
+                                <input  id="input"  type="password" class="login-input form-control" name="" id="" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary" >sign in</button>
+                        <br>
+                        <a href="">Forgot Username?</a>
+                        <a href="">Forgot Your Password?</a>
+                        <br>
+                        <p>Are you a new user <a href="">Sign Up Now</a></p>
+                    </div>
+
+                </div> -->
+                
+                <button class="open-button" onclick="openForm()">
+                        <img src="{% static 'landing/images/sign.jpg' %}"    id="myBtn"  alt="" >
+                        <img src="{% static 'landing/images/sign.jpg' %}"   style="margin-top: 40px" id="myBtn2" width="50" height="50" alt="" >
+                </button>
+
+                <div class="form-popup" id="myForm">
+                        <form method="POST" action="/log/" class="form-container">
+                            {% csrf_token %}
+                        <div class="logo2">
+                                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                     <img src="{% static 'landing/images/logo.jpg' %} " id="logo2" alt="">
+                        </div>
+                        <p id="p2"><b>Welcome |</b> Please login <br></p>
+        
+                    
+                         <input type="text" placeholder="Enter Email" name="email" required>
+                         <input type="password" placeholder="Enter Password" name="password" required>
+                                <div class="divider">
+                                    <div class="d1">
+                                        <label class="container"><p id="p7">Remember me</p>
+                                            <input type="checkbox" >
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+        
+                                    <div class="d2">
+                                        <label class="container" margin-right=12%; ><p id="p8">Keep me logged in</p>
+                                            <input type="checkbox">
+                                            <span class="checkmark" style="margin-left: 1px"></span>
+                                        </label>
+                                    </div>
+                                    
+                                </div>
+                     <div class="passwordArea">           
+                        <button type="submit" class="loginBTN">Login</button>
+                        <span class="psw1"><a href="#">Forgot Username?</a></span>
+                        <span class="psw"><a href="#">Forgot your password?</a></span>
+                    </div>  
+                        <!-- <button type="button" class="btn cancel" onclick="closeForm()">Close</button> -->
+                    <div class="signupArea">           
+                            
+                            <span class="psw2">Are you a new user?<a href="{% url 'landing:registration_page' %}">Register now</a></span>
+                        </div> 
+                    
+          </form>
+        </div>
+
+        </div>
+    </div>
+</div>
+<!-- video backround -->
+<div class="landing-background">
+       
+        
+              
+    <div class="video">
+            <img src="{% static 'landing/images/bg1.jpg' %}"  alt="" id="landingbg1"/>
+        <!-- <div class="content container">
+
+
+</div> -->
+    </div>
+    <div class="play-mobile">
+            <a href=""><img src="{% static 'landing/images/play.png' %}" width="50%" height="70%" alt=""></a>
+        </div> 
+
+    <div class="play">
+            <a href=""><img src="{% static 'landing/images/play.png' %}" width="50%" height="70%" alt=""></a>
+        </div>
+    
+    <div class="register-now">
+        <a href="{% url 'landing:registration_page' %}"><img src="{% static 'landing/images/Asset 2@300x.png' %} " id="regnowBTN" alt=""></a>
+    </div>
+    <div class="reg-mobile">
+        <a src="{% static 'landing/images/register.jpg' %}"><img src="{% static 'landing/images/Asset 2@300x.png' %} " width="100%" height="100%"
+                alt=""></a>
+
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+
+        function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+// Get the modal
+var modal = document.getElementById('myForm');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+        </script>
+
+
+
+</body>
+
+</html>

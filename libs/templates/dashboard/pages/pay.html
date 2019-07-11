@@ -1,0 +1,37 @@
+{% load static %}
+<html>
+    <head>
+<style>
+    .modal {
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: none; /* Disable scroll if needed */
+	background-color: rgba(0,0,0, 0.5); /* Black w/ opacity */
+  }
+  .card
+  {
+      z-index:999;
+      padding-top:20%;
+  }
+    </style>
+    </head>
+
+    <body>
+        
+        
+            <div class="modal">
+            <div class="card">
+            <script src="https://test.oppwa.com/v1/paymentWidgets.js?checkoutId={{id}}"></script>
+            <form action="http://127.0.0.1:8000/dashbaord/dashboard" class="paymentWidgets" data-brands="VISA MASTER AMEX" > 
+                
+        </form>
+    </div>
+</div>
+        
+
+    </body>
+</html>

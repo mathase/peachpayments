@@ -1,0 +1,809 @@
+
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  .img22 {
+    background-image: url(images/logo.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+	height: 145px;
+    width: 100%;
+}
+  /* Modal Content */
+  .modal-content {
+	background-color: #fefefe;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 25%;
+	position: absolute;
+	left: 30%;
+	font-size: 11px;
+  }
+
+
+#repID{
+	border: 1px solid gray;
+}
+#section-1{
+	background-color: white;
+	padding-bottom: 20px;
+
+}
+.user{
+	margin: auto;
+	width: 50%;
+	background: #17a9ff;
+	color: white;
+}
+.right-info{
+	width: 30%
+}
+.get-started{
+	border-radius: 2%;
+	border: 4px solid #17a9ff;
+	height: auto;
+  margin-left: 5%;
+	padding-bottom: 30px;
+	padding-top: 30px;
+}
+.reg-now{
+    margin-top: 10%;
+		margin-left: 5%;
+}
+.user-buttons{
+	display: flex;
+	margin-bottom: 5%
+}
+
+#main{
+	background-color: white;
+	margin-left:15%;
+	border-radius: 5%;
+	border: 4px solid #17a9ff;
+}
+
+#logo{
+	height: 150px;
+	padding-top: 1%;
+}
+
+.img2{
+	background-image: url(images/logo.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 100%;
+	width: 100%;
+}
+
+input[type=text], input[type=password], input[type=tel], input[type=email] {
+  	width: 100%;
+  	display: inline-block;
+  	border: none;
+  	background: transparent;
+	text-align: left;
+	margin-bottom: 4px;
+	height: 23px;
+
+}
+
+input[type=text]:focus , input[type=password]:focus, input[type=tel]:focus, input[type=email]:focus {
+  background-color: transparent;
+  outline: none;
+}
+
+input[type=checkbox], input[type=radio] {
+    box-sizing: border-box;
+    margin-top: 30px;
+}
+
+#checkbox2{
+	box-sizing: border-box;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+
+
+#highlight {
+	font-family:'Nunito Sans';
+	color: #4b4b4d;
+	padding-left: 10px;
+    text-decoration: none;
+    background-color: transparent;
+
+}
+
+#highlight:hover {
+	color: #f18534;
+	text-decoration: none;
+}
+
+
+
+#box1{
+	height: 60px;
+    width: 50%;
+    margin-bottom: 10px;
+    margin: auto;
+}
+
+.img{
+	background-image: url(images/Asset%206@300x.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+#line2{
+	border-top: 0px;
+}
+
+
+.footer{
+	padding: 20px;
+}
+
+
+
+
+
+
+#line1 {
+  	border: 0.5px solid #848788;
+    margin-top: -12px;
+    margin-bottom: 16px;
+	width: 80%;
+}
+
+
+
+#section-2{
+	background-color: #4b4b4d;
+	width: 100%
+}
+
+
+
+.txt-container{
+	height: 100%;
+	width: 80%;
+	margin: auto;
+	background-color: #4b4b4d;
+}
+
+#para{
+	margin-bottom: 0px;
+	font-size: 13px;
+	color: white;
+	font-family:'Arial', sans-serif;
+	font-weight: 200;
+}
+
+.no-underline{
+	text-decoration: none;
+	color: white;
+
+}
+
+.no-underline:hover{
+	color: #f18534;
+	text-decoration: none;
+}
+
+
+.navigation {
+	display: flex;
+	height: 20vh;
+	width: 100%;
+
+
+}
+.logo {
+	width: 20%;
+	height: 100%;
+
+}
+.heading {
+	width: 60%;
+	height: 100%;
+	margin-top: 60px;
+}
+.col-md-5 {
+}
+.col-sm-5 {
+}
+.sign-in {
+	width: 15%;
+	height: 100%
+}
+
+.landing-background {
+	
+}
+.video {
+	/*background-image: url(images/bg1.jpg);*/
+	background-size: 100% 100%;
+	width: 100%;
+	height: 100%;
+    position: absolute;
+    z-index: -5;
+    top: 0;
+}
+.content{
+	width: 100%;
+}
+
+
+
+
+@media only screen and (max-width: 490px) {
+
+	.play{
+		display: none
+	}
+	.play-mobile{
+	height: 10%;
+	width: 100%;
+	position: absolute;
+	top: 50%;
+
+	padding-left: 40%;
+	padding-right: 40%;
+	}
+	.register-now{
+		display: none;
+	}
+	.reg-mobile{
+    top: 85%;
+		position: absolute;
+    padding-left: 20%;
+    padding-right: 20%;
+	}
+
+  }
+
+@media only screen and (min-width: 500px) {
+
+	.play{
+		position: absolute;
+		top: 40%;
+		width: 100%;
+		height: 10%;
+		padding-left: 45%;
+		padding-right: 45%;
+	}
+	.play-mobile{
+		display: none
+
+	}
+	.register-now{
+		position: absolute;
+		top: 80%;
+		width: 100%;
+		padding-left: 30%;
+		padding-right: 30%;
+	}
+	.reg-mobile{
+	display: none
+	}
+
+  }
+
+.individual{
+	width: 50%;
+	text-align: center;
+
+}
+.school{
+	width: 50%;
+	text-align: center;
+}
+.nav-link.active{
+
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+	color: white;
+	background-color: #17a9ff
+}
+
+/* Login page */
+	#login{
+		margin: auto;
+		border-radius: 5%;
+		border: 4px solid #17a9ff;
+	}
+	/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+	background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 25%;
+    position: absolute;
+    left: 70%;
+    top: 10%;
+	font-size: 11px;
+  }
+  .login-input{
+	  border: solid 1px gray;
+  }
+  
+  /* The Close Button */
+  .close {
+	color: #aaaaaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+  }
+
+	/* referral page */
+
+	.referral{
+		width: 100%;
+		margin-top: 40px;
+		}
+	.continue{
+		margin: auto;
+		border-radius: 2%;
+		border: 4px solid #17a9ff;
+		padding: 40px;
+	}
+	.footer{
+		color: white;
+		width: 100%;
+		margin-top: 40px;
+		background: #4b4b4d;
+		padding: 20px;
+	
+	}
+	
+	#footer-line{
+		margin-left: 10px;
+		border-top: #fefefe 1px solid;
+		width: 100px;
+		margin-top: -5px;
+		margin-bottom: 0px;
+		
+	}
+	
+	.disclaimer{
+		color:white  ;
+		background-color:#2a58a4;
+		padding: 10px;
+		font-size: 12px;
+		text-align: center;
+	}
+	
+	/* Cart Page */
+	.terms{
+		height: 20vh;
+		overflow-y: auto;
+	}
+ #input{
+	border: 1px solid gainsboro;
+ }
+#subtotal{
+	margin: 0;
+}
+
+.total{
+	font-size: 10px
+
+}
+#text{
+		font-size: 10px
+}
+#title{
+	font-size: 10px;
+	margin: 3px;
+}
+.cart-section{
+	/* margin-bottom: 60px; */
+}
+hr{
+	margin: 0;
+}
+.cart-section2{
+	margin-top: 20px
+}
+
+.cart-section1{
+	margin-bottom: 0px;
+}
+.billing-left{
+	border: 1px solid rgba(0,0,0,.1);
+	margin-left: -5px;
+	font-size: 13px;
+
+}
+.billing-right{
+	border: 1px solid rgba(0,0,0,.1);
+	margin-left: 5px;
+	font-size: 13px;
+
+}
+.mailing-left{
+	border: 1px solid rgba(0,0,0,.1);
+		padding: 25px;
+		 margin-left: -5px;
+		 font-size: 13px
+}
+.delivery-right{
+	border: 1px solid rgba(0,0,0,.1);
+		padding: 25px;
+		margin-left: 5px;
+		font-size: 13px
+	}
+.terms-conditions{
+	border: 1px solid rgba(0,0,0,.1);
+    padding: 25px;
+    margin-bottom: 2%;
+    font-size: 13px;
+    text-align: left;
+    float: left;
+    overflow: scroll;
+	}
+.heading{
+	margin-bottom: 15px;
+}
+.captor-image{
+	height: 75px;
+background: rgb(0,0,0,1);
+margin: auto;
+}
+.captor-text{
+	margin: auto;
+	border: 1px solid gainsboro;
+margin-top: 15px;
+}
+.payment-btn{
+	margin-top: 15px;
+}
+.checkout{
+	display: flex;
+	margin-top: 10%;
+	margin: auto;
+	height: 80px;
+}
+
+.checkout1{
+	display: flex;
+	margin-top: 10%;
+	margin: auto;
+	height: 20px;
+}
+
+#checkout-text{
+	padding: 4%
+}
+#accept-text{
+	margin: auto;
+}
+.Address-input{
+	width: 100%;
+margin: 5px 0 22px 0;
+display: inline-block;
+background: transparent;
+}
+
+/* dashboard */
+#nav-home-tab{
+	width: 25%;
+	text-align:center;
+
+}
+#nav-profile-tab{
+	width: 25%;
+	text-align:center;
+}
+#nav-contact-tab{
+	width: 25%;
+	text-align:center;
+}
+#nav-representative-tab{
+	width: 25%;
+	text-align:center;
+}
+.Amapoints-details{
+ background-color: #4dc8f4;
+ margin-left: -5px;
+}
+.AmaPoints-info{
+		padding-top: 60px;
+}
+.amapoints-links{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.rewards{
+	    padding-top: 60px;
+			background-color: #4dc8f4;
+			    margin-left: 5px;
+}
+.dash-details{
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.dash-heading{
+	color: #4dc8f4;
+}
+#amapointsAmount{
+	font-size: 30px;
+	font-weight: 700;
+}
+#referbtn{
+	background: snow;
+width: 60%;
+padding: 8px;
+}
+#rewards-heading{
+	color: white;
+}
+.tab-header{
+	margin-top: 20px;
+}
+#amapoitnts-logo{
+	border-radius: 50%;
+	padding: 20px;
+}
+
+/* representative tab */
+
+.info-line{
+	border: 4px solid #4dc8f4;
+}
+.Holding-text{
+	width: 50%;
+
+}
+.volume{
+	width: 50%;
+
+}
+.record{
+	padding-left: 30px;
+    padding-right: 30px;
+}
+.custID{
+	width: 25%;
+}
+.custName{
+	width: 25%;
+}
+.custPole{
+	width: 25%;
+}
+.custActivity{
+	width: 25%;
+}
+.earnings-left{
+	border: 1px solid gainsboro;
+	margin-right: -5px;
+}
+.earnings-right{
+	border: 1px solid gainsboro;
+	    margin-left: 5px;
+}
+.earnings-dash{
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.commision-dash{
+	margin-top: 40px;
+margin-bottom: 40px;
+}
+
+
+#cart-container{
+	margin-top: 50px;
+}
+
+#cart-logo{
+	width: 100%;
+	height: 100%;
+	background-image: url(images/logo.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin-left: 2px;
+}
+
+#order-image{
+	
+	object-fit: contain;
+	
+}
+
+#edit-btn {
+	color: #2ab0e6;
+	text-decoration: underline;
+}
+
+#line1{
+    border: 0;
+    border-top: 1px solid #bababb;
+    width: 300px;
+    margin-right: 0px;
+}
+
+#hr{
+	margin: 0;
+    border: 0;
+    border-top: 1px solid #bababb;
+}
+
+#title{
+	font-weight: bold;
+	color: #000;
+	float: left;
+	display: inline;
+}
+
+#h2{
+	font-size: 14px;
+	margin-top: 100px;
+}
+
+#cashDeposit{
+	border: 1px solid #2a58a4
+    background-color: #2a58a4;
+	border-radius: 20px;
+	height: 28px;
+	text-align: center;
+	width: 110px;
+}
+
+#h1{
+	font-size: 13px;
+	margin-right: 8px;
+}
+
+#card1{
+	height: 55px;
+    background-image: url(images/mastercard.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: -5px;
+}
+
+#card2{
+	height: 45px;
+	background-image: url(images/visacard.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#card3{
+	height: 65px;
+    background-image: url(images/american-express.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: -5px
+}
+
+#mastercard{
+	object-fit: contain;
+}
+
+#red{
+	color:red;
+}
+
+.text-center{
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.selectBtn {
+    text-transform: none;
+    border: 1px solid;
+    width: 150px;
+    border-radius: 0px;
+}
+
+select{
+	text-transform:none; 
+	width: 224px; 
+	border-radius: 0;
+	-webkit-appearance: none;
+    border: 1px solid #0000004d;
+	color: #0000004d;
+	height: 21px;
+	font-size: small;
+}
+
+
+
+.mailingForm{
+	margin-top: 35px;
+}
+
+.form-check{
+	margin-left: -18px;
+}
+
+#p10{
+	font-size: 9px;
+	text-align: left;
+	float: left;
+	height: 226px;
+}
+
+#input1{
+	height: 23px !important;
+	border: 1px solid gainsboro;
+	
+}
+
+#headings{
+	font-size: 12px;
+	text-align: left;
+	float: left;
+	font-weight: 500;
+}
+
+#heading1{
+	font-size: 11px;
+	font-weight: 550;
+}
+
+.form-check-label{
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+#mailingForm1{
+	margin-top: 0px;
+}
+
+.row1{
+	height: 30px;
+    margin-bottom: 10px;
+}
+
+.firstSection{
+	padding-top: 15px;
+    border: 1px solid #ededed;
+    padding: 20px;
+}
+
+.disclaimer{
+	color:white  ;
+	background-color:#2a58a4;
+	padding: 10px;
+	font-size: 12px;
+	text-align: center;
+}

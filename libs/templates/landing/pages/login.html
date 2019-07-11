@@ -1,0 +1,132 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Login</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'landing/Reg_page.css' %}">
+    <script src="{% static 'landing/js/main.js' %}"></script>
+	<link rel="stylesheet" href="{% static 'landing/bootstrap/css/bootstrap.min.css' %}">
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+	<!--Reg_Box-->
+	<div id="section-1" class="col-md-12">
+		<div id="logo" class="col-md-2">
+			<div class="img2"></div>
+		</div>
+		<form method="POST" action="{% url 'accounts:login' %}">
+			{% csrf_token %}
+		<div id="login" class="col-md-5">
+			<h1 style="font-family:  'Arial Black', sans-serif; padding-top: 30px; padding-bottom: 30px; text-align:center; font-weight: 750; font-size: 30px; letter-spacing: 1px; color: #4b4b4d"> Login</h1>
+
+
+			<input type="email" placeholder="Email" name="email" required>
+			<hr id="line1">
+			<input type="password" placeholder="Password" name="password" required>
+			<hr id="line1">
+			<input type="checkbox"  name="remember"><a id="highlight" href="#" >Remember me</a>
+			<hr id="line2">
+
+				<button type="submit">
+						<div class="col-md-6" id="box1">
+								
+				
+							</div>
+				</button>
+			
+
+
+		</div>
+	</form>
+
+
+	</div>
+
+	<!--Footer-->
+	<div id="section-2">
+	<div class="footer container">
+		<div class="row">
+				<div class="col-md-4 col-sm-12">
+						<div class="txt">
+							<h2 style="font-size: 24px;font-family: 'Arial Black', sans-serif; letter-spacing: 0.5px; font-weight: 700; padding-top: 6%; color: white;">Support<br><br></h2>
+							<p id="para"><b><a class="no-underline" href="#">FAQ</a></b></p>
+						</div>
+
+					</div>
+
+
+					<div class="col-md-4 col-sm-12">
+						<div class="txt">
+							<h2 style="font-size: 24px;font-family: 'Arial Black', sans-serif; letter-spacing: 0.5px; font-weight: 700; padding-top: 6%; color: white";>Get in Touch<br><br></h2>
+							<p id="para"><b>Address: </b><br><br>Unit2, Coldstream Office Park,</p>
+							<p id="para"> Coldstream Street,</p>
+							<p id="para">Little Falls,</p>
+							<p id="para">Roodepoort</p>
+
+							<br>
+
+							<p id="para"><b>Email:</b><br></p>
+							<p id="para"><a class="no-underline" href="mailto:webmaster@example.com">info@backtoschool.biz</a></p>
+
+
+						</div>
+					</div>
+
+
+					<div class="col-md-4 col-sm-12">
+						<div class="txt">
+							<h2 style="font-size: 24px;font-family: 'Arial Black', sans-serif; letter-spacing: 0.5px; font-weight: 700;  padding-top: 6%; color: white">Legal<br><br></h2>
+							<p id="para"><b><a class="no-underline" href="#">Terms and Conditions</a></b></p>
+						</div>
+					</div>
+		</div>
+	</div>
+
+
+		</div>
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

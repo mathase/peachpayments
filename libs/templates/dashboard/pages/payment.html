@@ -1,0 +1,155 @@
+{% load static %}
+<!doctype html>
+
+
+<html lang="en">
+
+<head>
+    <title>BackToSchool</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<script src="{% static 'landing/js/jquery-1.11.2/jquery.js' %}"></script>
+        <script src="{% static 'landing/js/jquery-ui-1.11.4/jquery-ui.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'landing/js/jquery-ui-1.11.4/jquery-ui.css' %}" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+		<link rel="stylesheet" href="{% static 'landing/bootstrap/css/bootstrap.min.css' %}">
+		<script src="{% static 'dashboard/js/packages.js' %}"></script>
+	   <link rel="stylesheet" href="{% static 'dashboard/css/payment.css' %}">
+	
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+	
+	<!--Reg_Box-->
+<div id="section-1" class="col-md-12">
+		
+		<div class="row col-md-12">
+			
+			<div class="col-md-1" style=" height: 145px;">
+			</div>
+			
+			<div id="logo3" class="col-md-5">
+				<div class="img22"></div>
+			</div>
+		</div>
+	
+			<div class="col-md-6" style="height: 0;">
+			</div>
+			
+	
+	</div>
+	
+	<div id="section-2" class="col-md-12">
+		<div class="container1 col-md-9 ">
+				<div class="textbox1">
+					<div class="two">
+					<p id="text3">CONFIRMATION</p>
+					</div>
+					<div class="one">
+					<p id="text1">Your Membership is pending</p>
+					<p id="text2">Please use Membership number as reference</p>
+					</div>
+					<div class="two">
+					<p id="text4">Your order is pending as we await your cash deposit.</p>
+					</div>
+					
+					
+			</div>
+			<!-- Member details -->
+			<div class="textbox3 col-md-12">
+					<div class="row">
+						<div class="col-md-3">
+							<p>Membership number</p>
+							<p>Shipping address</p><br>
+							<br><br>
+							<!-- <p>Billing address</p> -->
+						</div>
+						<div class="col-md-9">
+							<p id="membership-no.">XXXXXXXXX</p>
+							<address id="address">
+								{% for address in addresses%}
+								{% if address.address_number == 'shipping'%}
+								 {{address.address_street_name}}<br>
+								 {{address.address_suburb}}<br>
+								 {{address.city}}, {{address.province}}, {{address.postal_code}}<br>
+								 {{address.country}}
+								 {% endif %}
+								 {% endfor %}
+							</address>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<p>Billing address</p>
+
+						</div>
+						<div class="col-md-9">
+							<p id="members-name">{{user.first_name}} {{user.last_name}}</p>
+							<address id="address">
+								{% for address in addresses%}
+								{% if address.address_number == 'mailing'%}
+								 {{address.address_street_name}}<br>
+								 {{address.address_suburb}}<br>
+								 {{address.city}}, {{address.province}}, {{address.postal_code}}<br>
+								 {{address.country}}
+								 {% endif %}
+								 {% endfor %}
+						</address>
+						</div>
+					</div>
+			</div>
+			<div class="textbox4 col-md-12">
+					<div class="sec6">
+						<p>Payment Method</p>
+						
+					
+					</div>
+					<div class="sec7">
+						<p>Cash deposit</p>
+						<div class="contain">
+							<p id="header1">Order summary</p>
+							<div class="box1" style="    border-bottom: 1px solid black;">
+								<p  style="margin-left: 3%;">Sub Total</p>
+								<p  style="margin-left: 3%;">VAT</p>
+								<p  style="margin-left: 3%;">Discount</p>
+							</div>
+							<div class="box2" style="    border-bottom: 1px solid black;">
+								<p id="Sub-Total" style="text-align: right; margin-right: 7%;">R {{total}}</p>
+								<p id="Taxes" style="text-align: right; margin-right: 7%;">R {{tax}}</p>
+								<p id="Discount" style="text-align: right; margin-right: 7%;">R 0.00</p>
+								<p></p>
+							</div>	
+							<p  style="float: left;	margin-left: 3%;">Order Total</p>
+							<p id="Total" style="float: right;	margin-right: 5%;"> R {{allTot}}</p>
+						</div>
+						
+					</div>
+				<p id="header2">Please note that delivery is note included</p>
+				</div>
+			<div class="textbox5 col-md-12">
+				<div class="two">
+					<p id="text3">We suggest you print a copy of this page for your records <a href="#" style="color:#00adee;text-decoration: underline;">Click here to Print This Page</a></p>
+					</div>
+					<div class="one1">
+						<p id="text3-1"><a href="/dashboard/dashboard" style="color:4b4b4d;">Dashboard</a></p>
+					
+					</div>
+			
+			</div>
+		</div>
+	</div>
+	
+ <!--Footer-->
+ {% include 'dashboard/pages/includes/footer.html' %}
+
+	</body>
+</html>

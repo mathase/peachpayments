@@ -1,0 +1,90 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title></title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'landing/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/Reg_page.css' %}">
+
+  </head>
+  <body>
+<!-- nav -->
+    <nav>
+        <div class="navigation">
+          <div class="logo">
+              <a href="{% url 'landing:home' %}">
+                  <img src="{% static 'landing/images/logo.jpg' %}" width="100%" height="100%"  alt="">
+              </a>
+          </div>
+        </div>
+    </nav>
+      <div class="referral container">
+          <div class="continue text-center col-md-5">
+            <h4>Get started</h4>
+            <p>Please specify a referral details</p>
+            <input id="repID" type="text" name="" value=""	placeholder="Representitive ID">
+            no referral number? <a href="#">Continue here</a>
+          </div>
+      </div>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+              <h2>Support</h2>
+              <p>FAQ</p>
+          </div>
+          <div class="col-md-4">
+            <h2>Get In Touch</h2>
+            <p>
+
+                <div class="row">
+                  <div class="col-md-3">
+                  <p>address:</p>
+                    <br>
+                  </div>
+                  <div class="col-md-8">
+                  <p>  Unit 2, Coldstream Office Park
+                  <br>
+                       2 Coldstream Street
+                  <br>
+                        Little Falls
+                  <br>
+                        Roodepoort
+                  </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3">
+                  <p>address:</p>
+                    <br>
+                  </div>
+                  <div class="col-md-8">
+                  <p> <a href="#">info@backtoschool.biz</a>
+                  </p>
+                  </div>
+                </div>
+
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h2>Legal</h2>
+            <p>Terms and Conditions</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+<!-- end nac -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="{% static 'landing/bootstrap/css/bootstrap.min.css %}"></script>
+  </body>
+</html>
