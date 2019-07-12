@@ -346,7 +346,7 @@
 													width="10px" height="10px" alt=""
 													style="float: left;margin-top: 2px;">
 											</a>
-											<input id='fileid' type='file' hidden />
+											<input id='fileid' type='file' hidden  name="foundation-mybox-list"/>
 											<input id='buttonid' type='button' value='Upload MB'
 												style="position: absolute; opacity:0" />
 	
@@ -2055,6 +2055,7 @@ function once_off_essentials_intermediate(){
 	  // Own amount, average spend
 	  $('#amount-mybox-average-foundation').change( function(){
 		spend = document.getElementById('amount-mybox-average-foundation').value
+		/*
 		d = new Date();
 		month = d.getMonth()+1;
 		monthsCal=12-month;
@@ -2062,26 +2063,26 @@ function once_off_essentials_intermediate(){
 		if(monthCal == 0)
 		{
 			monthsCal=1;
-		}
+		}*/
 
-		suggestion = spend/monthsCal
+		suggestion = spend/4
 		document.getElementById('amount-mybox-f').innerHTML = ((suggestion).toFixed(2))
 		document.getElementById('amount-mybox').value = ((suggestion).toFixed(2))
 	})
 
 	// Own amount, average spend
 	$('#amount-mybox-average-intermediate').change( function(){
-		spend = document.getElementById('amount-mybox-average-intermediate').value
+		/*
 		d = new Date();
 		month = d.getMonth()+1;
 		monthsCal=12-month;
-
+		
 		if(monthCal == 0)
 		{
 			monthsCal=1;
-		}
+		}*/
 
-		suggestion = spend/monthsCal
+		suggestion = spend/4
 		document.getElementById('amount-mybox-intermediate-i').innerHTML = ((suggestion).toFixed(2))
 		document.getElementById('amount-mybox-intermediate').value = ((suggestion).toFixed(2))
 		
@@ -2089,34 +2090,34 @@ function once_off_essentials_intermediate(){
 
 	// Own amount, average spend
 	$('#amount-mybox-average-junior').change( function(){
-		spend = document.getElementById('amount-mybox-average-junior').value
+		/*
 		d = new Date();
 		month = d.getMonth()+1;
 		monthsCal=12-month;
-
+		
 		if(monthCal == 0)
 		{
 			monthsCal=1;
-		}
+		}*/
 
-suggestion = spend/monthsCal
+suggestion = spend/4
 		document.getElementById('amount-mybox-junior-j').innerHTML = ((suggestion).toFixed(2))
 		document.getElementById('amount-mybox-junior').value = ((suggestion).toFixed(2))
 	})
 
 	// Own amount, average spend
 	$('#amount-mybox-average-senior').change( function(){
-		spend = document.getElementById('amount-mybox-average-senior').value
+		/*
 		d = new Date();
 		month = d.getMonth()+1;
 		monthsCal=12-month;
-
+		
 		if(monthCal == 0)
 		{
 			monthsCal=1;
-		}
+		}*/
 
-		suggestion = spend/monthsCal
+		suggestion = spend/4
 		document.getElementById('amount-mybox-senior-s').innerHTML = ((suggestion).toFixed(2))
 		document.getElementById('amount-mybox-senior').value = ((suggestion).toFixed(2))
 		

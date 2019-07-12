@@ -48,6 +48,7 @@ def packages(request):
             order.order_level = 'foundation'
             order.order_type = 'stationary'
             order.product = 'MyBox(Foundation)'
+            order.ownBox = request.FILES['foundation-mybox-list']
             if(request.POST['amount-radio'] == 'own-amount-mybox'):
                 order.price = request.POST['amount-mybox-foundation']
                 order.isRecurring = True
@@ -66,7 +67,7 @@ def packages(request):
             if(request.POST['amount-radio'] == 'own-compresenive-intermediate'):
                 order.price = request.POST['amount-comprehensive-intermediate']
             elif(request.POST['amount-radio'] == 'once-off-comprehensive-intermediate'):
-                order.price = '1682.52'
+                order.price = '2402.17'
 
         # Essentials
         elif(request.POST['product-name'] == 'essentials-intermediate'):
@@ -78,7 +79,7 @@ def packages(request):
                 order.price = request.POST['amount-essentials-intermediate']
                 order.isRecurring = True
             elif(request.POST['amount-radio'] == 'once-off-essentials-intermediate'):
-                order.price = '796.07'
+                order.price = '1184.00'
         
         # MyBox
         elif(request.POST['product-name'] == 'myBox-foundation'):
@@ -104,7 +105,7 @@ def packages(request):
                 order.price = request.POST['amount-comprehensive-junior']
                 order.isRecurring = True
             elif(request.POST['amount-radio'] == 'once-off-comprehensive-junior'):
-                order.price = '1682.52'
+                order.price = '1600.41'
         
         # Essentials
         elif(request.POST['product-name'] == 'essentials-junior'):
@@ -116,7 +117,7 @@ def packages(request):
                 order.price = request.POST['amount-essentials-junior']
                 order.isRecurring = True
             elif(request.POST['amount-radio'] == 'once-off-essentials-junior'):
-                order.price = '796.07'
+                order.price = '807.41'
 
         # MyBox
         elif(request.POST['product-name'] == 'myBox-foundation'):
@@ -141,7 +142,7 @@ def packages(request):
                 order.price = request.POST['amount-comprehensive-senior']
                 order.isRecurring = True
             elif(request.POST['amount-radio'] == 'once-off-comprehensive-senior'):
-                order.price = '1682.52'
+                order.price = '1566.42'
         
         # Essentials
         elif(request.POST['product-name'] == 'essentials-senior'):
@@ -153,7 +154,7 @@ def packages(request):
                 order.price = request.POST['amount-essentials-senior']
                 order.isRecurring = True
             elif(request.POST['amount-radio'] == 'once-off-essentials-senior'):
-                order.price = '796.07'
+                order.price = '745.14'
         
         # MyBox
         elif(request.POST['product-name'] == 'myBox-foundation'):

@@ -15,6 +15,7 @@ class Order(models.Model):
     isSettled       = models.BooleanField(default=False)
     date_created    = models.DateTimeField(auto_now_add = True)
     image           = models.CharField(max_length=100, default="default.jpg")
+    ownBox      = models.ImageField(upload_to='lists', default="none")
 
     def __str__(self):
         return str(self.user)

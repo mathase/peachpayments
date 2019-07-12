@@ -25,7 +25,7 @@ SECRET_KEY = 'n+5y)s=bh@1&cbm=j6!+y6$e)&1a_+0+ab!t-o_0syg4k+u-q2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['198.211.99.20', 'localhost', '127.0.0.1','127.0.0.1:8000','*']
+ALLOWED_HOSTS = ['ec2-3-85-110-117.compute-1.amazonaws.com','198.211.99.20', 'localhost', '127.0.0.1','127.0.0.1:8000','*']
 
 # Application definition
 
@@ -134,6 +134,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 PEACH_BASE_URL = 'https://oppwa.com/'
 
