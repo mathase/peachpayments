@@ -62,7 +62,7 @@ def register(request):
                 user = authenticate(request, username=username, password=password)
                 if user is not None:
                     login(request, user)
-                    #sendEmail(request)
+                    sendEmail(request)
                     return redirect('/dashboard/packages')
             
 
