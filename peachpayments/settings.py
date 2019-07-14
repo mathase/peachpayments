@@ -147,5 +147,6 @@ EMAIL_HOST_USER = 'rhulepara@gmail.com'
 EMAIL_HOST_PASSWORD = '$19950590Rhu1aniNdh1lovu'
 EMAIL_PORT = 587
 
+# added
 
 from .custom_settings import *
