@@ -1,0 +1,799 @@
+h2{
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 13px;
+	font-weight: 900;
+	letter-spacing: 0.2px;
+}
+
+#h1{
+	font-family: 'Arial Black', sans-serif;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-weight: 750;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #4b4b4d;
+}
+
+#h4{
+	font-family: 'Arial Black', sans-serif;
+    text-align: center;
+    font-weight: 750;
+    font-size: 19px;
+    letter-spacing: 1px;
+    color: #4b4b4d;
+	text-transform: uppercase;
+    padding-bottom: 25px;
+}
+
+#p{
+	font-size: 11px;
+}
+
+#p6{
+	font-size: 10px;
+	color: white;
+	text-align: center;
+	padding-top: 12px;
+}
+
+#p7{
+	font-size: 14px;
+	color: black;
+	float: left;
+	margin-left: 1%;
+	margin-top: -3px;
+
+	
+}
+
+#p8{
+	font-size: 14px;
+	color: black;
+	float: right;
+	margin-right: -10%;
+	margin-top: -3px;
+
+	
+}
+
+#p2{
+	font-size: 15px;
+	color: black;
+	text-align: center;
+	margin-bottom: 10px;
+	margin-top: 30px;
+}
+
+
+#refcode{
+	font-size: 9px;
+}
+
+#buttons1{
+	height: 35px;
+    width: 49%;
+	border-color: transparent;
+	text-transform: uppercase;
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 13px;
+}
+
+#repID{
+	border: 1px solid #cacaca;
+	margin-top: -10%;
+}
+
+#section-1{
+	background-color: white;
+	padding-bottom: 20px;
+
+}
+
+.user{
+	margin: auto;
+	width: 50%;
+	background: #17a9ff;
+	color: white;
+}
+
+#input1{
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 12px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #c5c5c5;
+}
+
+
+.get-started{
+	border: 4px solid #17a9ff;
+	height: auto;
+    margin-left: 8%;
+	padding-bottom: 30px;
+	padding-top: 30px;
+	background-color: white;
+	border-radius: 20px;
+	margin-top: 1%;	
+}
+
+.sub2{
+	width: 70%;
+	margin: auto;
+}
+
+.reg-now{
+    margin-top: 10%;
+	margin-left: 5%;
+}
+
+.user-buttons{
+	display: flex;
+	margin-bottom: 5%
+}
+
+#myBtn{
+	width: 80px;
+    height: 80px;
+}
+
+#main{
+	background-color: white;
+    margin-left: 10%;
+    border-radius: 20px;
+    border: 4px solid #17a9ff;
+    height: 570px;
+}
+
+.sub-main{
+   	height: 100%;
+	width: 58%;
+    margin: auto;
+}
+
+#logo{
+	height: 145px;
+	padding-top: 1%;
+	margin-bottom:3%;
+	margin-left: 10%;
+}
+
+#regnowBTN{
+	width:60%; 
+	height:60%;
+	margin-left: 40px;
+}
+
+.img2{
+	background-image: url(images/logo.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	height:80%;
+	width: 50%;
+	margin: auto;
+	float: right;
+	margin-right: 2%;
+}
+
+.img3{
+	background-image: url(images/sign.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 50%;
+	width: 50%;
+	margin: auto;
+}
+
+input[type=text], input[type=password], input[type=tel], input[type=email] {
+  	width: 100%;
+  	margin: 5px 0 22px 0;
+  	display: inline-block;
+  	border: none;
+  	background: transparent;
+	text-align: center;
+}
+
+input[type=text]:focus , input[type=password]:focus, input[type=tel]:focus, input[type=email]:focus {
+  background-color: transparent;
+  outline: none;
+}
+
+input[type=checkbox], input[type=radio] {
+    box-sizing: border-box;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+#checkbox2{
+	box-sizing: border-box;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+#highlight {
+	font-family:'Nunito Sans';
+	color: #4b4b4d;
+	padding-left: 10px;
+    text-decoration: none;
+    background-color: transparent;
+	font-size: 11px;
+}
+
+#highlight:hover {
+	color: #17a9ff;
+	text-decoration: none;
+}
+
+#box1{
+	height: 60px;
+    width: 50%;
+    margin-bottom: 10px;
+    margin: auto;
+}
+
+.img{
+	background-image: url(images/register2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+#line2{
+	border-top: 0px;
+}
+
+#lines{
+	height: 1px;
+	margin-bottom: 10px
+}
+
+.no1{
+	background-color: white;
+	width: 90px;
+	height: 1px;
+	margin-left: 5%;
+	float:left;
+}
+.no2{
+	background-color: white;
+	width: 90px;
+	height: 1px;
+	margin-left: 30%;
+	float:left;
+}
+.no3{
+	background-color: white;
+	width: 90px;
+	height: 1px;
+	margin-left: 22%;
+	float:left;
+}
+
+#disclaimerbox{
+	background-image:url(./images/dashboard-box.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 50px;
+	width: 100%;
+}
+
+#line1 {
+  	border: 0.5px solid #c5c5c5;
+    margin-top: -18px;
+    margin-bottom: 16px;
+}
+
+#section-2{
+	background-color: #4b4b4d;
+	width: 100%
+}
+
+.txt-container{
+	height: 100%;
+	width: 80%;
+	margin: auto;
+	background-color: #4b4b4d;
+}
+
+#para{
+	margin-bottom: 0px;
+	font-size: 13px;
+	color: white;
+	font-family:'Arial', sans-serif;
+	font-weight: 200;
+}
+
+.no-underline{
+	text-decoration: none;
+	color: white;
+
+}
+
+.no-underline:hover{
+	color: #f18534;
+	text-decoration: none;
+}
+
+.navigation {
+	display: flex;
+	height: 20vh;
+	width: 100%;
+}
+
+.logo {
+	width: 20%;
+	height: 100%;
+}
+
+.heading {
+	width: 100%;
+	height: 100%;
+	margin-top: 40px;
+}
+
+.sign-in {
+	width: 50%;
+	height: 50%;
+}
+	
+.landing-bacground {
+	width: 100%;
+	height: 100vh;
+}
+
+.video {
+	background-image: url(images/bg1.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+	margin-top: -12%;
+	margin-left: -3%;
+}
+
+.content{
+	width: 100%;
+}
+
+#slogan{
+	font-family: 'Amatic SC', cursive;
+	font-size: 35px;
+	font-weight: 700;
+	text-align: center;
+	margin-right: 150px;
+}
+
+#slogan2{
+	font-family: 'Amatic SC', cursive;
+	font-size: 18px;
+	font-weight: 700;
+	text-align: center;
+	margin-left: 1%;
+}
+
+#sect1{
+	height: 145px;
+	margin-top: 15px;
+}
+
+#sect2{
+	height: 145px;
+	margin-top: 15px;
+}
+
+#sect3{
+	height: 145px;
+	margin-top: 15px;
+}
+
+@media only screen and (max-width: 490px) {
+
+	.play{
+		display: none;
+	}
+
+	.play-mobile{
+		background-image: url(/env/src/backtoschool/libs/static/landing/images/Play-Button-PNG-Transparent.png);
+		background-size: contain;
+		bottom: 0%;
+		position: absolute;
+		padding-left: 45%;
+		padding-right: 45%;
+	}
+
+	.register-now{
+		display: none;
+	}
+
+	.reg-mobile{
+		bottom: 8px;
+		position: fixed;
+		padding-left: 20%;
+		padding-right: 20%;
+	}
+
+	#myBtn{
+		display: none;
+	}
+
+	#slogan{
+		display: none;
+	}
+
+	#sect2{
+		height: 25px;
+		margin-top: 15px;
+	}
+
+	.heading {
+		margin-top: 0px; 
+	}
+}
+
+@media only screen and (min-width: 500px) {
+
+	.play{
+		background-image: url(/env/src/backtoschool/libs/static/landing/images/play.png);
+		background-size: contain;
+		top: 40%;
+		position: fixed;
+		padding-left: 45%;
+		padding-right: 45%;
+	}
+	.play-mobile{
+		display: none;
+		
+	}
+	.register-now{
+		position: fixed;
+		top: 80%;
+		width: 100%;
+		padding-left: 30%;
+		padding-right: 30%;
+		margin-left: 80px;
+	}
+	.reg-mobile{
+	display: none
+	}
+	#myBtn2{
+		display: none;
+	}
+
+	#myBtn{
+	width: 80px;
+    height: 80px;
+	}
+
+	#slogan2{
+		display: none;
+	}
+	
+  }
+
+/* Login page */
+#login{
+	margin: auto;
+	border-radius: 5%;
+	border: 2px solid #17a9ff;
+}
+
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+	  
+/* Modal Content */
+.modal-content {
+	background-color: #fefefe;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 25%;
+	position: absolute;
+	left: 70%;
+	top: 10%;
+	font-size: 11px;
+}
+	
+.login-input{
+	  border: solid 1px gray;
+}
+	  
+/* The Close Button */
+.close {
+	color: #aaaaaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+	  
+.close:hover,.close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+	
+/* referral page */
+.referral{
+	width: 100%;
+	margin-top: 40px;
+}
+	
+.continue{
+	margin: auto;
+	border-radius: 20px;
+	border: 2px solid #17a9ff;
+	padding: 40px;
+}
+	
+.footer{
+	color: white;
+    width: 100%;
+    margin-top: 40px;
+    background: #4b4b4d;
+	padding: 20px;
+}
+
+#landingbg1{
+	width: 75% ;
+	height: 75%;
+	margin-left: 10%;
+	margin-top: 2%;		
+}
+
+.open-button{
+	border: none;
+	cursor: pointer;
+	opacity: 0.8;
+	position: fixed;
+	top: 10px;
+	right: 140px;
+	width: 80px;
+	height: 80px;
+	margin-top: 20px;
+	padding: 0px;
+	background-color: orange;
+}
+
+/* The popup form - hidden by default */
+.form-popup{
+	display: none;
+	position: fixed;
+	right: 135px;
+	z-index: 9;
+	top: 120px;		
+}
+	  
+/* Add styles to the form container */
+.form-container{
+	max-width: 300px;
+    padding: 10px;
+    background: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+    height: 500px;
+}
+	  
+/* Full-width input fields */
+.form-container input[type=text]{
+	width: 100%;
+	height: 20px;
+	border: none;
+	background: #f1f1f1;
+	padding: 0px;
+	margin:0px
+}
+
+.form-container input[type=password]{
+	width: 100%;
+	height: 20px;
+	border: none;
+	background: #f1f1f1;
+	padding: 0px;
+	margin-bottom: 10px;
+} 
+
+.divider{
+  height: 30px;
+  width: 100%;
+  }
+
+.d1{
+  height: 100%;
+  width: 50%;
+  float: left;
+}
+	
+.d2{
+	height: 100%;
+	width: 50%;
+	float: right;
+}
+
+	  /* When the inputs get focus, do something */
+	.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+		background-color: #ddd;
+		outline: none;
+	}
+
+	  .logo2{
+		width: 100%;
+		height: 120px;
+		margin: auto;
+	}
+
+	  #logo2{
+		width: 140px;
+    	height: 120px;
+    	margin-left: 70px;
+	}
+	  
+	.passwordArea{
+		width: 100%;
+		height: 80px;
+		margin-top: 70px;
+		
+	}
+
+	.signupArea{
+		width: 100%;
+		height: 30px;
+		margin-top: 50px;
+		
+	}
+
+	.psw1{
+		float: left;
+		margin-left: 80px;
+		font-family: 'Nunito Sans', sans-serif;
+		font-size: 13px;
+		font-weight: 200;
+		letter-spacing: 0.2px;
+		margin-top: 5px;
+		color:#00acee;
+	}
+
+	.psw{
+		float: left;
+		margin-left: 65px;
+		font-family: 'Nunito Sans', sans-serif;
+		font-size: 13px;
+		font-weight: 200;
+		letter-spacing: 0.2px;
+		margin-top: 5px;
+		color:#00acee;
+	}
+
+	.psw a{
+			color: #00acee;
+	}
+	.psw1 a{
+			color: #00acee;
+	}
+	.psw2 a{
+		color: #00acee;
+}
+
+
+	.psw2{
+			float: left;
+			margin-left: 40px;
+			  font-family: 'Nunito Sans', sans-serif;
+			  font-size: 13px;
+			  font-weight: 200;
+			  letter-spacing: 0.2px;
+	}
+	  
+	  /* Set a style for the submit/login button */
+	.form-container .loginBTN {
+		background-color:transparent;
+		border: 1px solid #8a8a8a;
+		color: black;
+		cursor: pointer;
+		width: 50%;
+		margin: auto;
+		opacity: 0.8;
+		border-radius: 50px;
+		margin-left: 65px;
+		float: left;
+		height: 50px;
+		
+	}
+	  
+	  /* Add a red background color to the cancel button */
+	  .form-container .cancel {
+		background-color: #4CAF50;
+		color: white;
+		border: none;
+		cursor: pointer;
+		width: 50%;
+		margin: auto;
+		margin-top: 10px;
+		opacity: 0.8;
+		border-radius: 20px;
+		margin-left: 65px;
+		float: left;
+		height: 10px;
+
+	  }
+	  
+	  /* Add some hover effects to buttons */
+	  .form-container .btn:hover, .open-button:hover {
+		opacity: 1;
+	  }
+
+	  .container {
+		display: block;
+		position: relative;
+		margin-bottom: 12px;
+		cursor: pointer;
+		font-size: 22px;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	  }
+	  
+	  /* Hide the browser's default checkbox */
+	  .container input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
+	  }
+	  
+	  /* Create a custom checkbox */
+	  .checkmark {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 15px;
+		width: 15px;
+		background-color: #eee;
+	  }
+	  
+	  /* On mouse-over, add a grey background color */
+	  .container:hover input ~ .checkmark {
+		background-color: #ccc;
+	  }
+	  
+	  /* When the checkbox is checked, add a blue background */
+	  .container input:checked ~ .checkmark {
+		background-color: black;
+	  }
+	  
+	  /* Create the checkmark/indicator (hidden when not checked) */
+	  .checkmark:after {
+		content: "";
+		position: absolute;
+		display: none;
+	  }
+	  
+	  /* Show the checkmark when checked */
+	  .container input:checked ~ .checkmark:after {
+		display: block;
+	  }
+	  
+	  /* Style the checkmark/indicator */
+	.container .checkmark:after {
+		left: 6px;
+		top: 2px;
+		width: 3px;
+		height: 8px;
+		border: solid white;
+		border-width: 0 1px 1px 0;
+		-webkit-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}

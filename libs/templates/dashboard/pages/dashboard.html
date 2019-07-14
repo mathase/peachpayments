@@ -163,7 +163,7 @@
 				
 					</div>{% endif %}
 				<div class="textbox3">
-						<form action="/dashboard/packages/" method="POST" enctype="multipart/form-data">
+						<form action="/dashboard/packages/" method="POST">
 							{% csrf_token %}
 					<div id="accordion">
 						<!-- Begining of Foundation Phase-->
@@ -346,7 +346,7 @@
 													width="10px" height="10px" alt=""
 													style="float: left;margin-top: 2px;">
 											</a>
-											<input id='fileid' type='file' hidden name="" name="foundation-mybox-list"/>
+											<input id='fileid' type='file' hidden />
 											<input id='buttonid' type='button' value='Upload MB'
 												style="position: absolute; opacity:0" />
 	
@@ -934,7 +934,7 @@
 										<div class="block6">
 											
 											<div class="block10" ><p id="p4">Once off payment</p></div>
-											<input type="radio"  name="amount-radio" id="own-mybox-junior" style="float: right;margin-top: 4px;margin-right: 4px;">
+											<input type="radio"  name="amount-radio" id="once-off-mybox-junior" style="float: right;margin-top: 4px;margin-right: 4px;">
 										
 										</div>
 									</div>
@@ -1049,7 +1049,7 @@
 													<div class="modal-content">
 															<a href="#" rel="modal:close" class="close">Close</a>
 														<img src="{% static 'landing/images/senior-popup@300x.png' %}"
-															id="img">
+															id="img" style="height:92%">
 													</div>
 	
 												</div>
@@ -1316,33 +1316,50 @@ window.onclick = function(event) {
 	  function once_off_foundation(){
 		  //$('#amount').('1682.52')
 		  $('#amount').val('')
+		  $('#amount-essentials').val('')
+		  $('#amount-mybox').val('')
 		  $('#amount').prop('readonly', true)
 	  }
 
 	  function own_foundation(){
-		  $('#amount').val('')
-		  $('#amount').prop('readonly', false)
+		spend = 1682.52
+		  d = new Date();
+		  month = d.getMonth()+1;
+
+		  suggestion = spend/(12-month)
+		  document.getElementById('amount').value = ((suggestion).toFixed(2))
+		  $('#amount').prop('readonly', true)
 	  }
 
 	  
 	  $('#once-off-foundation').click(function (){
 		  once_off_foundation()
-
-
-		  own_essentials()
-		  own_mybox()
+		  $('#amount').val('')
+		$('#amount-mybox').val('')
+		  $('#amount-essentials').val('')
+		  $('#comprehensive').prop('checked',true)
+		  
 	  })
 
 	  $('#own-foundation').click(function (){
 			own_foundation()
+			$('#comprehensive').prop('checked',true)
 
-			own_essentials()
-			own_mybox()
+			$('#amount-essentials').val('')
+		  	$('#amount-mybox').val('')
 	  })
-
+	$('#once-off-essentials').click(function (){
+			  once_off_essentials();
+			  $('#amount').val('')
+		$('#amount-mybox').val('')
+		  $('#amount-essentials').val('')
+			  $('#essentials').prop('checked',true)
+	  })
 	  // Essentials
 	  function once_off_essentials(){
 		  //$('#amount-essentials').val('796,07')
+		  $('#amount').val('')
+		$('#amount-mybox').val('')
 		  $('#amount-essentials').val('')
 		  $('#amount-essentials').prop('readonly', true)
 	  }
@@ -1353,10 +1370,11 @@ function once_off_comprehensive_intermediate(){
 		  $('#amount-comprehensive-intermediate').prop('readonly', true)
 	  }
 	  $('#once-off-comprehensive-intermediate').click(function (){
-		  once_off_essentials()
+		once_off_essentials()
+		$('#comprehensive-2').prop('checked',true)
 
-		  own_foundation()
-		  own_mybox()
+once_off_foundation()
+once_off_mybox()
 		  once_off_essentials_intermediate()
 		  once_off_comprehensive_intermediate()
 	  })
@@ -1367,10 +1385,10 @@ function once_off_essentials_junior(){
 		  $('#amount-essentials-junior').prop('readonly', true)
 	  }
 	  $('#once-off-essentials-junior').click(function (){
-		  once_off_essentials()
-
-		  own_foundation()
-		  own_mybox()
+		once_off_essentials()
+		$('#essentials-2').prop('checked',true)
+once_off_foundation()
+once_off_mybox()
 		  once_off_essentials_intermediate()
 		  once_off_comprehensive_intermediate()
 		  once_off_essentials_junior()
@@ -1382,10 +1400,10 @@ function once_off_comprehensive_junior(){
 		  $('#amount-comprehensive-junior').prop('readonly', true)
 	  }
 	  $('#once-off-comprehensive-junior').click(function (){
-		  once_off_essentials()
+		once_off_essentials()
 
-		  own_foundation()
-		  own_mybox()
+once_off_foundation()
+once_off_mybox()
 		  once_off_essentials_intermediate()
 		  once_off_comprehensive_intermediate()
 		  once_off_essentials_junior()
@@ -1398,10 +1416,10 @@ function once_off_comprehensive_junior(){
 		  $('#amount-comprehensive-senior').prop('readonly', true)
 	  }
 	  $('#once-off-comprehensive-senior').click(function (){
-		  once_off_essentials()
+		once_off_essentials()
 
-		  own_foundation()
-		  own_mybox()
+once_off_foundation()
+once_off_mybox()
 		  once_off_essentials_intermediate()
 		  once_off_comprehensive_intermediate()
 		  once_off_comprehensive_senior()
@@ -1413,10 +1431,10 @@ function once_off_comprehensive_junior(){
 		  $('#amount-essentials-senior').prop('readonly', true)
 	  }
 	  $('#once-off-essentials-senior').click(function (){
-		  once_off_essentials()
+		once_off_essentials()
 
-		  own_foundation()
-		  own_mybox()
+		once_off_foundation()
+		once_off_mybox()
 		  once_off_essentials_intermediate()
 		  once_off_comprehensive_intermediate()
 		  once_off_essentials_senior()
@@ -1429,10 +1447,10 @@ function once_off_essentials_intermediate(){
 		  $('#amount-essentials-intermediate').prop('readonly', true)
 	  }
 	  $('#once-off-essentials-intermediate').click(function (){
-		  once_off_essentials()
+		once_off_essentials()
 
-		  own_foundation()
-		  own_mybox()
+		once_off_foundation()
+		once_off_mybox()
 		  once_off_essentials_intermediate()
 		  once_off_comprehensive_intermediate()
 	  })
@@ -1445,8 +1463,8 @@ function once_off_essentials_comprehensive(){
 	  $('#once-off-comprehensive-intermediate').click(function (){
 		  once_off_essentials()
 
-		  own_foundation()
-		  own_mybox()
+		  once_off_foundation()
+		  once_off_mybox()
 		  once_off_essentials_intermediate()
 		  once_off_comprehensive_intermediate()
 	  })
@@ -1465,8 +1483,15 @@ function once_off_essentials_intermediate(){
 		  once_off_comprehensive_intermediate()
 	  })
 	  function own_essentials(){
-		  $('#amount-essentials').val('')
-		  $('#amount-essentials').prop('readonly', false)
+		
+		spend = 796.07
+		  d = new Date();
+		  month = d.getMonth()+1;
+
+		  suggestion = spend/(12-month)
+		  document.getElementById('amount-essentials').value = ((suggestion).toFixed(2))	
+		  $('#amount').val('')
+		  $('#amount-essentials').prop('readonly', true)
 	  }
 
 	  $('#once-off-essentials').click(function (){
@@ -1474,19 +1499,27 @@ function once_off_essentials_intermediate(){
 
 		  own_foundation()
 		  own_mybox()
+		  $('#amount').val('')
+		$('#amount-mybox').val('')
+		  $('#amount-essentials').val('')
 	  })
 
 	  $('#own-essentials').click(function (){
 			own_essentials()
-
+			$('#essentials').prop('checked',true)
 			own_foundation()
 			own_mybox()
+			$('#amount').val('')
+		$('#amount-mybox').val('')
 	  })
 
 	  // Mybox
 	  function once_off_mybox(){
 		  //$('#amount-mybox').val('1782.52')
+		  $('#amount').val('')
+		  $('#amount-essentials').val('')
 		  $('#amount-mybox').val('')
+		  $('#amount-mybox-average-foundation').val('')
 		  $('#amount-mybox').prop('readonly', true)
 	  }
 
@@ -1499,15 +1532,19 @@ function once_off_essentials_intermediate(){
 
 	  $('#once-off-mybox').click(function (){
 		  once_off_mybox()
-		  own_foundation()
-		  own_essentials()
+		  $('#amount').val('')
+		$('#amount-mybox').val('')
+		  $('#amount-essentials').val('')
+		  $('#mybox').prop('checked',true)
+		  $('#amount-mybox-average-foundation').prop('readonly', true)
 	  })
 
 	  $('#own-mybox').click(function (){
 		  own_mybox()
-
-		  own_foundation()
-		  own_essentials()
+		  $('#amount').val('')
+		  $('#amount-essentials').val('')
+		  $('#mybox').prop('checked',true)
+		  
 	  })
 	  
 
@@ -1516,8 +1553,8 @@ function once_off_essentials_intermediate(){
 		  $('#own-foundation').prop('checked',true)
 		  $('#once-off-comprehensive-junior').prop('checked', false)
 		  //foundation
-		  own_essentials()
-		  own_mybox()
+		  $('#amount-essentials').val('')
+		  $('#amount-mybox').val('')
 		  spend = 1682.52
 		  d = new Date();
 		  month = d.getMonth()+1;
@@ -1568,8 +1605,8 @@ function once_off_essentials_intermediate(){
 		  document.getElementById('amount-essentials').value = ((suggestion).toFixed(2))	
 
 		  //foundation
-		  own_foundation()
-		  own_mybox()
+		  $('#amount').val('')
+		  $('#amount-mybox').val('')
 		  $('#amount').prop('readonly', true)
 		  $('#amount-essentials').prop('readonly', true)
 			$('#amount-mybox').prop('readonly', true)
@@ -1597,8 +1634,8 @@ function once_off_essentials_intermediate(){
 		  $('#own-mybox').prop('checked',true)
 		  $('#once-off-comprehensive-junior').prop('checked', false)
 		  //foundation
-		  own_foundation()
-		  own_essentials()
+		  $('#amount-essentials').val('')
+		  $('#amount').val('')
 		  $('#amount').prop('readonly', true)
 		  $('#amount-essentials').prop('readonly', true)
 			$('#amount-mybox').prop('readonly', true)
@@ -1626,27 +1663,74 @@ function once_off_essentials_intermediate(){
 
 	  //Intermediate
 	  function own_comprehensive_intermediate(){
-		  $('#amount-comprehensive-intermediate').val('')
-		  $('#amount-comprehensive-intermediate').prop('readonly', false)
+		spend = 2402.17
+		  d = new Date();
+		  month = d.getMonth()+1;
+
+		  suggestion = spend/(12-month)
+		  document.getElementById('amount-comprehensive-intermediate').value = ((suggestion).toFixed(2))
+		 
+		  $('#amount-comprehensive-intermediate').prop('readonly', true)
 	  }
+	  $('#once-off-comprehensive-intermediate').click(function (){
+		$('#amount-comprehensive-intermediate').val('')
+		$('#amount-essentials-intermediate').val('')
+		$('#comprehensive-2').prop('checked',true)
+	  })
+	  $('#own-compresenive-intermediate').click(function (){
+		own_comprehensive_intermediate()
+		$('#amount-mybox-intermediate').val('')
+		$('#amount-essentials-intermediate').val('')
+		$('#comprehensive-2').prop('checked',true)
+	  })
+	  $('#once-off-essentials-intermediate').click(function (){
+		$('#essentials-2').prop('checked',true)
+	  })
 	  function own_essentials_intermediate(){
-		  $('#amount-essentials-intermediate').val('')
-		  $('#amount-essentials-intermediate').prop('readonly', false)
+		spend = 1184.00
+		  d = new Date();
+		  month = d.getMonth()+1;
+
+		  suggestion = spend/(12-month)
+		  document.getElementById('amount-essentials-intermediate').value = ((suggestion).toFixed(2))
+		  $('#amount-comprehensive-intermediate').val('')
+		  $('#amount-essentials-intermediate').prop('readonly', true)
 	  }
+	  $('#own-essentials-intermediate').click(function (){
+		own_essentials_intermediate()
+		$('#essentials-2').prop('checked',true)
+	  })
 	  function own_mybox_intermediate(){
 		  $('#amount-mybox-intermediate').val('')
 		  $('#amount-mybox-average-intermediate').val('')
 		  $('#amount-mybox-intermediate').prop('readonly', true)
 		  $('#amount-mybox-average-intermediate').prop('readonly', false)
 	  }
+	  
+	  $('#once-off-mybox-intermediate').click(function (){
+		own_mybox_intermediate()
+		$('#amount-comprehensive-intermediate').val('')
+		$('#amount-essentials-intermediate').val('')
+		$('#amount-mybox-average-intermediate').prop('readonly', true)
+		$('#mybox-2').prop('checked',true)
+	  })
+	  $('#own-mybox-intermediate').click(function (){
+		own_mybox_intermediate()
+		$('#amount-comprehensive-intermediate').val('')
+		$('#amount-essentials-intermediate').val('')
+		$('#mybox-2').prop('checked',true)
+	  })
 	  $('#comprehensive-2').click(function (){
 		  $('#own-compresenive-intermediate').prop('checked',true)
 		  $('#once-off-comprehensive-junior').prop('checked', false)
 		  //foundation
-		  own_foundation()
-		  own_mybox()
-		  own_essentials()
+		  
+		  once_off_foundation()
+		  once_off_mybox()
+		  once_off_essentials()
+		  $('#amount').val('')
 		  own_essentials_intermediate()
+		  $('#amount-essentials-intermediate').val('')
 		  own_mybox_intermediate()
 
 		  spend = 2402.17
@@ -1683,11 +1767,16 @@ function once_off_essentials_intermediate(){
 		  $('#own-essentials-intermediate').prop('checked', true)
 		  $('#once-off-comprehensive-junior').prop('checked', false)
 		  //foundation
-		  own_foundation()
-		  own_mybox()
-		  own_essentials()
+		  
+		  once_off_foundation()
+		  once_off_mybox()
+		  once_off_essentials()
+		  $('#amount').val('')
+		  
 		  own_comprehensive_intermediate()
+		  $('#amount-comprehensive-intermediate').val('')
 		  own_mybox_intermediate()
+		  
 
 		   spend = 1184.00
 		  d = new Date();
@@ -1723,11 +1812,15 @@ function once_off_essentials_intermediate(){
 		  $('#own-mybox-intermediate').prop('checked', true)
 		  $('#once-off-comprehensive-junior').prop('checked', false)
 		  //foundation
-		  own_foundation()
-		  own_mybox()
-		  own_essentials()
+		  
+		  once_off_foundation()
+		  once_off_mybox()
+		  once_off_essentials()
+		  $('#amount').val('')
 		  own_comprehensive_intermediate()
 		  own_essentials_intermediate()
+		  $('#amount-essentials-intermediate').val('')
+		  
 		  $('#amount').prop('readonly', true)
 		  $('#amount-essentials').prop('readonly', true)
 			$('#amount-mybox').prop('readonly', true)
@@ -1756,12 +1849,23 @@ function once_off_essentials_intermediate(){
 	  //Junior
   
 	  function own_comprehensive_junior(){
-		  $('#amount-comprehensive-junior').val('')
-		  $('#amount-comprehensive-junior').prop('readonly', false)
+		spend = 1600.41
+		  d = new Date();
+		  month = d.getMonth()+1;
+
+		  suggestion = spend/(12-month)
+		  document.getElementById('amount-comprehensive-junior').value = ((suggestion).toFixed(2))
+		  $('#amount-comprehensive-junior').prop('readonly', true)
 	  }
 	  function own_essentials_junior(){
-		  $('#amount-essentials-junior').val('')
-		  $('#amount-essentials-junior').prop('readonly', false)
+		  spend = 807.41
+		  d = new Date();
+		  month = d.getMonth()+1;
+
+		  suggestion = spend/(12-month)
+		  document.getElementById('amount-essentials-junior').value = ((suggestion).toFixed(2))
+		  $('#amount-comprehensive-junior').val('')
+		  $('#amount-essentials-junior').prop('readonly', true)
 	  }
 	  function own_mybox_junior(){
 		  $('#amount-mybox-junior').val('')
@@ -1770,26 +1874,66 @@ function once_off_essentials_intermediate(){
 		  $('#amount-mybox-average-junior').prop('readonly', false)
 	  }
 	  $('#own-comprehensive-junior').click(function (){
+		own_comprehensive_junior()
+		$('#amount-essentials-junior').val('')
 	  	$('#once-off-comprehensive-junior').prop('checked', false)
+		  
+		  $('#comprehensive-3').prop('checked', true)
 	  });
 	  $('#once-off-comprehensive-junior').click(function (){
+		own_mybox_junior()
 	  	$('#own-comprehensive-junior').prop('checked', false)
+		  $('#once-off-mybox-junior').prop('checked', false)
+		  $('#once-off-essentials-junior').prop('checked', false)
+		  $('#comprehensive-3').prop('checked', true)
+	  });
+	  $('#own-essentials-junior').click(function (){
+		own_essentials_junior()
+		$('#amount-comprehensive-junior').val('')
+	  	$('#once-off-comprehensive-junior').prop('checked', false)
+		  $('#essentials-3').prop('checked', true)
+	  });
+	  $('#once-off-essentials-junior').click(function (){
+		$('#amount-essentials-junior').val('')
+		$('#amount-comprehensive-junior').val('')
+	  	$('#own-essentials-junior').prop('checked', false)
+		  $('#once-off-comprehensive-junior').prop('checked', false)
+		  $('#essentials-3').prop('checked', true)
+	  });
+	  $('#own-mybox-junior').click(function (){
+		$('#amount-essentials-junior').val('')
+		$('#amount-mybox-junior').val('')
+		$('#amount-mybox-average-junior').val('')
+	  	$('#once-off-mybox-junior').prop('checked', false)
+		  $('#mybox-3').prop('checked', true)
+	  });
+	  $('#once-off-mybox-junior').click(function (){
+		$('#amount-mybox-junior').val('')
+		$('#amount-mybox-junior').val('')
+		$('#amount-mybox-average-junior').val('')
+	  	$('#own-mybox-junior').prop('checked', false)
+		  $('#once-off-comprehensive-junior').prop('checked', false)
+		  $('#mybox-3').prop('checked', true)
 	  });
 	  $('#comprehensive-3').click(function (){
 		  $('#own-comprehensive-junior').prop('checked', true)
 		  
 		  $('#once-off-comprehensive-junior').prop('checked', false)
 		  //foundation
-		  own_foundation()
-		  own_mybox()
-		  own_essentials()
+		  once_off_foundation()
+		  once_off_mybox()
+		  once_off_essentials()
+		  $('#amount').val('')
 		  own_essentials_intermediate()
+		  $('#amount-essentials-intermediate').val('')
 		  own_mybox_intermediate()
 		  own_comprehensive_intermediate()
+		  $('#amount-comprehensive-intermediate').val('')
 		  own_essentials_junior()
+		  $('#amount-essentials-junior').val('')
 		  own_mybox_junior()
 
-		   spend = 1600.41
+		  spend = 1600.41
 		  d = new Date();
 		  month = d.getMonth()+1;
 
@@ -1824,13 +1968,15 @@ function once_off_essentials_intermediate(){
 		  $('#own-essentials-junior').prop('checked', true)
 		  $('#once-off-comprehensive-junior').prop('checked', false)
 		  //foundation
-		  own_foundation()
-		  own_mybox()
-		  own_essentials()
-		  own_comprehensive_intermediate()
+		  once_off_foundation()
+		  once_off_mybox()
+		  once_off_essentials()
+		  $('#amount').val('')
 		  own_essentials_intermediate()
+		  $('#amount-essentials-intermediate').val('')
 		  own_mybox_intermediate()
 		  own_comprehensive_junior()
+		  $('#amount-comprehensive-junior').val('')
 		  own_mybox_junior()
 
 		  spend = 807.41
@@ -1868,14 +2014,15 @@ function once_off_essentials_intermediate(){
 		  $('#once-off-comprehensive-junior').prop('checked', false)
 		  //foundation
 		  
-		  own_foundation()
-		  own_mybox()
-		  own_essentials()
-		  own_comprehensive_intermediate()
+		  once_off_foundation()
+		  once_off_mybox()
+		  once_off_essentials()
+		  $('#amount').val('')
 		  own_essentials_intermediate()
+		  $('#amount-essentials-intermediate').val('')
 		  own_mybox_intermediate()
-		  own_essentials_junior()
-		  own_comprehensive_junior()
+		  once_off_essentials_junior()
+		  once_off_comprehensive_junior()
 
 		  $('#amount').prop('readonly', true)
 		  $('#amount-essentials').prop('readonly', true)
@@ -1906,34 +2053,85 @@ function once_off_essentials_intermediate(){
 	  //Senior High
   
 	  function own_comprehensive_senior(){
-		  $('#amount-comprehensive-senior').val('')
+		spend = 1566.42
+		  d = new Date();
+		  month = d.getMonth()+1;
+
+		  suggestion = spend/(12-month)
+		  document.getElementById('amount-comprehensive-senior').value = ((suggestion).toFixed(2))
 		  $('#amount-comprehensive-senior').prop('readonly', false)
 	  }
 	  function own_essentials_senior(){
-		  $('#amount-essentials-senior').val('')
+		spend = 745.14
+		  d = new Date();
+		  month = d.getMonth()+1;
+
+		  suggestion = spend/(12-month)
+		  document.getElementById('amount-essentials-senior').value = ((suggestion).toFixed(2))
 		  $('#amount-essentials-senior').prop('readonly', false)
 	  }
 	  function own_mybox_senior(){
 		  $('#amount-mybox-senior').val('')
 		  $('#amount-mybox-average-senior').val('')
+		  $('#amount-essentials-senior').val('')
+		  $('#amount-comprehensive-senior').val('')
 		  $('#amount-mybox-senior').prop('readonly', true)
-		  $('#amount-mybox-average-senior').prop('readonly', false)
+		  $('#amount-mybox-average-senior').prop('readonly', true)
 	  }
+	  $('#own-comprehensive-senior').click(function (){
+		own_comprehensive_senior()
+		$('#amount-essentials-senior').val('')
+	  	$('#once-off-comprehensive-senior').prop('checked', false)
+		  $('#comprehensive-4').prop('checked', true)
+	  });
+	  $('#once-off-comprehensive-senior').click(function (){
+		own_mybox_senior()
+	  	$('#own-comprehensive-senior').prop('checked', false)
+		  $('#comprehensive-4').prop('checked', true)
+	  });
+
+	  $('#own-essentials-senior').click(function (){
+		own_essentials_senior()
+		$('#amount-comprehensive-senior').val('')
+	  	$('#once-off-essentials-senior').prop('checked', false)
+		  $('#essentials-4').prop('checked', true)
+	  });
+	  $('#once-off-essentials-senior').click(function (){
+		own_mybox_senior()
+	  	$('#own-essentials-senior').prop('checked', false)
+		  $('#essentials-4').prop('checked', true)
+	  });
+
+	  $('#own-mybox-senior').click(function (){
+		own_mybox_senior()
+		$('#amount-comprehensive-senior').val('')
+	  	$('#once-off-mybox-senior').prop('checked', false)
+		  $('#mybox-4').prop('checked', true)
+	  });
+	  $('#once-off-mybox-senior').click(function (){
+		own_mybox_senior()
+	  	$('#own-mybox-senior').prop('checked', false)
+		  $('#mybox-4').prop('checked', true)
+	  });
+
 	  $('#comprehensive-4').click(function (){
 		  $('#own-comprehensive-senior').prop('checked',true)
 		  $('#once-off-comprehensive-junior').prop('checked', false)
 		  //foundation
-		  own_foundation()
-		  own_mybox()
-		  own_essentials()
+		  once_off_foundation()
+		  once_off_mybox()
+		  once_off_essentials()
+		  $('#amount').val('')
 		  own_essentials_intermediate()
+		  $('#amount-essentials-intermediate').val('')
 		  own_mybox_intermediate()
-		  own_comprehensive_intermediate()
 		  own_comprehensive_junior()
 		  own_essentials_junior()
 		  own_mybox_junior()
 		  own_mybox_senior()
 		  own_essentials_senior()
+		  $('#amount-essentials-senior').val('')
+		  $('#amount-essentials-junior').val('')
 
 		  spend = 1566.42
 		  d = new Date();
@@ -1970,17 +2168,20 @@ function once_off_essentials_intermediate(){
 		  $('#own-essentials-senior').prop('checked', true)
 		  $('#once-off-comprehensive-junior').prop('checked', false)
 		  //foundation
-		  own_foundation()
-		  own_mybox()
-		  own_essentials()
-		  own_comprehensive_intermediate()
+		  once_off_foundation()
+		  once_off_mybox()
+		  once_off_essentials()
+		  $('#amount').val('')
 		  own_essentials_intermediate()
+		  $('#amount-essentials-intermediate').val('')
 		  own_mybox_intermediate()
 		  own_comprehensive_junior()
 		  own_essentials_junior()
 		  own_mybox_junior()
 		  own_comprehensive_senior()
+		  $('#amount-comprehensive-senior').val('')
 		  own_mybox_senior()
+		  $('#amount-essentials-junior').val('')
 
 		  spend = 745.14
 		  d = new Date();
@@ -2016,17 +2217,22 @@ function once_off_essentials_intermediate(){
 		  $('#once-off-comprehensive-junior').prop('checked', false)
 		  //foundation
 		  
-		  own_foundation()
-		  own_mybox()
-		  own_essentials()
-		  own_comprehensive_intermediate()
+		  once_off_foundation()
+		  once_off_mybox()
+		  once_off_essentials()
+		  $('#amount').val('')
 		  own_essentials_intermediate()
+		  $('#amount-essentials-intermediate').val('')
 		  own_mybox_intermediate()
 		  own_comprehensive_junior()
 		  own_essentials_junior()
 		  own_mybox_junior()
 		  own_comprehensive_senior()
 		  own_essentials_senior()
+		  $('#amount-essentials-senior').val('')
+		  $('#amount-comprehensive-senior').val('')
+		  $('#amount-essentials-junior').val('')
+
 
 		  $('#amount').prop('readonly', true)
 		  $('#amount-essentials').prop('readonly', true)
@@ -2059,11 +2265,10 @@ function once_off_essentials_intermediate(){
 		month = d.getMonth()+1;
 		monthsCal=12-month;
 		
-		if(monthCal == 0)
+		if(monthsCal == 0)
 		{
 			monthsCal=12;
 		}
-
 		suggestion = spend/monthsCal
 		document.getElementById('amount-mybox-f').innerHTML = ((suggestion).toFixed(2))
 		document.getElementById('amount-mybox').value = ((suggestion).toFixed(2))
@@ -2076,7 +2281,7 @@ function once_off_essentials_intermediate(){
 		month = d.getMonth()+1;
 		monthsCal=12-month;
 
-		if(monthCal == 0)
+		if(monthsCal == 0)
 		{
 			monthsCal=12;
 		}
@@ -2094,7 +2299,7 @@ function once_off_essentials_intermediate(){
 		month = d.getMonth()+1;
 		monthsCal=12-month;
 
-		if(monthCal == 0)
+		if(monthsCal == 0)
 		{
 			monthsCal=12;
 		}
@@ -2111,7 +2316,7 @@ suggestion = spend/monthsCal
 		month = d.getMonth()+1;
 		monthsCal=12-month;
 
-		if(monthCal == 0)
+		if(monthsCal == 0)
 		{
 			monthsCal=12;
 		}

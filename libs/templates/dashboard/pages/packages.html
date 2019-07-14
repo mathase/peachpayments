@@ -32,6 +32,30 @@
 		.close-modal{
 			opacity: 0;
 		}
+		.schoolname-intermediate input{
+	background-color: #e6e7ea;
+	color: gray;
+	font-size: 11px;
+	font-size: .6em;
+}
+.schoolgrade-intermediate input{
+	background-color: #e6e7ea;
+	color: gray;
+	font-size: 11px;
+	font-size: .6em;
+
+}
+
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 0.6em;
+}
+.info {
+    height: 100%;
+    width: 50%;
+    float: right;
+    padding-left: 6px;
+}
 </style>
 
 <body>
@@ -163,7 +187,7 @@
 				
 					</div>{% endif %}
 				<div class="textbox3">
-						<form action="/dashboard/packages/" method="POST">
+						<form action="/dashboard/packages/" method="POST" enctype="multipart/form-data">
 							{% csrf_token %}
 					<div id="accordion">
 						<!-- Begining of Foundation Phase-->
@@ -338,32 +362,40 @@
 									<div class="block11"></div>
 										
 									<div class="info">
-										
+
 										<p id="p">My Box</p>
-										
+
 										<abbr id="myBtn3" href="#">
-												<img src="{% static 'landing/images/info-icon%20(1).png' %}"
-													width="10px" height="10px" alt=""
-													style="float: left;margin-top: 2px;">
-											</a>
-											<input id='fileid' type='file' hidden  name="foundation-mybox-list"/>
-											<input id='buttonid' type='button' value='Upload MB'
-												style="position: absolute; opacity:0" />
-	
-											<!-- The Modal -->
-											<div id="myModal" class="modal">
-	
-												<!-- Modal content -->
-												<div class="modal-content">
-														<a href="#" rel="modal:close" class="close">Close</a>
-	
+											<img src="{% static 'landing/images/info-icon%20(1).png' %}" width="10px" height="10px" alt="" style="float: left;margin-top: 2px;">
+											<p id="p2">Upload list</p>
+
+										</a>
+											<div class="school-name ">
+												<div class="school-name col-md-12">
+													<input type="text" placeholder="School name"  class="schoolname-intermediate" id="school-foundation" name="school-foundation" style="margin-bottom: 5px; border-radius: 20px;background-color: #e6e7ea;;background-color: #e6e7ea;">
 												</div>
-	
+												<div class="school-name col-md-12">
+													<input type="text" name="grade-foundation" class="schoolgrade-foundation" id="grade-foundation" placeholder="Grade" style="margin-bottom: 5px; border-radius: 20px;background-color: #e6e7ea;">
+												</div>
+												<input id='fileid' type='file' hidden name="foundation-mybox-list" />
+												<input id="buttonid" type="button" value="Upload school list" style="font-size: 8px; background: 
+												#4dc8f4; color: white;     border-radius: 20px;     margin-left: 15px;
+												">
 											</div>
 
-										<p  id="p2">Upload list</p>
-										
-										
+											<!-- The Modal -->
+											<div id="myModal" class="modal">
+
+												<!-- Modal content -->
+												<div class="modal-content">
+													<a href="#" rel="modal:close" class="close">Close</a>
+
+												</div>
+
+											</div>
+
+
+
 									</div>
 										
 										
@@ -373,7 +405,7 @@
 									<div class="txt-block">
 									<div class="block51" >
 										<!--<input type="text" placeholder="Average Spend" id="comprehensive-average-spend" name="amount-mybox-foundation" style="float: right;>-->
-											<input type="text" placeholder="Average Spend" id="amount-mybox-average-foundation" name="amount-mybox-foundation" style="float: right;
+											<input type="text" placeholder="Average Spend" id="amount-mybox-average-foundation" name="av-amount-mybox-foundation" id="av-amount-mybox-foundation" style="float: right;
 																												   font-size: 11px;
 																												   width: 150px;
 																												   height: 15px;
@@ -409,7 +441,7 @@
 																												   text-align: center;
 																												   margin-top: 1%;
 																												   background-color: #e6e7ea">
-											<input type="radio"  name="amount-radio" id="own-mybox" style="float: right;margin-top: 4px;margin-right: 4px;">
+											<input type="radio"  name="amount-radio" value="own-amount-mybox" id="own-mybox" style="float: right;margin-top: 4px;margin-right: 4px;">
 										</div>
 										<div class="block41"  style="margin-top: 10px;">
 											<p id="p5" style="margin-top: -10px;">Only use numeric characters*</p>
@@ -417,7 +449,7 @@
 										<div class="block6">
 											
 											<div class="block10" ><p id="p4">Once off payment</p></div>
-											<input type="radio"  name="amount-radio" value="once-off-mybox" id="once-off-mybox" style="float: right;margin-top: 4px;margin-right: 4px;">
+											<input type="radio"  name="amount-radio" value="once-off-mybox-foundation" id="once-off-mybox" style="float: right;margin-top: 4px;margin-right: 4px;">
 										
 										</div>
 									</div>
@@ -600,34 +632,45 @@
 									<div class="block11"></div>
 										
 									<div class="info">
-										
-										<p id="p">My Box</p>
-										
-										<abbr id="myBtn6" href="#">
-												<img src="{% static 'landing/images/info-icon%20(1).png' %}"
-													width="10px" height="10px" alt=""
-													style="float: left;margin-top: 2px;">
-											</a>
-											<input id='fileid2' type='file' hidden />
-											<input id='buttonid2' type='button' value='Upload MB'
-												style="position: absolute; opacity:0" />
-	
-	
-											<!-- The Modal -->
-											<div id="myModal" class="modal">
-	
-												<!-- Modal content -->
-												<div class="modal-content">
-														<a href="#" rel="modal:close" class="close">Close</a>
-	
-												</div>
-	
-											</div>
-	
 
-										<p  id="p2">Upload list</p>
-										
-										
+										<p id="p">My Box</p>
+
+										<div class="col-md-12">
+
+											<abbr id="myBtn6" href="#">
+												<img src="{% static 'landing/images/info-icon%20(1).png' %}" width="10px" height="10px" alt="" style="float: left;margin-top: 2px;">
+												<p id="p2">Upload list</p>
+
+												</a>
+										</div>
+										<div class="school-name ">
+											<div class="school-name col-md-12">
+												<input type="text" placeholder="School name" class="schoolname-intermediate" id="school-intermediate" name="school-intermediate"  style="margin-bottom: 5px; border-radius: 20px;background-color: #e6e7ea;">
+											</div>
+											<div class="school-name col-md-12">
+												<input type="text"  id="grade-intermediate" class="schoolgrade-intermediate" name="grade-intermediate"placeholder="Grade" style="margin-bottom: 5px; border-radius: 20px;background-color: #e6e7ea;">
+											</div>
+											<input id='fileid2' type='file' hidden name="intermediate-mybox-list" />
+											<input id='buttonid2' type='button' value='Upload school list' style="font-size: 8px; background: 
+											#4dc8f4; color: white;     border-radius: 20px;     margin-left: 15px;
+											" />
+										</div>
+
+
+										<!-- The Modal -->
+										<div id="myModal" class="modal">
+
+											<!-- Modal content -->
+											<div class="modal-content">
+												<a href="#" rel="modal:close" class="close">Close</a>
+
+											</div>
+
+										</div>
+
+
+
+
 									</div>
 										
 										
@@ -636,7 +679,7 @@
 									
 									<div class="txt-block">
 									<div class="block51" >
-											<input type="text" placeholder="Average Spend" id="amount-mybox-average-intermediate" name="amount-mybox-intermediate" style="float: right;
+											<input type="text" placeholder="Average Spend" id="amount-mybox-average-intermediate" name="av-amount-mybox-intermediate" style="float: right;
 																												   font-size: 11px;
 																												   width: 150px;
 																												   height: 15px;
@@ -672,7 +715,7 @@
 																												   text-align: center;
 																												   margin-top: 1%;
 																													background-color: #e6e7ea;">
-											<input type="radio"  name="amount-radio" value="once-off-mybox-intermediate" id="own-mybox-intermediate" style="float: right;margin-top: 4px;margin-right: 4px;">
+											<input type="radio"  name="amount-radio" value="own-amount-mybox-intermediate" id="own-mybox-intermediate" style="float: right;margin-top: 4px;margin-right: 4px;">
 										</div>
 										<div class="block41">
 											<p id="p5" style="margin-top: 3px;">Only use numeric characters*</p>
@@ -847,7 +890,7 @@
 							<div class="row" id="row">
 								
 								<div class="sec1 col-md-1">
-									<input type="radio"  name="product-name" id="mybox-3" value="mybox-comprehensive">
+									<input type="radio"  name="product-name" id="mybox-3" value="mybox-junior">
 								</div>
 							
 								<div class="sec2 col-md-11">
@@ -855,33 +898,41 @@
 									<div class="block11"></div>
 										
 									<div class="info">
-										
+
 										<p id="p">My Box</p>
-										
-										
+
+
 										<abbr id="myBtn9" href="#">
-												<img src="{% static 'landing/images/info-icon%20(1).png' %}"
-													width="10px" height="10px" alt=""
-													style="float: left;margin-top: 2px;">
-											</a>
-											<input id='fileid3' type='file' hidden />
-											<input id='buttonid3' type='button' value='Upload MB'
-												style="position: absolute; opacity:0" />
-	
+											<img src="{% static 'landing/images/info-icon%20(1).png' %}" width="10px" height="10px" alt="" style="float: left;margin-top: 2px;">
+											<p id="p2">Upload list</p>
+
+										</a>
+										
+											<div class="school-name ">
+												<div class="school-name col-md-12">
+													<input type="text" placeholder="School name" class="schoolname-intermediate"  id="school-junior" name="school-junior" style="margin-bottom: 5px; border-radius: 20px;background-color: #e6e7ea;">
+												</div>
+												<div class="school-name col-md-12">
+													<input type="text" id="grade-junior" class="schoolgrade-intermediate" name="grade-junior" placeholder="Grade" style="margin-bottom: 5px; border-radius: 20px;background-color: #e6e7ea;">
+												</div>
+												<input id='fileid3' type='file' name="junior-mybox-list" hidden />
+												<input id='buttonid3' type='button' value='Upload school list' style="font-size: 8px; background: 
+												#4dc8f4; color: white;     border-radius: 20px;     margin-left: 15px;
+												" />
+											</div>
 											<!-- The Modal -->
 											<div id="myModal" class="modal">
-	
+
 												<!-- Modal content -->
 												<div class="modal-content">
-														<a href="#" rel="modal:close" class="close">Close</a>
-	
+													<a href="#" rel="modal:close" class="close">Close</a>
+
 												</div>
-	
+
 											</div>
 
-										<p  id="p2">Upload list</p>
-										
-										
+
+
 									</div>
 										
 										
@@ -890,7 +941,7 @@
 									
 									<div class="txt-block">
 									<div class="block51" >
-											<input type="text" placeholder="Average Spend" id="amount-mybox-average-junior" name="amount-mybox-junior" style="float: right;
+											<input type="text" placeholder="Average Spend" id="amount-mybox-average-junior" name="av-amount-mybox-junior" style="float: right;
 																												   font-size: 11px;
 																												   width: 150px;
 																												   height: 15px;
@@ -926,7 +977,7 @@
 																												   text-align: center;
 																												   margin-top: 1%;
 																												background-color: #e6e7ea">
-											<input type="radio"  name="amount-radio" id="own-mybox-junior" style="float: right;margin-top: 4px;margin-right: 4px;">
+											<input type="radio"  name="amount-radio" value="own-amount-mybox-junior" id="own-mybox-junior" style="float: right;margin-top: 4px;margin-right: 4px;">
 										</div>
 										<div class="block41">
 											<p id="p5" style="    margin-top: 3.5px;">Only use numeric characters*</p>
@@ -934,7 +985,7 @@
 										<div class="block6">
 											
 											<div class="block10" ><p id="p4">Once off payment</p></div>
-											<input type="radio"  name="amount-radio" id="own-mybox-junior" style="float: right;margin-top: 4px;margin-right: 4px;">
+											<input type="radio"  name="amount-radio" id="once-off-mybox-junior"  value="once-mybox-junior"style="float: right;margin-top: 4px;margin-right: 4px;">
 										
 										</div>
 									</div>
@@ -1109,34 +1160,40 @@
 									<div class="block11"></div>
 										
 									<div class="info">
-										
+
 										<p id="p">My Box</p>
-										
+
 										<abbr id="myBtn" href="#">
-												<img src="{% static 'landing/images/info-icon%20(1).png' %}"
-													width="10px" height="10px" alt=""
-													style="float: left;margin-top: 2px;">
-											</a>
-											<input id='fileid4' type='file' hidden />
-											 <input id='buttonid4' type='button' value='Upload MB'
-												style="position: absolute; opacity:0" />
-	
-	
+											<img src="{% static 'landing/images/info-icon%20(1).png' %}" width="10px" height="10px" alt="" style="float: left;margin-top: 2px;">
+											<p id="p2">Upload list</p>
+
+										</a>
+											<div class="school-name ">
+												<div class="school-name col-md-12">
+													<input type="text" placeholder="School name" class="schoolname-intermediate" id="school-senior" name="school-senior" style="margin-bottom: 5px; border-radius: 20px;background-color: #e6e7ea;">
+												</div>
+												<div class="school-name col-md-12">
+													<input type="text" id="grade-senior" class="schoolgrade-intermediate" name="grade-senior" placeholder="Grade" style="margin-bottom: 5px; border-radius: 20px;background-color: #e6e7ea;">
+												</div>
+												<input id='fileid4' type='file' hidden name="senior-mybox-list" />
+												<input id='buttonid4' type='button' value='Upload school list' style="font-size: 8px; background: 
+												#4dc8f4; color: white;     border-radius: 20px;     margin-left: 15px;
+												" />
+											</div>
 											<!-- The Modal -->
 											<div id="myModal" class="modal">
-	
+
 												<!-- Modal content -->
 												<div class="modal-content">
-														<a href="#" rel="modal:close" class="close">Close</a>
-	
-												</div>
-	
-											</div>
-	
+													<a href="#" rel="modal:close" class="close">Close</a>
 
-										<p  id="p2">Upload list</p>
-										
-										
+												</div>
+
+											</div>
+
+
+
+
 									</div>
 										
 										
@@ -1145,7 +1202,7 @@
 									
 									<div class="txt-block">
 									<div class="block51" >
-											<input type="text" placeholder="Average Spend" id="amount-mybox-average-senior" name="phone number" style="float: right;
+											<input type="text" placeholder="Average Spend" id="amount-mybox-average-senior" name="av-amount-mybox-average-senior" style="float: right;
 																												   font-size: 11px;
 																												   width: 150px;
 																												   height: 15px;
@@ -1173,7 +1230,7 @@
 											
 										<div class="block6">
 											
-											<input type="text" placeholder="Own Monthly Spend" id="amount-mybox-senior" name="phone number" style="float: right;
+											<input type="text" placeholder="Own Monthly Spend" id="amount-mybox-senior" name="amount-mybox-senior" style="float: right;
 																												   font-size: 11px;
 																												   width: 150px;
 																												   height: 15px;
@@ -1182,7 +1239,7 @@
 																												   text-align: center;
 																												   margin-top: 1%;
 																												  background-color: #e6e7ea">
-											<input type="radio"  name="amount-radio" id="own-mybox-senior" style="float: right;margin-top: 4px;margin-right: 4px;">
+											<input type="radio"  name="amount-radio" value="own-mybox-senior" id="own-mybox-senior" style="float: right;margin-top: 4px;margin-right: 4px;">
 											
 										</div>
 										<div class="block41">
@@ -1191,7 +1248,7 @@
 										<div class="block6">
 											
 											<div class="block10" ><p id="p4">Once off payment</p></div>
-											<input type="radio"  name="amount-radio" id="once-off-mybox-senior" style="float: right;margin-top: 4px;margin-right: 4px;">
+											<input type="radio"  name="amount-radio" value="once-off-mybox-senior" id="once-off-mybox-senior" style="float: right;margin-top: 4px;margin-right: 4px;">
 										</div>
 									</div>
 								</div>
@@ -1292,6 +1349,8 @@ window.onclick = function(event) {
 
 	<script>
 		$(document).ready(function (){
+
+			/*$('#comprehensive').prop('required', r)*/
 			//foundation
 			$('#amount-essentials').prop('readonly', true)
 			$('#amount-mybox').prop('readonly', true)
@@ -1316,33 +1375,43 @@ window.onclick = function(event) {
 	  function once_off_foundation(){
 		  //$('#amount').('1682.52')
 		  $('#amount').val('')
+		  $('#amount-essentials').val('')
+		  $('#amount-mybox').val('')
 		  $('#amount').prop('readonly', true)
 	  }
 
 	  function own_foundation(){
-		  $('#amount').val('')
-		  $('#amount').prop('readonly', false)
+		spend = 1682.52
+		  d = new Date();
+		  month = d.getMonth()+1;
+
+		  suggestion = spend/(12-month)
+		  document.getElementById('amount').value = ((suggestion).toFixed(2))
+		  $('#amount').prop('readonly', true)
 	  }
 
 	  
 	  $('#once-off-foundation').click(function (){
 		  once_off_foundation()
-
-
-		  own_essentials()
-		  own_mybox()
+		  $('#amount').val('')
+		$('#amount-mybox').val('')
+		  $('#amount-essentials').val('')
+		  $('#comprehensive').prop('checked',true)
 	  })
 
 	  $('#own-foundation').click(function (){
-			own_foundation()
+		own_foundation()
+			$('#comprehensive').prop('checked',true)
 
-			own_essentials()
-			own_mybox()
+			$('#amount-essentials').val('')
+		  	$('#amount-mybox').val('')
 	  })
 
 	  // Essentials
 	  function once_off_essentials(){
-		  //$('#amount-essentials').val('796,07')
+		 //$('#amount-essentials').val('796,07')
+		 $('#amount').val('')
+		$('#amount-mybox').val('')
 		  $('#amount-essentials').val('')
 		  $('#amount-essentials').prop('readonly', true)
 	  }
@@ -1353,10 +1422,11 @@ function once_off_comprehensive_intermediate(){
 		  $('#amount-comprehensive-intermediate').prop('readonly', true)
 	  }
 	  $('#once-off-comprehensive-intermediate').click(function (){
-		  once_off_essentials()
+		once_off_essentials()
+		$('#comprehensive-2').prop('checked',true)
 
-		  own_foundation()
-		  own_mybox()
+once_off_foundation()
+once_off_mybox()
 		  once_off_essentials_intermediate()
 		  once_off_comprehensive_intermediate()
 	  })
@@ -1367,14 +1437,12 @@ function once_off_essentials_junior(){
 		  $('#amount-essentials-junior').prop('readonly', true)
 	  }
 	  $('#once-off-essentials-junior').click(function (){
-		  once_off_essentials()
-
-		  own_foundation()
-		  own_mybox()
-		  once_off_essentials_intermediate()
-		  once_off_comprehensive_intermediate()
-		  once_off_essentials_junior()
-	  })
+		$('#amount-essentials-junior').val('')
+		$('#amount-comprehensive-junior').val('')
+	  	$('#own-essentials-junior').prop('checked', false)
+		  $('#once-off-comprehensive-junior').prop('checked', false)
+		  $('#essentials-3').prop('checked', true)
+	  });
 	  // Comprehensive - Junior
 function once_off_comprehensive_junior(){
 		  //$('#amount-essentials').val('796,07')
@@ -1382,10 +1450,10 @@ function once_off_comprehensive_junior(){
 		  $('#amount-comprehensive-junior').prop('readonly', true)
 	  }
 	  $('#once-off-comprehensive-junior').click(function (){
-		  once_off_essentials()
+		once_off_essentials()
 
-		  own_foundation()
-		  own_mybox()
+once_off_foundation()
+once_off_mybox()
 		  once_off_essentials_intermediate()
 		  once_off_comprehensive_intermediate()
 		  once_off_essentials_junior()
@@ -1413,15 +1481,10 @@ function once_off_comprehensive_junior(){
 		  $('#amount-essentials-senior').prop('readonly', true)
 	  }
 	  $('#once-off-essentials-senior').click(function (){
-		  once_off_essentials()
-
-		  own_foundation()
-		  own_mybox()
-		  once_off_essentials_intermediate()
-		  once_off_comprehensive_intermediate()
-		  once_off_essentials_senior()
-		  once_off_comprehensive_senior()
-	  })
+		own_mybox_senior()
+	  	$('#own-essentials-senior').prop('checked', false)
+		  $('#essentials-4').prop('checked', true)
+	  });
 // Essentials- Intermediate
 function once_off_essentials_intermediate(){
 		  //$('#amount-essentials').val('796,07')
@@ -1465,22 +1528,31 @@ function once_off_essentials_intermediate(){
 		  once_off_comprehensive_intermediate()
 	  })
 	  function own_essentials(){
-		  $('#amount-essentials').val('')
-		  $('#amount-essentials').prop('readonly', false)
+		spend = 796.07
+		  d = new Date();
+		  month = d.getMonth()+1;
+
+		  suggestion = spend/(12-month)
+		  document.getElementById('amount-essentials').value = ((suggestion).toFixed(2))	
+		  $('#amount').val('')
+		  $('#amount-essentials').prop('readonly', true) 
 	  }
 
 	  $('#once-off-essentials').click(function (){
-		  once_off_essentials()
-
-		  own_foundation()
-		  own_mybox()
+		once_off_essentials();
+			  $('#amount').val('')
+		$('#amount-mybox').val('')
+		  $('#amount-essentials').val('')
+			  $('#essentials').prop('checked',true)
 	  })
 
 	  $('#own-essentials').click(function (){
-			own_essentials()
-
+		own_essentials()
+			$('#essentials').prop('checked',true)
 			own_foundation()
 			own_mybox()
+			$('#amount').val('')
+		$('#amount-mybox').val('')
 	  })
 
 	  // Mybox
@@ -1498,20 +1570,25 @@ function once_off_essentials_intermediate(){
 	  }
 
 	  $('#once-off-mybox').click(function (){
-		  once_off_mybox()
-		  own_foundation()
-		  own_essentials()
+		once_off_mybox()
+		  $('#amount').val('')
+		$('#amount-mybox').val('')
+		  $('#amount-essentials').val('')
+		  $('#mybox').prop('checked',true)
+		  $('#amount-mybox-average-foundation').prop('readonly', true)
 	  })
 
 	  $('#own-mybox').click(function (){
-		  own_mybox()
-
-		  own_foundation()
-		  own_essentials()
+		own_mybox()
+		  $('#amount').val('')
+		  $('#amount-essentials').val('')
+		  $('#mybox').prop('checked',true)
 	  })
 	  
 
 	  $('#comprehensive').click(function (){
+
+		disable_all_required()
 
 		  $('#own-foundation').prop('checked',true)
 		  $('#once-off-comprehensive-junior').prop('checked', false)
@@ -1529,6 +1606,9 @@ function once_off_essentials_intermediate(){
 		  document.getElementById('amount-mybox-junior-j').innerHTML = " "
 		  document.getElementById('amount-mybox-senior-s').innerHTML = " "
 		  document.getElementById('amount-mybox-foundation-f').innerHTML = " "
+
+
+		 
 		  
 			$('#amount').prop('readonly', true)
 			$('#amount-essentials').prop('readonly', true)
@@ -1555,7 +1635,8 @@ function once_off_essentials_intermediate(){
 	  })
 
 	  $('#essentials').click(function (){
-
+		
+		disable_all_required()
 		  
 		  $('#own-essentials').prop('checked',true)
 		  $('#once-off-comprehensive-junior').prop('checked', false)
@@ -1568,8 +1649,8 @@ function once_off_essentials_intermediate(){
 		  document.getElementById('amount-essentials').value = ((suggestion).toFixed(2))	
 
 		  //foundation
-		  own_foundation()
-		  own_mybox()
+		  $('#amount').val('')
+		  $('#amount-mybox').val('')
 		  $('#amount').prop('readonly', true)
 		  $('#amount-essentials').prop('readonly', true)
 			$('#amount-mybox').prop('readonly', true)
@@ -1593,9 +1674,20 @@ function once_off_essentials_intermediate(){
 			$('#amount-mybox-senior').prop('readonly', true)
 			$('#amount-mybox-average-senior').prop('readonly', true)
 	  })
+
+
 	  $('#mybox').click(function (){
+
+		required_foundation()
+
 		  $('#own-mybox').prop('checked',true)
 		  $('#once-off-comprehensive-junior').prop('checked', false)
+
+
+		  
+
+
+
 		  //foundation
 		  own_foundation()
 		  own_essentials()
@@ -1630,8 +1722,14 @@ function once_off_essentials_intermediate(){
 		  $('#amount-comprehensive-intermediate').prop('readonly', false)
 	  }
 	  function own_essentials_intermediate(){
-		  $('#amount-essentials-intermediate').val('')
-		  $('#amount-essentials-intermediate').prop('readonly', false)
+		spend = 1184.00
+		  d = new Date();
+		  month = d.getMonth()+1;
+
+		  suggestion = spend/(12-month)
+		  document.getElementById('amount-essentials-intermediate').value = ((suggestion).toFixed(2))
+		  $('#amount-comprehensive-intermediate').val('')
+		  $('#amount-essentials-intermediate').prop('readonly', true)
 	  }
 	  function own_mybox_intermediate(){
 		  $('#amount-mybox-intermediate').val('')
@@ -1640,6 +1738,9 @@ function once_off_essentials_intermediate(){
 		  $('#amount-mybox-average-intermediate').prop('readonly', false)
 	  }
 	  $('#comprehensive-2').click(function (){
+
+		  disable_all_required()
+
 		  $('#own-compresenive-intermediate').prop('checked',true)
 		  $('#once-off-comprehensive-junior').prop('checked', false)
 		  //foundation
@@ -1680,6 +1781,9 @@ function once_off_essentials_intermediate(){
 	  })
 
 	  $('#essentials-2').click(function (){
+
+		disable_all_required()
+
 		  $('#own-essentials-intermediate').prop('checked', true)
 		  $('#once-off-comprehensive-junior').prop('checked', false)
 		  //foundation
@@ -1720,6 +1824,10 @@ function once_off_essentials_intermediate(){
 			$('#amount-mybox-average-senior').prop('readonly', true)
 	  })
 	  $('#mybox-2').click(function (){
+
+		  required_intermediate()
+
+
 		  $('#own-mybox-intermediate').prop('checked', true)
 		  $('#once-off-comprehensive-junior').prop('checked', false)
 		  //foundation
@@ -1756,12 +1864,25 @@ function once_off_essentials_intermediate(){
 	  //Junior
   
 	  function own_comprehensive_junior(){
-		  $('#amount-comprehensive-junior').val('')
-		  $('#amount-comprehensive-junior').prop('readonly', false)
+		spend = 1600.41
+		  d = new Date();
+		  month = d.getMonth()+1;
+
+		  suggestion = spend/(12-month)
+		  document.getElementById('amount-comprehensive-junior').value = ((suggestion).toFixed(2))
+		  $('#amount-comprehensive-junior').prop('readonly', true)
 	  }
+
+
 	  function own_essentials_junior(){
-		  $('#amount-essentials-junior').val('')
-		  $('#amount-essentials-junior').prop('readonly', false)
+		   spend = 807.41
+		  d = new Date();
+		  month = d.getMonth()+1;
+
+		  suggestion = spend/(12-month)
+		  document.getElementById('amount-essentials-junior').value = ((suggestion).toFixed(2))
+		  $('#amount-comprehensive-junior').val('')
+		  $('#amount-essentials-junior').prop('readonly', true)
 	  }
 	  function own_mybox_junior(){
 		  $('#amount-mybox-junior').val('')
@@ -1770,12 +1891,23 @@ function once_off_essentials_intermediate(){
 		  $('#amount-mybox-average-junior').prop('readonly', false)
 	  }
 	  $('#own-comprehensive-junior').click(function (){
+		own_comprehensive_junior()
+		$('#amount-essentials-junior').val('')
 	  	$('#once-off-comprehensive-junior').prop('checked', false)
+		  
+		  $('#comprehensive-3').prop('checked', true)
 	  });
 	  $('#once-off-comprehensive-junior').click(function (){
+		own_mybox_junior()
 	  	$('#own-comprehensive-junior').prop('checked', false)
+		  $('#once-off-mybox-junior').prop('checked', false)
+		  $('#once-off-essentials-junior').prop('checked', false)
+		  $('#comprehensive-3').prop('checked', true)
 	  });
 	  $('#comprehensive-3').click(function (){
+
+		  disable_all_required()
+
 		  $('#own-comprehensive-junior').prop('checked', true)
 		  
 		  $('#once-off-comprehensive-junior').prop('checked', false)
@@ -1821,6 +1953,9 @@ function once_off_essentials_intermediate(){
 	  })
 
 	  $('#essentials-3').click(function (){
+
+		  disable_all_required()
+		  $('#own-essentials-junior').prop('checked', true)
 		  $('#own-essentials-junior').prop('checked', true)
 		  $('#once-off-comprehensive-junior').prop('checked', false)
 		  //foundation
@@ -1864,6 +1999,10 @@ function once_off_essentials_intermediate(){
 			$('#amount-mybox-average-senior').prop('readonly', true)
 	  })
 	  $('#mybox-3').click(function (){
+
+		  required_junior()
+
+
 		  $('#own-mybox-junior').prop('checked', true)
 		  $('#once-off-comprehensive-junior').prop('checked', false)
 		  //foundation
@@ -1906,11 +2045,21 @@ function once_off_essentials_intermediate(){
 	  //Senior High
   
 	  function own_comprehensive_senior(){
-		  $('#amount-comprehensive-senior').val('')
+		spend = 1566.42
+		  d = new Date();
+		  month = d.getMonth()+1;
+
+		  suggestion = spend/(12-month)
+		  document.getElementById('amount-comprehensive-senior').value = ((suggestion).toFixed(2))
 		  $('#amount-comprehensive-senior').prop('readonly', false)
 	  }
 	  function own_essentials_senior(){
-		  $('#amount-essentials-senior').val('')
+		spend = 745.14
+		  d = new Date();
+		  month = d.getMonth()+1;
+
+		  suggestion = spend/(12-month)
+		  document.getElementById('amount-essentials-senior').value = ((suggestion).toFixed(2))
 		  $('#amount-essentials-senior').prop('readonly', false)
 	  }
 	  function own_mybox_senior(){
@@ -1920,6 +2069,9 @@ function once_off_essentials_intermediate(){
 		  $('#amount-mybox-average-senior').prop('readonly', false)
 	  }
 	  $('#comprehensive-4').click(function (){
+
+		  disable_all_required()
+
 		  $('#own-comprehensive-senior').prop('checked',true)
 		  $('#once-off-comprehensive-junior').prop('checked', false)
 		  //foundation
@@ -1967,6 +2119,10 @@ function once_off_essentials_intermediate(){
 	  })
 
 	  $('#essentials-4').click(function (){
+
+		  disable_all_required()
+
+
 		  $('#own-essentials-senior').prop('checked', true)
 		  $('#once-off-comprehensive-junior').prop('checked', false)
 		  //foundation
@@ -2012,6 +2168,10 @@ function once_off_essentials_intermediate(){
 			$('#amount-mybox-average-senior').prop('readonly', true)
 	  })
 	  $('#mybox-4').click(function (){
+
+		  required_senior()
+
+
 		  $('#own-mybox-senior').prop('checked', true)
 		  $('#once-off-comprehensive-junior').prop('checked', false)
 		  //foundation
@@ -2053,75 +2213,78 @@ function once_off_essentials_intermediate(){
 	  })
 
 	  // Own amount, average spend
-	  $('#amount-mybox-average-foundation').change( function(){
-		spend = document.getElementById('amount-mybox-average-foundation').value
-		/*
-		d = new Date();
-		month = d.getMonth()+1;
-		monthsCal=12-month;
-		
-		if(monthCal == 0)
-		{
-			monthsCal=1;
-		}*/
+		$('#amount-mybox-average-foundation').change(function () {
+			spend = document.getElementById('amount-mybox-average-foundation').value
+			/*
+			d = new Date();
+			month = d.getMonth()+1;
+			monthsCal=12-month;
+			
+			if(monthCal == 0)
+			{
+				monthsCal=1;
+			}*/
 
-		suggestion = spend/4
-		document.getElementById('amount-mybox-f').innerHTML = ((suggestion).toFixed(2))
-		document.getElementById('amount-mybox').value = ((suggestion).toFixed(2))
-	})
+			suggestion = spend / 4
+			document.getElementById('amount-mybox-f').innerHTML = ((suggestion).toFixed(2))
+			document.getElementById('amount-mybox').value = ((suggestion).toFixed(2))
+		})
 
-	// Own amount, average spend
-	$('#amount-mybox-average-intermediate').change( function(){
-		/*
-		d = new Date();
-		month = d.getMonth()+1;
-		monthsCal=12-month;
-		
-		if(monthCal == 0)
-		{
-			monthsCal=1;
-		}*/
+		// Own amount, average spend
+		$('#amount-mybox-average-intermediate').change(function () {
+			spend = document.getElementById('amount-mybox-average-intermediate').value
+			/*
+			d = new Date();
+			month = d.getMonth()+1;
+			monthsCal=12-month;
+			
+			if(monthCal == 0)
+			{
+				monthsCal=1;
+			}*/
 
-		suggestion = spend/4
-		document.getElementById('amount-mybox-intermediate-i').innerHTML = ((suggestion).toFixed(2))
-		document.getElementById('amount-mybox-intermediate').value = ((suggestion).toFixed(2))
-		
-	})
+			suggestion = spend / 4
+			document.getElementById('amount-mybox-intermediate-i').innerHTML = ((suggestion).toFixed(2))
+			document.getElementById('amount-mybox-intermediate').value = ((suggestion).toFixed(2))
 
-	// Own amount, average spend
-	$('#amount-mybox-average-junior').change( function(){
-		/*
-		d = new Date();
-		month = d.getMonth()+1;
-		monthsCal=12-month;
-		
-		if(monthCal == 0)
-		{
-			monthsCal=1;
-		}*/
+		})
 
-suggestion = spend/4
-		document.getElementById('amount-mybox-junior-j').innerHTML = ((suggestion).toFixed(2))
-		document.getElementById('amount-mybox-junior').value = ((suggestion).toFixed(2))
-	})
+		// Own amount, average spend
+		$('#amount-mybox-average-junior').change(function () {
+			spend = document.getElementById('amount-mybox-average-junior').value
+			/*
+			d = new Date();
+			month = d.getMonth()+1;
+			monthsCal=12-month;
+			
+			if(monthCal == 0)
+			{
+				monthsCal=1;
+			}*/
 
-	// Own amount, average spend
-	$('#amount-mybox-average-senior').change( function(){
-		/*
-		d = new Date();
-		month = d.getMonth()+1;
-		monthsCal=12-month;
-		
-		if(monthCal == 0)
-		{
-			monthsCal=1;
-		}*/
+			suggestion = spend / 4
+			document.getElementById('amount-mybox-junior-j').innerHTML = ((suggestion).toFixed(2))
+			document.getElementById('amount-mybox-junior').value = ((suggestion).toFixed(2))
+		})
 
-		suggestion = spend/4
-		document.getElementById('amount-mybox-senior-s').innerHTML = ((suggestion).toFixed(2))
-		document.getElementById('amount-mybox-senior').value = ((suggestion).toFixed(2))
-		
-	})
+		// Own amount, average spend
+		$('#amount-mybox-average-senior').change(function () {
+			spend = document.getElementById('amount-mybox-average-senior').value
+			/*
+			d = new Date();
+			month = d.getMonth()+1;
+			monthsCal=12-month;
+			
+			if(monthCal == 0)
+			{
+				monthsCal=1;
+			}*/
+
+			suggestion = spend / 4
+			document.getElementById('amount-mybox-senior-s').innerHTML = ((suggestion).toFixed(2))
+			document.getElementById('amount-mybox-senior').value = ((suggestion).toFixed(2))
+
+		})
 
 	$('#rep-membership').click( function(){
 		rep_mem = document.getElementById('rep-mem')
@@ -2196,29 +2359,29 @@ $(document).on('submit', '#membership-form', function(e){
 	</script>
 	    <!-- upload btn -->
 <script>
-	        document.getElementById('buttonid').addEventListener('click', openDialog);
+	        document.getElementById('buttonid').addEventListener('click', openDialog1);
 	
-	        function openDialog() {
+	        function openDialog1() {
 	            document.getElementById('fileid').click();
 	        }
 	        // intermediate btn
 	
-	        document.getElementById('buttonid2').addEventListener('click', openDialog);
+	        document.getElementById('buttonid2').addEventListener('click', openDialog2);
 	
-	        function openDialog() {
+	        function openDialog2() {
 	            document.getElementById('fileid2').click();
 	        }
 	
 	        // junior high
-	        document.getElementById('buttonid3').addEventListener('click', openDialog);
+	        document.getElementById('buttonid3').addEventListener('click', openDialog3);
 	
-	        function openDialog() {
+	        function openDialog3() {
 	            document.getElementById('fileid3').click();
 	        }
 	        // junior high
-	        document.getElementById('buttonid4').addEventListener('click', openDialog);
+	        document.getElementById('buttonid4').addEventListener('click', openDialog4);
 	
-	        function openDialog() {
+	        function openDialog4() {
 	            document.getElementById('fileid4').click();
 	        }
 </script>
@@ -2340,6 +2503,205 @@ $(document).on('submit', '#membership-form', function(e){
 				});
 			});
 		
+
+
+
+
+		function disable_all_required(){
+			/* school */
+			$('#school-foundation').prop('required',false)
+			$('#school-intermediate').prop('required',false)
+			$('#school-junior').prop('required',false)
+			$('#school-senior').prop('required',false)
+			/* grade */
+			$('#grade-foundation').prop('required',false)
+			$('#grade-intermediate').prop('required',false)
+			$('#grade-junior').prop('required',false)
+			$('#grade-senior').prop('required',false)
+
+			/* upload */
+			$('#fileid').prop('required',false)
+			$('#fileid2').prop('required',false)
+			$('#fileid3').prop('required',false)
+			$('#fileid4').prop('required',false)
+
+			/* everage */
+			$("#av-amount-mybox-foundation").prop('required',false)
+			$("#amount-mybox-average-intermediate").prop('required',false)
+			$("#amount-mybox-average-junior").prop('required',false)
+			$("#amount-mybox-average-senior").prop('required',false)
+		}
+
+		function required_foundation(){
+			$('#school-foundation').prop('required',true)
+			$('#school-intermediate').prop('required',false)
+			$('#school-junior').prop('required',false)
+			$('#school-senior').prop('required',false)
+			/* grade */
+			$('#grade-foundation').prop('required',true)
+			$('#grade-intermediate').prop('required',false)
+			$('#grade-junior').prop('required',false)
+			$('#grade-senior').prop('required',false)
+
+			$('#fileid').prop('required',true)
+			$('#fileid2').prop('required',false)
+			$('#fileid3').prop('required',false)
+			$('#fileid4').prop('required',false)
+
+			$("#amount-mybox-average-foundation").prop('required',true)
+			$("#amount-mybox-average-intermediate").prop('required',false)
+			$("#amount-mybox-average-junior").prop('required',false)
+			$("#amount-mybox-average-senior").prop('required',false)
+		}
+		function required_intermediate(){
+			$('#school-foundation').prop('required',true)
+			$('#school-intermediate').prop('required',true)
+			$('#school-junior').prop('required',false)
+			$('#school-senior').prop('required',false)
+			/* grade */
+			$('#grade-foundation').prop('required',true)
+			$('#grade-intermediate').prop('required',true)
+			$('#grade-junior').prop('required',false)
+			$('#grade-senior').prop('required',false)
+
+			$('#fileid2').prop('required',true)
+			$('#fileid').prop('required',false)
+			$('#fileid3').prop('required',false)
+			$('#fileid4').prop('required',false)
+
+			$("#amount-mybox-average-foundation").prop('required',false)
+			$("#amount-mybox-average-intermediate").prop('required',true)
+			$("#amount-mybox-average-junior").prop('required',false)
+			$("#amount-mybox-average-senior").prop('required',false)
+		}
+
+		function required_junior(){
+			$('#school-foundation').prop('required',true)
+			$('#school-intermediate').prop('required',false)
+			$('#school-junior').prop('required',true)
+			$('#school-senior').prop('required',false)
+			/* grade */
+			$('#grade-foundation').prop('required',true)
+			$('#grade-intermediate').prop('required',false)
+			$('#grade-junior').prop('required',true)
+			$('#grade-senior').prop('required',false)
+
+			$('#fileid3').prop('required',true)
+			$('#fileid').prop('required',false)
+			$('#fileid2').prop('required',false)
+			$('#fileid4').prop('required',false)
+
+			$("#amount-mybox-average-foundation").prop('required',false)
+			$("#amount-mybox-average-intermediate").prop('required',false)
+			$("#amount-mybox-average-junior").prop('required',true)
+			$("#amount-mybox-average-senior").prop('required',false)
+		}
+
+		function required_senior(){
+			$('#school-foundation').prop('required',true)
+			$('#school-intermediate').prop('required',false)
+			$('#school-junior').prop('required',false)
+			$('#school-senior').prop('required',true)
+			/* grade */
+			$('#grade-foundation').prop('required',true)
+			$('#grade-intermediate').prop('required',false)
+			$('#grade-junior').prop('required',false)
+			$('#grade-senior').prop('required',true)
+
+			$('#fileid4').prop('required',true)
+			$('#fileid').prop('required',false)
+			$('#fileid2').prop('required',false)
+			$('#fileid3').prop('required',false)
+
+			$("#amount-mybox-average-foundation").prop('required',false)
+			$("#amount-mybox-average-intermediate").prop('required',false)
+			$("#amount-mybox-average-junior").prop('required',false)
+			$("#amount-mybox-average-senior").prop('required',true)
+		}
+
+
+		$('#own-compresenive-intermediate').click(function (){
+		own_comprehensive_intermediate()
+		$('#amount-mybox-intermediate').val('')
+		$('#amount-essentials-intermediate').val('')
+		$('#comprehensive-2').prop('checked',true)
+	  })
+
+	  $('#own-essentials-intermediate').click(function (){
+		own_essentials_intermediate()
+		$('#essentials-2').prop('checked',true)
+	  })
+
+	  $('#own-mybox-intermediate').click(function (){
+		own_mybox_intermediate()
+		$('#amount-comprehensive-intermediate').val('')
+		$('#amount-essentials-intermediate').val('')
+		$('#mybox-2').prop('checked',true)
+	  })
+
+	  $('#once-off-mybox-intermediate').click(function (){
+		own_mybox_intermediate()
+		$('#amount-comprehensive-intermediate').val('')
+		$('#amount-essentials-intermediate').val('')
+		$('#amount-mybox-average-intermediate').prop('readonly', true)
+		$('#mybox-2').prop('checked',true)
+	  })
+
+	  $('#own-essentials-junior').click(function (){
+		own_essentials_junior()
+		$('#amount-comprehensive-junior').val('')
+	  	$('#once-off-comprehensive-junior').prop('checked', false)
+		  $('#essentials-3').prop('checked', true)
+	  });
+
+	  $('#own-mybox-junior').click(function (){
+		$('#amount-essentials-junior').val('')
+		$('#amount-mybox-junior').val('')
+		$('#amount-mybox-average-junior').val('')
+	  	$('#once-off-mybox-junior').prop('checked', false)
+		  $('#mybox-3').prop('checked', true)
+	  });
+
+	  $('#once-off-mybox-junior').click(function (){
+		$('#amount-mybox-junior').val('')
+		$('#amount-mybox-junior').val('')
+		$('#amount-mybox-average-junior').val('')
+	  	$('#own-mybox-junior').prop('checked', false)
+		  $('#once-off-comprehensive-junior').prop('checked', false)
+		  $('#mybox-3').prop('checked', true)
+	  });
+	  $('#own-comprehensive-senior').click(function (){
+		own_comprehensive_senior()
+		$('#amount-essentials-senior').val('')
+	  	$('#once-off-comprehensive-senior').prop('checked', false)
+		  $('#comprehensive-4').prop('checked', true)
+	  });
+
+	  $('#once-off-comprehensive-senior').click(function (){
+		own_mybox_senior()
+	  	$('#own-comprehensive-senior').prop('checked', false)
+		  $('#comprehensive-4').prop('checked', true)
+	  });
+
+	  $('#own-essentials-senior').click(function (){
+		own_essentials_senior()
+		$('#amount-comprehensive-senior').val('')
+	  	$('#once-off-essentials-senior').prop('checked', false)
+		  $('#essentials-4').prop('checked', true)
+	  });
+
+	  $('#own-mybox-senior').click(function (){
+		own_mybox_senior()
+		$('#amount-comprehensive-senior').val('')
+	  	$('#once-off-mybox-senior').prop('checked', false)
+		  $('#mybox-4').prop('checked', true)
+	  });
+
+	  $('#once-off-mybox-senior').click(function (){
+		own_mybox_senior()
+	  	$('#own-mybox-senior').prop('checked', false)
+		  $('#mybox-4').prop('checked', true)
+	  });
 		</script>
 		<script></script>
 	

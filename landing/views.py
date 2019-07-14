@@ -28,6 +28,10 @@ def login_in(request):
 
 def reg_page(request):
 
+    pass_c = ''
+    email_c= ''
+    password_validation= 'Confirm Password'
+    email_validation  = 'Email'
     if request.POST:
         user_create = User()
         user_create.username = request.POST['email']
@@ -40,7 +44,7 @@ def reg_page(request):
         return redirect('dashboard/packages')
     else:
         pass
-    return render(request, 'landing/pages/registration_page.html', {})
+    return render(request, 'landing/pages/registration_page.html', {'password_validation':password_validation , 'email_validation':email_validation, 'pass_c':pass_c,'emai_c':email_c})
  
 
 def referral(request):

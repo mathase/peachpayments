@@ -28,48 +28,51 @@ def register(request):
     username_validation = ''
     email_validation    = ''
     password_validation = ''
+    pass_c = ''
+    email_c= ''
 
     if request.method == 'POST':
+
+
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
-            user = form.save(commit=False)
-            user.is_active = True
-            user.username = request.POST['email']
-            user.first_name = request.POST['first_name']
-            user.last_name = request.POST['last_name']
-            user.phone = request.POST['phone']
-            user.save()
-                
-            
-
-            username = request.POST.get('email', '')
-            password = request.POST.get('password1', '')
-
-            user = authenticate(request, username=username, password=password)
-            if user is not None:
-                login(request, user)
-                sendEmail(request)
-                return redirect('/dashboard/packages')
-            
-            
-
-
-            #return HttpResponse('Please confirm your email address to complete the registration')
-            
-        else:
 
             if(User.objects.filter(email = request.POST['email']).exists()):
                 email_validation = "email already exists"
+                email_c= 'red'
                 
-            if(request.POST['password2'] != request.POST['password1']):
+            elif(request.POST['password2'] != request.POST['password1']):
                 password_validation = "passwords do not match"
+                pass_c = 'red'
+            
+            else:
+                user = form.save(commit=False)
+                user.is_active = True
+                user.username = request.POST['email']
+                user.first_name = request.POST['first_name']
+                user.last_name = request.POST['last_name']
+                user.phone = request.POST['phone']
+                user.save()
+                    
+                
 
-        #return render(request, template_name, 
-        #                    {'username_validation':username_validation,
-        #                        'email_validation':email_validation,
-        #                        'password_validation':password_validation})
+                username = request.POST.get('email', '')
+                password = request.POST.get('password1', '')
 
-        return render
+                user = authenticate(request, username=username, password=password)
+                if user is not None:
+                    login(request, user)
+                    #sendEmail(request)
+                    return redirect('/dashboard/packages')
+            
+
+        return render(request, template_name, 
+                            {'username_validation':username_validation,
+                                'email_validation':email_validation,
+                                'password_validation':password_validation,
+                                 'pass_c':pass_c,'emai_c':email_c})
+
+        
     else:
         #form = SignupForm()
         form_class = CustomUserCreationForm

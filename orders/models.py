@@ -17,5 +17,8 @@ class Order(models.Model):
     image           = models.CharField(max_length=100, default="default.jpg")
     ownBox      = models.ImageField(upload_to='lists', default="none")
 
+    school           = models.CharField(max_length=100, default='none')
+    grade           = models.CharField(max_length=100, default='none')
+
     def __str__(self):
         return str(self.user)

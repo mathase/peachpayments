@@ -21,3 +21,4 @@ Faker
 coverage
 codacy-coverage
 flask
+Pillow

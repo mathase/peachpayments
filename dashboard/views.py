@@ -48,12 +48,14 @@ def packages(request):
             order.order_level = 'foundation'
             order.order_type = 'stationary'
             order.product = 'MyBox(Foundation)'
+            order.school = request.POST['school-foundation']
+            order.grade = request.POST['grade-foundation']
             order.ownBox = request.FILES['foundation-mybox-list']
             if(request.POST['amount-radio'] == 'own-amount-mybox'):
                 order.price = request.POST['amount-mybox-foundation']
                 order.isRecurring = True
-            elif(request.POST['amount-radio'] == 'once-off-mybox'):
-                order.price = request.POST['amount-mybox-foundation']
+            elif(request.POST['amount-radio'] == 'once-off-mybox-foundation'):
+                order.price = request.POST['av-amount-mybox-foundation']
 
 
 
@@ -82,16 +84,19 @@ def packages(request):
                 order.price = '1184.00'
         
         # MyBox
-        elif(request.POST['product-name'] == 'myBox-foundation'):
+        elif(request.POST['product-name'] == 'mybox-intermediate'):
             order.image = 'images/mybox.png'
-            order.order_level = 'foundation'
+            order.order_level = 'intermediate'
             order.order_type = 'stationary'
-            order.product = 'MyBox(Foundation)'
-            if(request.POST['amount-radio'] == 'own-amount-mybox'):
-                order.price = request.POST['amount-mybox-foundation']
+            order.school = request.POST['school-intermediate']
+            order.grade = request.POST['grade-intermediate']
+            order.product = 'MyBox(Intermediate)'
+            order.ownBox = request.FILES['intermediate-mybox-list']
+            if(request.POST['amount-radio'] == 'own-amount-mybox-intermediate'):
+                order.price = request.POST['amount-mybox-intermediate']
                 order.isRecurring = True
-            elif(request.POST['amount-radio'] == 'once-off-mybox'):
-                order.price = request.POST['amount-mybox-foundation']
+            elif(request.POST['amount-radio'] == 'once-off-mybox-intermediate'):
+                order.price = request.POST['av-amount-mybox-intermediate']
         
 
     # Junior ------------------------------------------------------------------------------
@@ -120,16 +125,19 @@ def packages(request):
                 order.price = '807.41'
 
         # MyBox
-        elif(request.POST['product-name'] == 'myBox-foundation'):
+        elif(request.POST['product-name'] == 'mybox-junior'):
             order.image = 'images/mybox.png'
-            order.order_level = 'foundation'
+            order.order_level = 'junior'
             order.order_type = 'stationary'
-            order.product = 'MyBox(Foundation)'
-            if(request.POST['amount-radio'] == 'own-amount-mybox'):
-                order.price = request.POST['amount-mybox-foundation']
+            order.product = 'MyBox(junior)'
+            order.school = request.POST['school-junior']
+            order.grade = request.POST['grade-junior']
+            order.ownBox = request.FILES['junior-mybox-list']
+            if(request.POST['amount-radio'] == 'own-amount-mybox-junior'):
+                order.price = request.POST['amount-mybox-junior']
                 order.isRecurring = True
-            elif(request.POST['amount-radio'] == 'once-off-mybox'):
-                order.price = request.POST['amount-mybox-foundation']
+            elif(request.POST['amount-radio'] == 'once-mybox-junior'):
+                order.price = request.POST['av-amount-mybox-junior']
         
     # Senior ------------------------------------------------------------------------------
         # Comprehensive
@@ -157,16 +165,19 @@ def packages(request):
                 order.price = '745.14'
         
         # MyBox
-        elif(request.POST['product-name'] == 'myBox-foundation'):
+        elif(request.POST['product-name'] == 'mybox-senior'):
             order.image = 'images/mybox.png'
-            order.order_level = 'foundation'
+            order.order_level = 'mybox-senior'
             order.order_type = 'stationary'
-            order.product = 'MyBox(Foundation)'
-            if(request.POST['amount-radio'] == 'own-amount-mybox'):
-                order.price = request.POST['amount-mybox-foundation']
+            order.product = 'MyBox(Senior)'
+            order.school = request.POST['school-senior']
+            order.grade = request.POST['grade-senior']
+            order.ownBox = request.FILES['senior-mybox-list']
+            if(request.POST['amount-radio'] == 'own-mybox-senior'):
+                order.price = request.POST['amount-mybox-senior']
                 order.isRecurring = True
-            elif(request.POST['amount-radio'] == 'once-off-mybox'):
-                order.price = request.POST['amount-mybox-foundation']
+            elif(request.POST['amount-radio'] == 'once-off-mybox-senior'):
+                order.price = request.POST['av-amount-mybox-average-senior']
                 
 
         
