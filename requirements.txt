@@ -1,6 +1,6 @@
 django==1.11.17
 django-filter==1.0.4
-djangorestframework==3.6.3
+djangorestframework==3.11.2
 gunicorn==19.7.1
 psycopg2-binary
 django-storages==1.6.3
